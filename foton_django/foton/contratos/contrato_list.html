@@ -1,0 +1,8 @@
+<h1>Lista de Contratos</h1>
+<ul>
+    {% for contrato in contratos %}
+        <li>{{ contrato.nome }}</li>
+    {% empty %}
+        <li>Nenhum contrato encontrado.</li>
+    {% endfor %}
+</ul>

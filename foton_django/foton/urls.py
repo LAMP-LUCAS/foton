@@ -17,6 +17,24 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from .contratos.views import contrato_list
+from .clientes.views import cliente_list
+from .orcamento.views import orcamento_list
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+]
+
+urlpatterns = [
+    path('./foton/contratos/', contrato_list, name='contrato_list'),
+]
+
+urlpatterns = [
+    path('./foton/clientes/', cliente_list, name='cliente_list'),
+]
+
+urlpatterns = [
+    path('./foton/orcamento/', orcamento_list, name='orcamento_list'),
 ]
