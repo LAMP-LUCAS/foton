@@ -1,6 +1,6 @@
 from django.db import models
 
-class contratos(models.Model):
+class contrato(models.Model):
     numero = models.CharField(max_length=20)
     cliente = models.ForeignKey('clientes.Cliente', on_delete=models.CASCADE)
     descricao = models.TextField()
@@ -8,5 +8,8 @@ class contratos(models.Model):
     data_inicio = models.DateField()
     data_fim = models.DateField()
 
+    class Meta:
+        app_label = 'foton.contrato'
+        
     def __str__(self):
         return self.numero
