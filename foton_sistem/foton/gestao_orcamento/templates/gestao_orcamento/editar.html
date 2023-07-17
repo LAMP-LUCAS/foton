@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Orçamento</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Editar Orçamento</h1>
+        <form method="POST" action="{% url 'gestao_orcamento:editar' orcamento.id %}">
+            {% csrf_token %}
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" value="{{ orcamento.descricao }}" required>
+            <br>
+            <label for="valor">Valor:</label>
+            <input type="number" id="valor" name="valor" value="{{ orcamento.valor }}" required>
+            <br>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+        </form>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excluir Orçamento</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Excluir Orçamento</h1>
+        <p>Você tem certeza que deseja excluir o orçamento "{{ orcamento.descricao }}"?</p>
+        <form method="POST" action="{% url 'gestao_orcamento:excluir' orcamento.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a href="{% url 'gestao_orcamento:index' %}" class="btn btn-secondary">Cancelar</a>
+        </form>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

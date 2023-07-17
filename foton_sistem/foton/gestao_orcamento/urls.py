@@ -5,5 +5,7 @@ app_name = 'gestao_orcamento'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    # outras rotas do microsserviço de orcamento...
+    path('<int:orcamento_id>/', views.detalhes, name='detalhes'),
+    path('<int:orcamento_id>/editar/', views.editar, name='editar'),
+    path('<int:orcamento_id>/excluir/', views.excluir, name='excluir'),
 ]

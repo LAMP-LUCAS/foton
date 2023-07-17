@@ -5,33 +5,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <h1>Orçamentos</h1>
-    <!-- Lista de orçamentos -->
-    <table class="table">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Descrição</th>
-                <th>Valor</th>
-                <th>Ações</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for orcamento in orcamentos %}
-            <tr>
-                <td>{{ orcamento.id }}</td>
-                <td>{{ orcamento.descricao }}</td>
-                <td>{{ orcamento.valor }}</td>
-                <td>
-                    <!-- Botões para visualizar, editar ou excluir orçamento -->
-                    <a href="{% url 'gestao_orcamento:detalhes' orcamento.id %}" class="btn btn-primary">Detalhes</a>
-                    <a href="{% url 'gestao_orcamento:editar' orcamento.id %}" class="btn btn-warning">Editar</a>
-                    <a href="{% url 'gestao_orcamento:excluir' orcamento.id %}" class="btn btn-danger">Excluir</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="container">
+        <h1>Gestão de Orçamentos</h1>
+        <!-- Lista de orçamentos -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for orcamento in orcamentos %}
+                <tr>
+                    <td>{{ orcamento.id }}</td>
+                    <td>{{ orcamento.descricao }}</td>
+                    <td>{{ orcamento.valor }}</td>
+                    <td>
+                        <a href="{% url 'gestao_orcamento:detalhes' orcamento.id %}" class="btn btn-primary">Detalhes</a>
+                        <a href="{% url 'gestao_orcamento:editar' orcamento.id %}" class="btn btn-warning">Editar</a>
+                        <a href="{% url 'gestao_orcamento:excluir' orcamento.id %}" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>

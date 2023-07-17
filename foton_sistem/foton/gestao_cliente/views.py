@@ -1,7 +1,24 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Cliente
 
 def index(request):
-    # lógica para recuperar os cliente e renderizar o template
-    return render(request, 'gestao_cliente/index.html')
+    clientes = Cliente.objects.all()  # substitua "Clientes" pelo nome do seu modelo de cliente
+    return render(request, 'gestao_cliente/index.html', {'clientes': clientes})
 
-# outras views do microsserviço de contrato...
+def detalhes(request, cliente_id):
+    cliente = Cliente.objects.get(id=cliente_id)  # substitua "Clientes" pelo nome do seu modelo de cliente
+    return render(request, 'gestao_cliente/detalhes.html', {'cliente': cliente})
+
+def editar(request, cliente_id):
+    cliente = Cliente.objects.get(id=cliente_id)  # substitua "Clientes" pelo nome do seu modelo de cliente
+    if request.method == 'POST':
+        # lógica para salvar as alterações do cliente
+        return redirect('gestao_cliente:index')
+    return render(request, 'gestao_cliente/editar.html', {'cliente': cliente})
+
+def excluir(request, cliente_id):
+    cliente = Cliente.objects.get(id=cliente_id)  # substitua "Clientes" pelo nome do seu modelo de cliente
+    if request.method == 'POST':
+        # lógica para excluir o cliente
+        return redirect('gestao_cliente:index')
+    return render(request, 'gestao_cliente/excluir.html', {'cliente': cliente})
