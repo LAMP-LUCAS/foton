@@ -44,7 +44,13 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.apple',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.microsoft',
+    'foton',  # Aplicação principal do projeto
+    'gestao_contrato',  # Aplicação de gestão de contrato
+    'gestao_cliente',  # Aplicação de gestão de cliente
+    'gestao_orcamento',  # Aplicação de gestão de orçamento
+    # outras aplicações...
 ]
+
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',

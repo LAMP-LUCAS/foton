@@ -2,13 +2,36 @@
 <html>
 <head>
     <title>Gestão de Contratos</title>
-    <!-- importe os arquivos CSS do Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
-    <!-- conteúdo da página -->
     <h1>Contratos</h1>
-    <!-- importe os arquivos JavaScript do Bootstrap -->
+    <!-- Lista de contratos -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Data</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contrato in contratos %}
+            <tr>
+                <td>{{ contrato.id }}</td>
+                <td>{{ contrato.titulo }}</td>
+                <td>{{ contrato.data }}</td>
+                <td>
+                    <!-- Botões para visualizar, editar ou excluir contrato -->
+                    <a href="{% url 'gestao_contrato:detalhes' contrato.id %}" class="btn btn-primary">Detalhes</a>
+                    <a href="{% url 'gestao_contrato:editar' contrato.id %}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'gestao_contrato:excluir' contrato.id %}" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </body>
 </html>

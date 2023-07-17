@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bem-vindo ao Projeto Foton</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo ao Projeto Foton</h1>
+        <p>Escolha uma opção:</p>
+        <ul>
+            <li><a href="{% url 'gestao_contrato:index' %}">Gestão de Contratos</a></li>
+            <li><a href="{% url 'gestao_cliente:index' %}">Gestão de Clientes</a></li>
+            <li><a href="{% url 'gestao_orcamento:index' %}">Gestão de Orçamentos</a></li>
+        </ul>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
