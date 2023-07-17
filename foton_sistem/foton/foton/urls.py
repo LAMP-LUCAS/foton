@@ -21,9 +21,9 @@ from foton import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.homepage, name='homepage'),
-    path('contrato/', include('gestao_contrato.urls', namespace='gestao_contrato')),
-    path('cliente/', include('gestao_cliente.urls', namespace='gestao_cliente')),
-    path('orcamento/', include('gestao_orcamento.urls', namespace='gestao_orcamento')),
-    path('accounts/', include('allauth.urls')),
+    path('api/contrato/', include('gestao_contrato.urls', namespace='gestao_contrato')),
+    path('api/cliente/', include('gestao_cliente.urls', namespace='gestao_cliente')),
+    path('api/orcamento/', include('gestao_orcamento.urls', namespace='gestao_orcamento')),
+    path('api/accounts/', include('allauth.urls')),
     # outras rotas do sistema...
 ]

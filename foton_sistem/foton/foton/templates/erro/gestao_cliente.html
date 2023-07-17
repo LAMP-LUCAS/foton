@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Gestão de Clientes</h1>
+    <!-- Lista de clientes -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for cliente in clientes %}
+            <tr>
+                <td>{{ cliente.id }}</td>
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.email }}</td>
+                <td>
+                    <!-- Botões para visualizar, editar ou excluir cliente -->
+                    <a href="{% url 'gestao_cliente:detalhes' cliente.id %}" class="btn btn-primary">Detalhes</a>
+                    <a href="{% url 'gestao_cliente:editar' cliente.id %}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'gestao_cliente:excluir' cliente.id %}" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Conteúdo específico da administração do sistema -->
+{% endblock %}
