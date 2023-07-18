@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Gestão de Contratos</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
     <div class="container">
         <h1>Contratos</h1>
+        <p><a href="{% url 'gestao_contrato:incluir' %}" class="btn btn-primary">Incluir contrato</a></p>
         <!-- Lista de contratos -->
         <table class="table">
             <thead>
@@ -34,6 +31,4 @@
             </tbody>
         </table>
     </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-</body>
-</html>
+{% endblock %}
