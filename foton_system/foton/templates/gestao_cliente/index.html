@@ -24,8 +24,9 @@
                     <td>{{ cliente.nome }}</td>
                     <td>{{ cliente.email }}</td>
                     <td>
-                        <!-- Botões para visualizar, editar ou excluir cliente -->
+                        <!-- Botões para visualizar, inserir, editar ou excluir cliente -->
                         <a href="{% url 'gestao_cliente:detalhes' cliente.id %}" class="btn btn-primary">Detalhes</a>
+                        <a href="{% url 'gestao_cliente:incluir' cliente.id %}" class="btn btn-primary">Incluir</a>
                         <a href="{% url 'gestao_cliente:editar' cliente.id %}" class="btn btn-warning">Editar</a>
                         <a href="{% url 'gestao_cliente:excluir' cliente.id %}" class="btn btn-danger">Excluir</a>
                     </td>
