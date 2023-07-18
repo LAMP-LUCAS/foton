@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Conteúdo específico do sistema -->
+<div class="container">
+    <h1>Detalhes do Contrato</h1>
+    <p>ID: {{ contrato.id }}</p>
+    <p>Título: {{ contrato.titulo }}</p>
+    <p>Data: {{ contrato.data }}</p>
+    <!-- Outros detalhes do contrato -->
+    <a href="{% url 'gestao_contrato:index' %}" class="btn btn-primary">Voltar</a>
+</div>
+<!-- Conteúdo específico do sistema -->
+{% endblock %}
