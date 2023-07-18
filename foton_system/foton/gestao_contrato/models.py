@@ -13,8 +13,8 @@ class Contrato(models.Model):
         from gestao_orcamento.models import Orcamento
         return Orcamento.objects.get(id=self.orcamento_id)
 
-    cliente = models.ForeignKey('gestao_cliente.Cliente', on_delete=models.CASCADE)
-    orcamento = models.OneToOneField('gestao_orcamento.Orcamento', on_delete=models.CASCADE)
+    cliente = models.ForeignKey('gestao_cliente.Cliente', on_delete=models.CASCADE, related_name='contratos')
+    orcamento = models.OneToOneField('gestao_orcamento.Orcamento', on_delete=models.CASCADE, related_name='contrato')
 
     def __str__(self):
         return self.titulo
