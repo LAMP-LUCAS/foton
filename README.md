@@ -2,6 +2,8 @@
 
 O Projeto Foton é um sistema de gestão de escritórios de arquitetura, engenharia e construção. Ele foi desenvolvido utilizando Python com o framework Django, seguindo as diretrizes de microsserviços para a gestão de contrato, cliente e orçamento.
 
+É um sistema feito por construtores para construtores!
+
 ## Funcionalidades
 
 O projeto possui as seguintes funcionalidades principais:

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Contratos</h1>
+        <p><a href="{% url 'gestao_contrato:incluir' %}" class="btn btn-primary">Incluir contrato</a></p>
+        <!-- Lista de contratos -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Data</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contrato in contratos %}
+                <tr>
+                    <td>{{ contrato.id }}</td>
+                    <td>{{ contrato.titulo }}</td>
+                    <td>{{ contrato.data }}</td>
+                    <td>
+                        <!-- Botões para visualizar, editar ou excluir contrato -->
+                        <a href="{% url 'gestao_contrato:detalhes' contrato.id %}" class="btn btn-primary">Detalhes</a>
+                        <a href="{% url 'gestao_contrato:editar' contrato.id %}" class="btn btn-warning">Editar</a>
+                        <a href="{% url 'gestao_contrato:excluir' contrato.id %}" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
