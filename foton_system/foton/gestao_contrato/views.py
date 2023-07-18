@@ -1,20 +1,9 @@
-<<<<<<< HEAD
+
 from django.shortcuts import render,get_object_or_404
 
 def index(request):
     # lógica para recuperar os contratos e renderizar o template
     return render(request, 'gestao_contrato/home_contrato.html')
-=======
-from django.shortcuts import render, get_object_or_404
-from .models import Contrato
-from .forms import ContratoForm
-
-
-def index(request):
-    # lógica para recuperar os contratos e renderizar o template
-    contratos = Contrato.objects.all()
-    return render(request, 'gestao_contrato/index.html', {'contratos': contratos})
->>>>>>> master
 
 def detalhes(request, contrato_id):
     contrato = get_object_or_404(Contrato, id=contrato_id)
