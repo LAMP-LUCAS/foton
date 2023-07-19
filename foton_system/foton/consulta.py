@@ -6,9 +6,9 @@ print(os.environ.get('DJANGO_SETTINGS_MODULE'))
 import django
 django.setup()
 
-from gestao_cliente.models import Cliente
-from gestao_contrato.models import Contrato
-from gestao_orcamento.models import Orcamento
+from GestaoCliente.models import Cliente
+from GestaoContrato.models import Contrato
+from GestaoOrcamento.models import Orcamento
 
 
 print(' COMEÇANDO O CÓDIGO ')
