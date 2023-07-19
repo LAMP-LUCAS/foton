@@ -1,13 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Bem-vindo ao Foton!</h1>
     <div class="container">
+        <h1>Bem-vindo ao Foton!</h1>
+        <p>O Foton é um sistema de gestão de escritórios de arquitetura, engenharia e construção que foi desenvolvido para solucionar os problemas diários dos usuários da indústria da construção civil.</p>
+        <p>Com o Foton, você pode gerenciar contratos, clientes e orçamentos de forma eficiente, proporcionando uma gestão coesa e estável para o seu negócio.</p>
+        <p>As aplicações disponíveis no Foton são:</p>
+        <ul>
+            <li>Gestão de Contratos: permite incluir, visualizar, editar e excluir contratos.</li>
+            <li>Gestão de Clientes: permite incluir, visualizar, editar e excluir clientes.</li>
+            <li>Gestão de Orçamentos: permite incluir, visualizar, editar e excluir orçamentos.</li>
+        </ul>
         <p>Escolha uma opção:</p>
         <ul>
             <li><a href="{% url 'GestaoContrato:GestaoContrato_home' %}">Gestão de Contratos</a></li>
-            <li><a href="{% url 'GestaoCliente:index' %}">Gestão de Clientes</a></li>
-            <li><a href="{% url 'GestaoOrcamento:index' %}">Gestão de Orçamentos</a></li>
+            <li><a href="{% url 'GestaoCliente:GestaoCliente_home' %}">Gestão de Clientes</a></li>
+            <li><a href="{% url 'GestaoOrcamento:GestaoOrcamento_home' %}">Gestão de Orçamentos</a></li>
         </ul>
+        <a href="{% url 'account_login' %}" class="btn btn-primary">Acessar o sistema</a>
     </div>
 {% endblock %}

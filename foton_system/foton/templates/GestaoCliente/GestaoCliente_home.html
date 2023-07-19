@@ -3,6 +3,14 @@
 {% block content %}
 <div class="container">
     <h1>Gestão de Clientes</h1>
+    <div class="mb-3">
+        <a href="{% url 'GestaoCliente:incluir' %}" class="btn btn-primary">Incluir Novo Cliente</a>
+        <div class="btn-group" role="group" aria-label="Filtrar tabela">
+            <button type="button" class="btn btn-secondary">Filtro 1</button>
+            <button type="button" class="btn btn-secondary">Filtro 2</button>
+            <button type="button" class="btn btn-secondary">Filtro 3</button>
+        </div>
+    </div>
     <!-- Lista de clientes -->
     <table class="table">
         <thead>
@@ -21,9 +29,9 @@
                 <td>{{ cliente.email }}</td>
                 <td>
                     <!-- Botões para visualizar, editar ou excluir cliente -->
-                    <a href="{% url 'gestao_cliente:detalhes' cliente.id %}" class="btn btn-primary">Detalhes</a>
-                    <a href="{% url 'gestao_cliente:editar' cliente.id %}" class="btn btn-warning">Editar</a>
-                    <a href="{% url 'gestao_cliente:excluir' cliente.id %}" class="btn btn-danger">Excluir</a>
+                    <a href="{% url 'GestaoCliente:detalhes' cliente.id %}" class="btn btn-primary">Detalhes</a>
+                    <a href="{% url 'GestaoCliente:editar' cliente.id %}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'GestaoCliente:excluir' cliente.id %}" class="btn btn-danger">Excluir</a>
                 </td>
             </tr>
             {% endfor %}

@@ -1,0 +1,7 @@
+<!-- templates/fotonUser/authorization_edit.html -->
+<form method="POST" action="{% url 'authorization_edit' user.id %}">
+    {% csrf_token %}
+    <!-- Campos do formulário para editar as autorizações do usuário -->
+    <!-- ... -->
+    <button type="submit">Salvar alterações</button>
+</form>

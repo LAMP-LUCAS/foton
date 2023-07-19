@@ -1,0 +1,7 @@
+<!-- templates/fotonUser/user_edit.html -->
+<form method="POST" action="{% url 'user_edit' user.id %}">
+    {% csrf_token %}
+    <!-- Campos do formulário para editar o usuário -->
+    <!-- ... -->
+    <button type="submit">Salvar alterações</button>
+</form>

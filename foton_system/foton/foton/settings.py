@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.microsoft',
     'foton',  # Aplicação principal do projeto
+    'fotonAdmin', #Aplicação de gestão do sistema
+    'fotonUser', # Aplicação dos usuários do sistema
     'GestaoContrato',  # Aplicação de gestão de contrato
     'GestaoCliente',  # Aplicação de gestão de cliente
     'GestaoOrcamento',  # Aplicação de gestão de orçamento

@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Gestão de Orçamentos</h1>
+    <div class="mb-3">
+        <a href="{% url 'GestaoOrcamento:incluir' %}" class="btn btn-primary">Incluir Novo Orçamento</a>
+        <div class="btn-group" role="group" aria-label="Filtrar tabela">
+            <button type="button" class="btn btn-secondary">Filtro 1</button>
+            <button type="button" class="btn btn-secondary">Filtro 2</button>
+            <button type="button" class="btn btn-secondary">Filtro 3</button>
+        </div>
+    </div>
+    <!-- Lista de orçamentos -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Valor</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for orcamento in orcamentos %}
+            <tr>
+                <td>{{ orcamento.id }}</td>
+                <td>{{ orcamento.descricao }}</td>
+                <td>{{ orcamento.valor }}</td>
+                <td>
+                    <!-- Botões para visualizar, editar ou excluir orçamento -->
+                    <a href="{% url 'GestaoOrcamento:detalhes' orcamento.id %}" class="btn btn-primary">Detalhes</a>
+                    <a href="{% url 'GestaoOrcamento:editar' orcamento.id %}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'GestaoOrcamento:excluir' orcamento.id %}" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Conteúdo específico da administração do sistema -->
+{% endblock %}

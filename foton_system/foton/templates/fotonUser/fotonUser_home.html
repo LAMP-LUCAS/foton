@@ -1,0 +1,7 @@
+<!-- templates/fotonUser/user_list.html -->
+{% for user in users %}
+    <p>{{ user.username }}</p>
+{% empty %}
+    <p>Nenhum usuário encontrado.</p>
+{% endfor %}
+<a href="{% url 'user_create' %}">Criar novo usuário</a>
