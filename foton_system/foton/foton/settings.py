@@ -45,9 +45,9 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.microsoft',
     'foton',  # Aplicação principal do projeto
-    'gestao_contrato',  # Aplicação de gestão de contrato
-    'gestao_cliente',  # Aplicação de gestão de cliente
-    'gestao_orcamento',  # Aplicação de gestão de orçamento
+    'GestaoContrato',  # Aplicação de gestão de contrato
+    'GestaoCliente',  # Aplicação de gestão de cliente
+    'GestaoOrcamento',  # Aplicação de gestão de orçamento
     # outras aplicações...
 ]
 
@@ -103,8 +103,10 @@ DATABASES = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'u336790221_foton',
-        'USER': 'u336790221_fotonadmin',
+#       'NAME': 'u336790221_foton',
+#       'USER': 'u336790221_fotonadmin',
+        'NAME': 'u336790221_fotonTest',
+        'USER': 'u336790221_fotonadminTest',
         'PASSWORD': 'Fotonadmin0451',
         'HOST': 'srv742.hstgr.io',
 #        'PORT': 'PORTA_DO_SERVIDOR_MYSQL',
