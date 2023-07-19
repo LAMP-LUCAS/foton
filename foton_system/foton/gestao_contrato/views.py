@@ -1,5 +1,6 @@
 
 from django.shortcuts import render,get_object_or_404
+from .forms import ContratoForm
 
 def index(request):
     # lógica para recuperar os contratos e renderizar o template
