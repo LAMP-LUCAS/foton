@@ -19,14 +19,14 @@ class Contrato(models.Model):
     cliente = models.ForeignKey(
         'gestao_cliente.Cliente',
         on_delete=models.CASCADE,
-        related_name='n_contrato',
+        related_name='contratos',
         default=1
         )
     
     orcamento = models.OneToOneField(
         'gestao_orcamento.Orcamento',
         on_delete=models.CASCADE,
-        related_name='id_contrato',
+        related_name='contratado',
         default=1,
         )
 
