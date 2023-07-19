@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Gestão de Contratos</h1>
+    <div class="mb-3">
+        <a href="{% url 'GestaoContrato:incluir' %}" class="btn btn-primary">Incluir Novo Contrato</a>
+        <div class="btn-group" role="group" aria-label="Filtrar tabela">
+            <button type="button" class="btn btn-secondary">Filtro 1</button>
+            <button type="button" class="btn btn-secondary">Filtro 2</button>
+            <button type="button" class="btn btn-secondary">Filtro 3</button>
+        </div>
+    </div>
+    <!-- Lista de contratos -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Título</th>
+                <th>Data</th>
+                <th>Número</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contrato in contratos %}
+            <tr>
+                <td>{{ contrato.id }}</td>
+                <td>{{ contrato.titulo }}</td>
+                <td>{{ contrato.data }}</td>
+                <td>{{ contrato.numero }}</td>
+                <td>
+                    <!-- Botões para visualizar, editar ou excluir contrato -->
+                    <a href="{% url 'GestaoContrato:detalhes' contrato.id %}" class="btn btn-primary">Detalhes</a>
+                    <a href="{% url 'GestaoContrato:editar' contrato.id %}" class="btn btn-warning">Editar</a>
+                    <a href="{% url 'GestaoContrato:excluir' contrato.id %}" class="btn btn-danger">Excluir</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- Conteúdo específico da administração do sistema -->
+{% endblock %}

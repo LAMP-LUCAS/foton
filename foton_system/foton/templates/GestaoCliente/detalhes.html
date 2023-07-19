@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Detalhes do Cliente</h1>
+    <p>ID: {{ cliente.id }}</p>
+    <p>Nome: {{ cliente.nome }}</p>
+    <p>Email: {{ cliente.email }}</p>
+    <!-- Outros detalhes do cliente -->
+    <a href="{% url 'GestaoCliente:editar' cliente.id %}" class="btn btn-warning">Editar</a>
+    <a href="{% url 'GestaoCliente:excluir' cliente.id %}" class="btn btn-danger">Excluir</a>
+</div>
+{% endblock %}

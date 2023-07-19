@@ -20,14 +20,22 @@ from foton import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('', views.homepage, name='homepage'),
     
+    path('api/fotonAdmin/', include('fotonAdmin.urls',namespace='fotonAdmin')),
+
+    path('api/fotonUser/', include('fotonUser.urls',namespace='fotonUser')),
+
     path('api/contrato/', include('GestaoContrato.urls',namespace='GestaoContrato')),
 
     path('api/cliente/', include('GestaoCliente.urls', namespace='GestaoCliente')),
 
-    path('api/orcamento/', include('GestaoOrcamento.urls', namespace='GestaoOorcamento')),
+    path('api/orcamento/', include('GestaoOrcamento.urls', namespace='GestaoOrcamento')),
 
     path('api/accounts/', include('allauth.urls')),
+
+    path('accounts/', include('allauth.urls')),
+
     # outras rotas do sistema...
 ]

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Detalhes do Orçamento</h1>
+    <p>ID: {{ orcamento.id }}</p>
+    <p>Descrição: {{ orcamento.descricao }}</p>
+    <p>Valor: {{ orcamento.valor }}</p>
+    <!-- Outros detalhes do orçamento -->
+    <a href="{% url 'GestaoOrcamento:editar' orcamento.id %}" class="btn btn-warning">Editar</a>
+    <a href="{% url 'GestaoOrcamento:excluir' orcamento.id %}" class="btn btn-danger">Excluir</a>
+</div>
+{% endblock %}

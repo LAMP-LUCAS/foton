@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Detalhes do Contrato</h1>
+    <p>ID: {{ contrato.id }}</p>
+    <p>Título: {{ contrato.titulo }}</p>
+    <p>Data: {{ contrato.data }}</p>
+    <p>Número: {{ contrato.numero }}</p>
+    <!-- Outros detalhes do contrato -->
+    <a href="{% url 'GestaoContrato:editar' contrato.id %}" class="btn btn-warning">Editar</a>
+    <a href="{% url 'GestaoContrato:excluir' contrato.id %}" class="btn btn-danger">Excluir</a>
+</div>
+{% endblock %}

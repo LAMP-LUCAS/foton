@@ -1,0 +1,7 @@
+<!-- templates/fotonUser/user_create.html -->
+<form method="POST" action="{% url 'user_create' %}">
+    {% csrf_token %}
+    <!-- Campos do formulário para criar um novo usuário -->
+    <!-- ... -->
+    <button type="submit">Criar usuário</button>
+</form>

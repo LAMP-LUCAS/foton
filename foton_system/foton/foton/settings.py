@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.microsoft',
     'foton',  # Aplicação principal do projeto
+    'fotonAdmin', #Aplicação de gestão do sistema
+    'fotonUser', # Aplicação dos usuários do sistema
     'GestaoContrato',  # Aplicação de gestão de contrato
     'GestaoCliente',  # Aplicação de gestão de cliente
     'GestaoOrcamento',  # Aplicação de gestão de orçamento
@@ -135,7 +137,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+ll_CC = 'pt_BR'
+
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 

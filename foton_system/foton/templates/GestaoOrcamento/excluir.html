@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Excluir Orçamento</h1>
+    <p>Você tem certeza que deseja excluir o orçamento '{{ orcamento.descricao }}'?</p>
+    <form method="post" action="{% url 'GestaoOrcamento:excluir' orcamento.id %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+    </form>
+</div>
+{% endblock %}

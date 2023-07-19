@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Excluir Contrato</h1>
+    <p>Você tem certeza que deseja excluir o contrato '{{ contrato.titulo }}'?</p>
+    <form method="post" action="{% url 'GestaoContrato:excluir' contrato.id %}">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+    </form>
+</div>
+{% endblock %}
