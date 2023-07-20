@@ -14,4 +14,3 @@ urlpatterns = [
 
     # outras rotas do aplicativo gestao_cliente...
 ]
-path('incluir/', views.incluir, name='incluir'),

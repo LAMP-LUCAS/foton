@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Cliente
+from foton.forms import ClienteForm
 
 '''
 def index(request):
@@ -13,13 +14,13 @@ def index(request):
 
 def incluir(request):
     if request.method == 'POST':
-        # Cria um novo objeto Cliente com os dados do formulário
-        cliente = Cliente.objects.create(
-            nome=request.POST['nome'],
-            email=request.POST['email']
-        )
-        return redirect('GestaoCliente:index')
-    return render(request, 'GestaoCliente/incluir.html')
+        form = ClienteForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('GestaoCliente:index')
+    else:
+        form = ClienteForm()
+    return render(request, 'GestaoCliente/incluir.html', {'form': form})
 
 def editar(request, cliente_id):
     cliente = Cliente.objects.get(id=cliente_id)
