@@ -111,7 +111,7 @@ DATABASES = {
         'USER': 'u336790221_fotonadminTest',
         'PASSWORD': 'Fotonadmin0451',
         'HOST': 'srv742.hstgr.io',
-#        'PORT': 'PORTA_DO_SERVIDOR_MYSQL',
+#       'PORT': 'PORTA_DO_SERVIDOR_MYSQL',
     }
 }
 
