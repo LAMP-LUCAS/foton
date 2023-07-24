@@ -1,5 +1,5 @@
 runtime: python311
-entrypoint: gunicorn -b :$PORT myproject.wsgi
+entrypoint: gunicorn -b :$PORT foton.wsgi
 
 handlers:
 - url: /static

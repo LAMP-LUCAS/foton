@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-vy*jx288sag4m5(zml0^ot^&)bh#yrwpx5_$rw6q-su3f%nx@i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# settings.py
+ALLOWED_HOSTS = ['foton-393716.uw.r.appspot.com', 'localhost', '127.0.0.1', 'foton.arqlamp.com']
 
 # Application definition
 
