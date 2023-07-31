@@ -1,9 +1,7 @@
 */__pycache__/
-foton_sysyem/design
-/ferramentas
-/SECRET
+/foton_sysyem/design
 /notas
+/ferramentas
 /.vscode
 *.pyc
 *.cpython-311.pyc
-*.gitignore
