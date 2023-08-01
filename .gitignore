@@ -5,3 +5,7 @@
 /.vscode
 *.pyc
 *.cpython-311.pyc
+/foton_system/foton_manager/Lib
+/foton_system/foton_manager/Scripts
+/foton_system/foton_manager/pyvenv.cfg
+/foton_system/foton_manager/.env
