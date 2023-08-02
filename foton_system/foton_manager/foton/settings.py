@@ -87,6 +87,7 @@ INSTALLED_APPS = [
     'GestaoContrato',  # Aplicação de gestão de contrato
     'GestaoCliente',  # Aplicação de gestão de cliente
     'GestaoOrcamento',  # Aplicação de gestão de orçamento
+    'GestaoRequisitos' #Aplicação de gestão de Requisitos do contrato
     # outras aplicações...
 ]
 
@@ -135,7 +136,7 @@ DATABASES = {"default": env.db()}
 # If the flag as been set, configure to use proxy
 if os.getenv("USE_CLOUD_SQL_AUTH_PROXY", None):
     DATABASES["default"]["HOST"] = "127.0.0.1"
-    DATABASES["default"]["PORT"] = 3306 #5432
+#    DATABASES["default"]["PORT"] = 3306 #5432
 
 # [END gaestd_py_django_database_config]
 # [END db_setup]
