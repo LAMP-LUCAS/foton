@@ -1,0 +1,2885 @@
+{
+    "prato": {
+        "largura": 200,
+        "altura": 20,
+        "profundidade": 200,
+        "peso": 0.03,
+        "material": [
+            "vidro",
+            "plastico",
+            "porcelana",
+            "pedra"
+        ],
+        "funcao": [
+            "comer"
+        ],
+        "mobArmazenar": [
+            "cristaleira",
+            "armario"
+        ],
+        "mobUtilizar": [
+            "cristaleira",
+            "armario"
+        ]
+    },
+    "sofa": {
+        "largura": 1500,
+        "altura": 800,
+        "profundidade": 800,
+        "peso": 40,
+        "material": [
+            "tecido",
+            "couro"
+        ],
+        "funcao": [
+            "sentar",
+            "descansar"
+        ],
+        "mobArmazenar": [
+            "sala",
+            "quarto"
+        ],
+        "mobUtilizar": [
+            "sala"
+        ]
+    },
+    "mesa de centro": {
+        "largura": 800,
+        "altura": 400,
+        "profundidade": 800,
+        "peso": 10,
+        "material": [
+            "madeira",
+            "vidro",
+            "metal"
+        ],
+        "funcao": [
+            "apoio para objetos"
+        ],
+        "mobArmazenar": [
+            "área de lazer"
+        ],
+        "mobUtilizar": [
+            "área de lazer"
+        ]
+    },
+    "estante": {
+        "largura": 1000,
+        "altura": 1800,
+        "profundidade": 400,
+        "peso": 40,
+        "material": [
+            "madeira"
+        ],
+        "funcao": [
+            "armazenar livros e objetos decorativos"
+        ],
+        "mobArmazenar": [
+            "sala de estar"
+        ],
+        "mobUtilizar": [
+            "sala de estar"
+        ]
+    },
+    "televisão": {
+        "largura": 1200,
+        "altura": 800,
+        "profundidade": 100,
+        "peso": 20,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "entretenimento"
+        ],
+        "mobArmazenar": [
+            "rack",
+            "home theater"
+        ],
+        "mobUtilizar": [
+            "sala de TV"
+        ]
+    },
+    "tapete": {
+        "largura": 2000,
+        "altura": 10,
+        "profundidade": 1200,
+        "peso": 8,
+        "material": [
+            "tecido"
+        ],
+        "funcao": [
+            "decorar o piso",
+            "acústica"
+        ],
+        "mobArmazenar": [
+            "sala de TV"
+        ],
+        "mobUtilizar": [
+            "sala de TV"
+        ]
+    },
+    "poltrona": {
+        "largura": 800,
+        "altura": 900,
+        "profundidade": 800,
+        "peso": 25,
+        "material": [
+            "tecido",
+            "espuma",
+            "madeira"
+        ],
+        "funcao": [
+            "sentar",
+            "relaxar",
+            "assistir TV"
+        ],
+        "mobArmazenar": [
+            "sala de TV"
+        ],
+        "mobUtilizar": [
+            "sala de TV"
+        ]
+    },
+    "abajur": {
+        "largura": 200,
+        "altura": 400,
+        "profundidade": 200,
+        "peso": 2,
+        "material": [
+            "metal",
+            "tecido"
+        ],
+        "funcao": [
+            "iluminar"
+        ],
+        "mobArmazenar": [
+            "mesa de centro"
+        ],
+        "mobUtilizar": [
+            "sala de estar"
+        ]
+    },
+    "prateleira": {
+        "largura": 600,
+        "altura": 200,
+        "profundidade": 200,
+        "peso": 5,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "organizar objetos"
+        ],
+        "mobArmazenar": [
+            "lavanderia"
+        ],
+        "mobUtilizar": [
+            "lavanderia"
+        ]
+    },
+    "mesa lateral": {
+        "largura": 400,
+        "altura": 500,
+        "profundidade": 400,
+        "peso": 5,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "apoio para objetos"
+        ],
+        "mobArmazenar": [
+            "área de piscina"
+        ],
+        "mobUtilizar": [
+            "área de piscina"
+        ]
+    },
+    "cortina": {
+        "largura": 2000,
+        "altura": 1500,
+        "profundidade": 5,
+        "peso": 1,
+        "material": [
+            "tecido"
+        ],
+        "funcao": [
+            "cobrir janelas"
+        ],
+        "mobArmazenar": [],
+        "mobUtilizar": [
+            "sala"
+        ]
+    },
+    "fogão": {
+        "largura": 600,
+        "altura": 850,
+        "profundidade": 600,
+        "peso": 35,
+        "material": [
+            "metal",
+            "vidro"
+        ],
+        "funcao": [
+            "cozinhar"
+        ],
+        "mobArmazenar": [
+            "cozinha"
+        ],
+        "mobUtilizar": [
+            "cozinha"
+        ]
+    },
+    "geladeira": {
+        "largura": 700,
+        "altura": 1700,
+        "profundidade": 700,
+        "peso": 80,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "refrigerar",
+            "armazenar alimentos"
+        ],
+        "mobArmazenar": [
+            "cozinha"
+        ],
+        "mobUtilizar": [
+            "cozinha"
+        ]
+    },
+    "pia": {
+        "largura": 1200,
+        "altura": 850,
+        "profundidade": 600,
+        "peso": 40,
+        "material": [
+            "pedra",
+            "metal"
+        ],
+        "funcao": [
+            "lavar louças",
+            "preparar alimentos"
+        ],
+        "mobArmazenar": [
+            "cozinha"
+        ],
+        "mobUtilizar": [
+            "cozinha"
+        ]
+    },
+    "armário": {
+        "largura": 1000,
+        "altura": 2000,
+        "profundidade": 500,
+        "peso": 60,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "armazenar utensílios",
+            "alimentos"
+        ],
+        "mobArmazenar": [
+            "cozinha"
+        ],
+        "mobUtilizar": [
+            "cozinha"
+        ]
+    },
+    "mesa": {
+        "largura": 800,
+        "altura": 750,
+        "profundidade": 800,
+        "peso": 20,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "apoio para refeições",
+            "apoio para objetos"
+        ],
+        "mobArmazenar": [
+            "varanda"
+        ],
+        "mobUtilizar": [
+            "varanda"
+        ]
+    },
+    "cadeira": {
+        "largura": 400,
+        "altura": 900,
+        "profundidade": 400,
+        "peso": 5,
+        "material": [
+            "metal",
+            "tecido"
+        ],
+        "funcao": [
+            "sentar"
+        ],
+        "mobArmazenar": [
+            "varanda"
+        ],
+        "mobUtilizar": [
+            "varanda"
+        ]
+    },
+    "torradeira": {
+        "largura": 200,
+        "altura": 200,
+        "profundidade": 150,
+        "peso": 2,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "tostar pães"
+        ],
+        "mobArmazenar": [
+            "cozinha"
+        ],
+        "mobUtilizar": [
+            "cozinha"
+        ]
+    },
+    "liquidificador": {
+        "largura": 150,
+        "altura": 300,
+        "profundidade": 150,
+        "peso": 3,
+        "material": [
+            "plastico",
+            "vidro"
+        ],
+        "funcao": [
+            "preparar sucos",
+            "vitaminas"
+        ],
+        "mobArmazenar": [
+            "cozinha"
+        ],
+        "mobUtilizar": [
+            "cozinha"
+        ]
+    },
+    "microondas": {
+        "largura": 450,
+        "altura": 300,
+        "profundidade": 350,
+        "peso": 15,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "aquecer alimentos"
+        ],
+        "mobArmazenar": [
+            "cozinha"
+        ],
+        "mobUtilizar": [
+            "cozinha"
+        ]
+    },
+    "cafeteira": {
+        "largura": 200,
+        "altura": 300,
+        "profundidade": 200,
+        "peso": 2,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "preparar café"
+        ],
+        "mobArmazenar": [
+            "cozinha"
+        ],
+        "mobUtilizar": [
+            "cozinha"
+        ]
+    },
+    "cama": {
+        "largura": 1600,
+        "altura": 600,
+        "profundidade": 2000,
+        "peso": 50,
+        "material": [
+            "madeira",
+            "tecido"
+        ],
+        "funcao": [
+            "dormir"
+        ],
+        "mobArmazenar": [
+            "quarto"
+        ],
+        "mobUtilizar": [
+            "quarto"
+        ]
+    },
+    "guarda-roupa": {
+        "largura": 1200,
+        "altura": 2000,
+        "profundidade": 600,
+        "peso": 80,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "armazenar roupas",
+            "objetos pessoais"
+        ],
+        "mobArmazenar": [
+            "quarto"
+        ],
+        "mobUtilizar": [
+            "quarto"
+        ]
+    },
+    "criado-mudo": {
+        "largura": 500,
+        "altura": 600,
+        "profundidade": 400,
+        "peso": 10,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "apoio próximo à cama"
+        ],
+        "mobArmazenar": [
+            "quarto"
+        ],
+        "mobUtilizar": [
+            "quarto"
+        ]
+    },
+    "escrivaninha": {
+        "largura": 1000,
+        "altura": 750,
+        "profundidade": 500,
+        "peso": 25,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "estudar",
+            "trabalhar"
+        ],
+        "mobArmazenar": [
+            "quarto"
+        ],
+        "mobUtilizar": [
+            "quarto"
+        ]
+    },
+    "cadeira de escritório": {
+        "largura": 600,
+        "altura": 900,
+        "profundidade": 600,
+        "peso": 10,
+        "material": [
+            "metal",
+            "tecido"
+        ],
+        "funcao": [
+            "sentar"
+        ],
+        "mobArmazenar": [
+            "quarto"
+        ],
+        "mobUtilizar": [
+            "quarto"
+        ]
+    },
+    "espelho": {
+        "largura": 500,
+        "altura": 1200,
+        "profundidade": 20,
+        "peso": 8,
+        "material": [
+            "vidro",
+            "madeira"
+        ],
+        "funcao": [
+            "refletir imagem"
+        ],
+        "mobArmazenar": [
+            "parede"
+        ],
+        "mobUtilizar": [
+            "closet"
+        ]
+    },
+    "sapateira": {
+        "largura": 800,
+        "altura": 800,
+        "profundidade": 400,
+        "peso": 20,
+        "material": [
+            "madeira"
+        ],
+        "funcao": [
+            "organizar sapatos"
+        ],
+        "mobArmazenar": [
+            "closet"
+        ],
+        "mobUtilizar": [
+            "closet"
+        ]
+    },
+    "tv": {
+        "largura": 800,
+        "altura": 500,
+        "profundidade": 100,
+        "peso": 10,
+        "material": [
+            "plastico",
+            "vidro"
+        ],
+        "funcao": [
+            "exibir conteúdo"
+        ],
+        "mobArmazenar": [
+            "escrivaninha"
+        ],
+        "mobUtilizar": [
+            "quarto"
+        ]
+    },
+    "máquina de lavar roupa": {
+        "largura": 600,
+        "altura": 850,
+        "profundidade": 600,
+        "peso": 60,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "lavar roupas"
+        ],
+        "mobArmazenar": [
+            "lavanderia"
+        ],
+        "mobUtilizar": [
+            "lavanderia"
+        ]
+    },
+    "secadora de roupa": {
+        "largura": 600,
+        "altura": 850,
+        "profundidade": 600,
+        "peso": 50,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "secar roupas"
+        ],
+        "mobArmazenar": [
+            "lavanderia"
+        ],
+        "mobUtilizar": [
+            "lavanderia"
+        ]
+    },
+    "tábua de passar roupa": {
+        "largura": 400,
+        "altura": 800,
+        "profundidade": 100,
+        "peso": 5,
+        "material": [
+            "madeira",
+            "tecido"
+        ],
+        "funcao": [
+            "passar roupas"
+        ],
+        "mobArmazenar": [
+            "lavanderia"
+        ],
+        "mobUtilizar": [
+            "lavanderia"
+        ]
+    },
+    "varal": {
+        "largura": 1500,
+        "altura": 1800,
+        "profundidade": 100,
+        "peso": 10,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "secar roupas"
+        ],
+        "mobArmazenar": [
+            "lavanderia"
+        ],
+        "mobUtilizar": [
+            "lavanderia"
+        ]
+    },
+    "cesto de roupas": {
+        "largura": 500,
+        "altura": 600,
+        "profundidade": 500,
+        "peso": 2,
+        "material": [
+            "plastico",
+            "tecido"
+        ],
+        "funcao": [
+            "armazenar roupas sujas"
+        ],
+        "mobArmazenar": [
+            "lavanderia"
+        ],
+        "mobUtilizar": [
+            "lavanderia"
+        ]
+    },
+    "balde": {
+        "largura": 300,
+        "altura": 250,
+        "profundidade": 300,
+        "peso": 1,
+        "material": [
+            "plastico"
+        ],
+        "funcao": [
+            "lavar roupas",
+            "armazenar água"
+        ],
+        "mobArmazenar": [
+            "lavanderia"
+        ],
+        "mobUtilizar": [
+            "lavanderia"
+        ]
+    },
+    "vassoura": {
+        "largura": 100,
+        "altura": 1200,
+        "profundidade": 100,
+        "peso": 1,
+        "material": [
+            "madeira",
+            "cerdas"
+        ],
+        "funcao": [
+            "limpar o chão"
+        ],
+        "mobArmazenar": [
+            "lavanderia"
+        ],
+        "mobUtilizar": [
+            "lavanderia"
+        ]
+    },
+    "aspirador de pó": {
+        "largura": 300,
+        "altura": 250,
+        "profundidade": 300,
+        "peso": 5,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "limpar o chão"
+        ],
+        "mobArmazenar": [
+            "lavanderia"
+        ],
+        "mobUtilizar": [
+            "lavanderia"
+        ]
+    },
+    "ferro de passar roupa": {
+        "largura": 100,
+        "altura": 200,
+        "profundidade": 150,
+        "peso": 2,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "passar roupas"
+        ],
+        "mobArmazenar": [
+            "lavanderia"
+        ],
+        "mobUtilizar": [
+            "lavanderia"
+        ]
+    },
+    "computador": {
+        "largura": 600,
+        "altura": 500,
+        "profundidade": 400,
+        "peso": 10,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "computação",
+            "trabalho"
+        ],
+        "mobArmazenar": [
+            "escritorio"
+        ],
+        "mobUtilizar": [
+            "escritorio"
+        ]
+    },
+    "notebook": {
+        "largura": 350,
+        "altura": 30,
+        "profundidade": 250,
+        "peso": 2,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "computação",
+            "trabalho"
+        ],
+        "mobArmazenar": [
+            "escritorio"
+        ],
+        "mobUtilizar": [
+            "escritorio"
+        ]
+    },
+    "impressora": {
+        "largura": 400,
+        "altura": 200,
+        "profundidade": 300,
+        "peso": 8,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "imprimir documentos"
+        ],
+        "mobArmazenar": [
+            "estante",
+            "mesa"
+        ],
+        "mobUtilizar": [
+            "escritorio"
+        ]
+    },
+    "luminária": {
+        "largura": 200,
+        "altura": 400,
+        "profundidade": 200,
+        "peso": 2,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "iluminar"
+        ],
+        "mobArmazenar": [
+            "mesa"
+        ],
+        "mobUtilizar": [
+            "escritorio"
+        ]
+    },
+    "quadro branco": {
+        "largura": 800,
+        "altura": 600,
+        "profundidade": 50,
+        "peso": 5,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "anotar",
+            "escrever"
+        ],
+        "mobArmazenar": [
+            "escritorio"
+        ],
+        "mobUtilizar": [
+            "escritorio"
+        ]
+    },
+    "telefone": {
+        "largura": 150,
+        "altura": 200,
+        "profundidade": 50,
+        "peso": 1,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "comunicar"
+        ],
+        "mobArmazenar": [
+            "mesa"
+        ],
+        "mobUtilizar": [
+            "escritorio"
+        ]
+    },
+    "gaveteiro": {
+        "largura": 600,
+        "altura": 800,
+        "profundidade": 500,
+        "peso": 15,
+        "material": [
+            "madeira"
+        ],
+        "funcao": [
+            "organizar roupas íntimas e acessórios"
+        ],
+        "mobArmazenar": [
+            "closet"
+        ],
+        "mobUtilizar": [
+            "closet"
+        ]
+    },
+    "sofá": {
+        "largura": 2000,
+        "altura": 800,
+        "profundidade": 900,
+        "peso": 50,
+        "material": [
+            "tecido",
+            "espuma",
+            "madeira"
+        ],
+        "funcao": [
+            "sentar",
+            "assistir TV"
+        ],
+        "mobArmazenar": [
+            "sala de TV"
+        ],
+        "mobUtilizar": [
+            "sala de TV"
+        ]
+    },
+    "rede": {
+        "largura": 1000,
+        "altura": 200,
+        "profundidade": 400,
+        "peso": 1.5,
+        "material": [
+            "tecido"
+        ],
+        "funcao": [
+            "descansar"
+        ],
+        "mobArmazenar": [
+            "área externa"
+        ],
+        "mobUtilizar": [
+            "área externa"
+        ]
+    },
+    "vaso de planta": {
+        "largura": 300,
+        "altura": 600,
+        "profundidade": 300,
+        "peso": 5,
+        "material": [
+            "cerâmica",
+            "terra"
+        ],
+        "funcao": [
+            "decorar",
+            "cultivar plantas"
+        ],
+        "mobArmazenar": [
+            "jardim"
+        ],
+        "mobUtilizar": [
+            "jardim"
+        ]
+    },
+    "churrasqueira": {
+        "largura": 1000,
+        "altura": 1200,
+        "profundidade": 800,
+        "peso": 60,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "preparar alimentos"
+        ],
+        "mobArmazenar": [
+            "área de lazer"
+        ],
+        "mobUtilizar": [
+            "área de lazer"
+        ]
+    },
+    "espreguiçadeira": {
+        "largura": 600,
+        "altura": 800,
+        "profundidade": 1800,
+        "peso": 12,
+        "material": [
+            "madeira",
+            "tecido"
+        ],
+        "funcao": [
+            "deitar e relaxar"
+        ],
+        "mobArmazenar": [
+            "área de piscina"
+        ],
+        "mobUtilizar": [
+            "área de piscina"
+        ]
+    },
+    "guarda-sol": {
+        "largura": 2000,
+        "altura": 2500,
+        "profundidade": 2000,
+        "peso": 8,
+        "material": [
+            "tecido",
+            "metal"
+        ],
+        "funcao": [
+            "proteger do sol"
+        ],
+        "mobArmazenar": [
+            "área de piscina"
+        ],
+        "mobUtilizar": [
+            "área de piscina"
+        ]
+    },
+    "abajur externo": {
+        "largura": 200,
+        "altura": 400,
+        "profundidade": 200,
+        "peso": 2,
+        "material": [
+            "metal",
+            "tecido"
+        ],
+        "funcao": [
+            "iluminar"
+        ],
+        "mobArmazenar": [
+            "mesa"
+        ],
+        "mobUtilizar": [
+            "varanda"
+        ]
+    },
+    "carro": {
+        "largura": 1800,
+        "altura": 1500,
+        "profundidade": 4500,
+        "peso": 1000,
+        "material": [
+            "metal",
+            "vidro",
+            "plastico"
+        ],
+        "funcao": [
+            "transporte",
+            "mobilidade"
+        ],
+        "mobArmazenar": [
+            "garagem"
+        ],
+        "mobUtilizar": [
+            "garagem"
+        ]
+    },
+    "bicicleta": {
+        "largura": 600,
+        "altura": 1000,
+        "profundidade": 1800,
+        "peso": 15,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "transporte",
+            "exercício"
+        ],
+        "mobArmazenar": [
+            "garagem"
+        ],
+        "mobUtilizar": [
+            "garagem"
+        ]
+    },
+    "moto": {
+        "largura": 800,
+        "altura": 1100,
+        "profundidade": 2000,
+        "peso": 150,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "transporte",
+            "mobilidade"
+        ],
+        "mobArmazenar": [
+            "garagem"
+        ],
+        "mobUtilizar": [
+            "garagem"
+        ]
+    },
+    "escada": {
+        "largura": 500,
+        "altura": 1800,
+        "profundidade": 200,
+        "peso": 10,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "alcançar lugares altos"
+        ],
+        "mobArmazenar": [
+            "garagem"
+        ],
+        "mobUtilizar": [
+            "garagem"
+        ]
+    },
+    "ferramentas": {
+        "largura": 500,
+        "altura": 200,
+        "profundidade": 300,
+        "peso": 5,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "realizar reparos"
+        ],
+        "mobArmazenar": [
+            "garagem"
+        ],
+        "mobUtilizar": [
+            "garagem"
+        ]
+    },
+    "caixa de ferramentas": {
+        "largura": 400,
+        "altura": 200,
+        "profundidade": 200,
+        "peso": 3,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "organizar ferramentas"
+        ],
+        "mobArmazenar": [
+            "garagem"
+        ],
+        "mobUtilizar": [
+            "garagem"
+        ]
+    },
+    "pneu sobressalente": {
+        "largura": 500,
+        "altura": 500,
+        "profundidade": 150,
+        "peso": 15,
+        "material": [
+            "borracha",
+            "metal"
+        ],
+        "funcao": [
+            "substituir pneus danificados"
+        ],
+        "mobArmazenar": [
+            "garagem"
+        ],
+        "mobUtilizar": [
+            "garagem"
+        ]
+    },
+    "escova para lavar carros": {
+        "largura": 100,
+        "altura": 400,
+        "profundidade": 50,
+        "peso": 1,
+        "material": [
+            "plastico",
+            "cerdas"
+        ],
+        "funcao": [
+            "limpar o carro"
+        ],
+        "mobArmazenar": [
+            "garagem"
+        ],
+        "mobUtilizar": [
+            "garagem"
+        ]
+    },
+    "aspirador de pó automotivo": {
+        "largura": 200,
+        "altura": 300,
+        "profundidade": 150,
+        "peso": 2,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "limpar o carro"
+        ],
+        "mobArmazenar": [
+            "garagem"
+        ],
+        "mobUtilizar": [
+            "garagem"
+        ]
+    },
+    "bancada de trabalho": {
+        "largura": 1200,
+        "altura": 900,
+        "profundidade": 600,
+        "peso": 50,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "realizar trabalhos manuais",
+            "reparos"
+        ],
+        "mobArmazenar": [
+            "garagem"
+        ],
+        "mobUtilizar": [
+            "garagem"
+        ]
+    },
+    "cadeira de jardim": {
+        "largura": 500,
+        "altura": 800,
+        "profundidade": 500,
+        "peso": 5,
+        "material": [
+            "metal",
+            "tecido"
+        ],
+        "funcao": [
+            "sentar",
+            "relaxar"
+        ],
+        "mobArmazenar": [
+            "jardim"
+        ],
+        "mobUtilizar": [
+            "jardim"
+        ]
+    },
+    "mesa de jardim": {
+        "largura": 800,
+        "altura": 750,
+        "profundidade": 800,
+        "peso": 15,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "apoio para refeições",
+            "apoio para objetos"
+        ],
+        "mobArmazenar": [
+            "jardim"
+        ],
+        "mobUtilizar": [
+            "jardim"
+        ]
+    },
+    "churrasqueira portátil": {
+        "largura": 600,
+        "altura": 800,
+        "profundidade": 600,
+        "peso": 10,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "preparar churrascos"
+        ],
+        "mobArmazenar": [
+            "jardim"
+        ],
+        "mobUtilizar": [
+            "jardim"
+        ]
+    },
+    "regador": {
+        "largura": 200,
+        "altura": 300,
+        "profundidade": 100,
+        "peso": 2,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "regar plantas"
+        ],
+        "mobArmazenar": [
+            "jardim"
+        ],
+        "mobUtilizar": [
+            "jardim"
+        ]
+    },
+    "cortador de grama": {
+        "largura": 400,
+        "altura": 800,
+        "profundidade": 400,
+        "peso": 20,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "cortar a grama"
+        ],
+        "mobArmazenar": [
+            "jardim"
+        ],
+        "mobUtilizar": [
+            "jardim"
+        ]
+    },
+    "mangueira de jardim": {
+        "largura": 20,
+        "altura": 1500,
+        "profundidade": 20,
+        "peso": 3,
+        "material": [
+            "plastico"
+        ],
+        "funcao": [
+            "regar plantas"
+        ],
+        "mobArmazenar": [
+            "jardim"
+        ],
+        "mobUtilizar": [
+            "jardim"
+        ]
+    },
+    "balanço de jardim": {
+        "largura": 1000,
+        "altura": 2000,
+        "profundidade": 1000,
+        "peso": 30,
+        "material": [
+            "metal",
+            "tecido"
+        ],
+        "funcao": [
+            "balançar",
+            "relaxar"
+        ],
+        "mobArmazenar": [
+            "jardim"
+        ],
+        "mobUtilizar": [
+            "jardim"
+        ]
+    },
+    "caixas de armazenamento": {
+        "largura": 300,
+        "altura": 200,
+        "profundidade": 400,
+        "peso": 2,
+        "material": [
+            "plastico"
+        ],
+        "funcao": [
+            "armazenar objetos"
+        ],
+        "mobArmazenar": [
+            "sótão"
+        ],
+        "mobUtilizar": [
+            "sótão"
+        ]
+    },
+    "malas de viagem": {
+        "largura": 400,
+        "altura": 250,
+        "profundidade": 700,
+        "peso": 3,
+        "material": [
+            "tecido",
+            "metal"
+        ],
+        "funcao": [
+            "armazenar roupas e pertences"
+        ],
+        "mobArmazenar": [
+            "sótão"
+        ],
+        "mobUtilizar": [
+            "sótão"
+        ]
+    },
+    "prateleiras": {
+        "largura": 600,
+        "altura": 200,
+        "profundidade": 300,
+        "peso": 5,
+        "material": [
+            "madeira"
+        ],
+        "funcao": [
+            "organizar roupas e acessórios"
+        ],
+        "mobArmazenar": [
+            "closet"
+        ],
+        "mobUtilizar": [
+            "closet"
+        ]
+    },
+    "roupeiro antigo": {
+        "largura": 1000,
+        "altura": 1800,
+        "profundidade": 500,
+        "peso": 40,
+        "material": [
+            "madeira"
+        ],
+        "funcao": [
+            "armazenar roupas"
+        ],
+        "mobArmazenar": [
+            "sótão"
+        ],
+        "mobUtilizar": [
+            "sótão"
+        ]
+    },
+    "escada retrátil": {
+        "largura": 400,
+        "altura": 2500,
+        "profundidade": 50,
+        "peso": 10,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "acesso ao sótão"
+        ],
+        "mobArmazenar": [
+            "sótão"
+        ],
+        "mobUtilizar": [
+            "sótão"
+        ]
+    },
+    "luminária de teto": {
+        "largura": 200,
+        "altura": 300,
+        "profundidade": 200,
+        "peso": 2,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "iluminar"
+        ],
+        "mobArmazenar": [
+            "sótão"
+        ],
+        "mobUtilizar": [
+            "sótão"
+        ]
+    },
+    "ventilador de teto": {
+        "largura": 800,
+        "altura": 500,
+        "profundidade": 800,
+        "peso": 5,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "ventilação"
+        ],
+        "mobArmazenar": [
+            "sótão"
+        ],
+        "mobUtilizar": [
+            "sótão"
+        ]
+    },
+    "cama dobrável": {
+        "largura": 800,
+        "altura": 500,
+        "profundidade": 1800,
+        "peso": 15,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "dormir"
+        ],
+        "mobArmazenar": [
+            "sótão"
+        ],
+        "mobUtilizar": [
+            "sótão"
+        ]
+    },
+    "aquecedor portátil": {
+        "largura": 200,
+        "altura": 300,
+        "profundidade": 150,
+        "peso": 3,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "aquecer o ambiente"
+        ],
+        "mobArmazenar": [
+            "sótão"
+        ],
+        "mobUtilizar": [
+            "sótão"
+        ]
+    },
+    "cobertores e edredons": {
+        "largura": 800,
+        "altura": 400,
+        "profundidade": 800,
+        "peso": 5,
+        "material": [
+            "tecido"
+        ],
+        "funcao": [
+            "manter aquecido"
+        ],
+        "mobArmazenar": [
+            "sótão"
+        ],
+        "mobUtilizar": [
+            "sótão"
+        ]
+    },
+    "mesa de jantar": {
+        "largura": 1200,
+        "altura": 750,
+        "profundidade": 800,
+        "peso": 40,
+        "material": [
+            "madeira"
+        ],
+        "funcao": [
+            "apoio para refeições"
+        ],
+        "mobArmazenar": [
+            "sala de jantar"
+        ],
+        "mobUtilizar": [
+            "sala de jantar"
+        ]
+    },
+    "cadeira de jantar": {
+        "largura": 400,
+        "altura": 900,
+        "profundidade": 400,
+        "peso": 5,
+        "material": [
+            "madeira",
+            "tecido"
+        ],
+        "funcao": [
+            "sentar"
+        ],
+        "mobArmazenar": [
+            "sala de jantar"
+        ],
+        "mobUtilizar": [
+            "sala de jantar"
+        ]
+    },
+    "buffet": {
+        "largura": 1000,
+        "altura": 900,
+        "profundidade": 500,
+        "peso": 30,
+        "material": [
+            "madeira"
+        ],
+        "funcao": [
+            "armazenar louças e talheres",
+            "apoio para refeições"
+        ],
+        "mobArmazenar": [
+            "sala de jantar"
+        ],
+        "mobUtilizar": [
+            "sala de jantar"
+        ]
+    },
+    "lustre": {
+        "largura": 500,
+        "altura": 800,
+        "profundidade": 500,
+        "peso": 10,
+        "material": [
+            "metal",
+            "vidro"
+        ],
+        "funcao": [
+            "iluminar"
+        ],
+        "mobArmazenar": [
+            "teto"
+        ],
+        "mobUtilizar": [
+            "sala de jantar"
+        ]
+    },
+    "aparador": {
+        "largura": 1000,
+        "altura": 800,
+        "profundidade": 400,
+        "peso": 20,
+        "material": [
+            "madeira"
+        ],
+        "funcao": [
+            "apoio para objetos",
+            "decoração"
+        ],
+        "mobArmazenar": [
+            "sala de jantar"
+        ],
+        "mobUtilizar": [
+            "sala de jantar"
+        ]
+    },
+    "guarda-louças": {
+        "largura": 800,
+        "altura": 1800,
+        "profundidade": 400,
+        "peso": 40,
+        "material": [
+            "madeira"
+        ],
+        "funcao": [
+            "armazenar louças"
+        ],
+        "mobArmazenar": [
+            "sala de jantar"
+        ],
+        "mobUtilizar": [
+            "sala de jantar"
+        ]
+    },
+    "pratos": {
+        "largura": 200,
+        "altura": 20,
+        "profundidade": 200,
+        "peso": 0.5,
+        "material": [
+            "porcelana"
+        ],
+        "funcao": [
+            "comer"
+        ],
+        "mobArmazenar": [
+            "guarda-louças",
+            "buffet"
+        ],
+        "mobUtilizar": [
+            "mesa de jantar"
+        ]
+    },
+    "copos": {
+        "largura": 100,
+        "altura": 150,
+        "profundidade": 100,
+        "peso": 0.3,
+        "material": [
+            "vidro"
+        ],
+        "funcao": [
+            "beber"
+        ],
+        "mobArmazenar": [
+            "guarda-louças",
+            "buffet"
+        ],
+        "mobUtilizar": [
+            "mesa de jantar"
+        ]
+    },
+    "toalha de mesa": {
+        "largura": 1200,
+        "altura": 10,
+        "profundidade": 800,
+        "peso": 0.5,
+        "material": [
+            "tecido"
+        ],
+        "funcao": [
+            "proteger e decorar a mesa"
+        ],
+        "mobArmazenar": [
+            "sala de jantar"
+        ],
+        "mobUtilizar": [
+            "mesa de jantar"
+        ]
+    },
+    "almofadas": {
+        "largura": 400,
+        "altura": 400,
+        "profundidade": 100,
+        "peso": 0.5,
+        "material": [
+            "tecido",
+            "espuma"
+        ],
+        "funcao": [
+            "apoio para sentar",
+            "decoração"
+        ],
+        "mobArmazenar": [
+            "sofá",
+            "poltrona"
+        ],
+        "mobUtilizar": [
+            "sala de estar"
+        ]
+    },
+    "quadros decorativos": {
+        "largura": 600,
+        "altura": 600,
+        "profundidade": 50,
+        "peso": 2,
+        "material": [
+            "madeira",
+            "vidro"
+        ],
+        "funcao": [
+            "decorar as paredes"
+        ],
+        "mobArmazenar": [
+            "sala de estar"
+        ],
+        "mobUtilizar": [
+            "sala de estar"
+        ]
+    },
+    "cortinas": {
+        "largura": 1500,
+        "altura": 2000,
+        "profundidade": 0,
+        "peso": 1,
+        "material": [
+            "tecido"
+        ],
+        "funcao": [
+            "proteger contra a luz externa"
+        ],
+        "mobArmazenar": [
+            "janela"
+        ],
+        "mobUtilizar": [
+            "sala de estar"
+        ]
+    },
+    "rack": {
+        "largura": 1500,
+        "altura": 600,
+        "profundidade": 500,
+        "peso": 30,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "apoio para a TV",
+            "armazenar equipamentos eletrônicos"
+        ],
+        "mobArmazenar": [
+            "sala de TV"
+        ],
+        "mobUtilizar": [
+            "sala de TV"
+        ]
+    },
+    "home theater": {
+        "largura": 800,
+        "altura": 300,
+        "profundidade": 400,
+        "peso": 15,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "entretenimento",
+            "reprodução de áudio e vídeo"
+        ],
+        "mobArmazenar": [
+            "rack"
+        ],
+        "mobUtilizar": [
+            "sala de TV"
+        ]
+    },
+    "controle remoto": {
+        "largura": 50,
+        "altura": 150,
+        "profundidade": 20,
+        "peso": 0.1,
+        "material": [
+            "plastico"
+        ],
+        "funcao": [
+            "controlar a TV e o home theater"
+        ],
+        "mobArmazenar": [
+            "mesa de centro"
+        ],
+        "mobUtilizar": [
+            "sala de TV"
+        ]
+    },
+    "caixas de som": {
+        "largura": 150,
+        "altura": 300,
+        "profundidade": 150,
+        "peso": 2,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "reprodução de áudio"
+        ],
+        "mobArmazenar": [
+            "rack",
+            "estante"
+        ],
+        "mobUtilizar": [
+            "sala de TV"
+        ]
+    },
+    "DVD player": {
+        "largura": 400,
+        "altura": 50,
+        "profundidade": 300,
+        "peso": 1,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "reprodução de vídeos"
+        ],
+        "mobArmazenar": [
+            "rack",
+            "estante"
+        ],
+        "mobUtilizar": [
+            "sala de TV"
+        ]
+    },
+    "cabides": {
+        "largura": 400,
+        "altura": 200,
+        "profundidade": 20,
+        "peso": 0.2,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "suspender roupas"
+        ],
+        "mobArmazenar": [
+            "araras"
+        ],
+        "mobUtilizar": [
+            "closet"
+        ]
+    },
+    "araras": {
+        "largura": 800,
+        "altura": 1500,
+        "profundidade": 400,
+        "peso": 10,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "pendurar roupas"
+        ],
+        "mobArmazenar": [
+            "closet"
+        ],
+        "mobUtilizar": [
+            "closet"
+        ]
+    },
+    "puff": {
+        "largura": 400,
+        "altura": 400,
+        "profundidade": 400,
+        "peso": 5,
+        "material": [
+            "tecido",
+            "espuma"
+        ],
+        "funcao": [
+            "assento",
+            "apoio para os pés"
+        ],
+        "mobArmazenar": [
+            "closet"
+        ],
+        "mobUtilizar": [
+            "closet"
+        ]
+    },
+    "caixas organizadoras": {
+        "largura": 300,
+        "altura": 200,
+        "profundidade": 400,
+        "peso": 1,
+        "material": [
+            "plastico",
+            "tecido"
+        ],
+        "funcao": [
+            "organizar acessórios e objetos menores"
+        ],
+        "mobArmazenar": [
+            "prateleiras"
+        ],
+        "mobUtilizar": [
+            "closet"
+        ]
+    },
+    "cintos": {
+        "largura": 50,
+        "altura": 100,
+        "profundidade": 10,
+        "peso": 0.1,
+        "material": [
+            "tecido",
+            "metal"
+        ],
+        "funcao": [
+            "segurar calças e saias"
+        ],
+        "mobArmazenar": [
+            "cabides",
+            "gaveteiro"
+        ],
+        "mobUtilizar": [
+            "closet"
+        ]
+    },
+    "bolsas": {
+        "largura": 300,
+        "altura": 250,
+        "profundidade": 100,
+        "peso": 0.5,
+        "material": [
+            "tecido",
+            "couro"
+        ],
+        "funcao": [
+            "armazenar objetos pessoais"
+        ],
+        "mobArmazenar": [
+            "prateleiras",
+            "gaveteiro"
+        ],
+        "mobUtilizar": [
+            "closet"
+        ]
+    },
+    "mesa externa": {
+        "largura": 800,
+        "altura": 750,
+        "profundidade": 800,
+        "peso": 15,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "apoio para refeições"
+        ],
+        "mobArmazenar": [
+            "área externa"
+        ],
+        "mobUtilizar": [
+            "área externa"
+        ]
+    },
+    "cadeira externa": {
+        "largura": 500,
+        "altura": 900,
+        "profundidade": 500,
+        "peso": 5,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "sentar"
+        ],
+        "mobArmazenar": [
+            "área externa"
+        ],
+        "mobUtilizar": [
+            "área externa"
+        ]
+    },
+    "piscina": {
+        "largura": 4000,
+        "altura": 1500,
+        "profundidade": 2000,
+        "peso": 0,
+        "material": [
+            "fibra de vidro",
+            "azulejo"
+        ],
+        "funcao": [
+            "nadar",
+            "refrescar"
+        ],
+        "mobArmazenar": [
+            "área de lazer"
+        ],
+        "mobUtilizar": [
+            "área de lazer"
+        ]
+    },
+    "jardim vertical": {
+        "largura": 800,
+        "altura": 1500,
+        "profundidade": 150,
+        "peso": 25,
+        "material": [
+            "metal",
+            "plantas"
+        ],
+        "funcao": [
+            "decorar com plantas verticais"
+        ],
+        "mobArmazenar": [
+            "parede"
+        ],
+        "mobUtilizar": [
+            "área externa"
+        ]
+    },
+    "balanço": {
+        "largura": 800,
+        "altura": 2000,
+        "profundidade": 800,
+        "peso": 20,
+        "material": [
+            "madeira",
+            "corda"
+        ],
+        "funcao": [
+            "brincar"
+        ],
+        "mobArmazenar": [
+            "árvore"
+        ],
+        "mobUtilizar": [
+            "área externa"
+        ]
+    },
+    "vaso de plantas": {
+        "largura": 300,
+        "altura": 400,
+        "profundidade": 300,
+        "peso": 2,
+        "material": [
+            "cerâmica"
+        ],
+        "funcao": [
+            "plantar e decorar com plantas"
+        ],
+        "mobArmazenar": [
+            "área externa"
+        ],
+        "mobUtilizar": [
+            "área externa"
+        ]
+    },
+    "mesa de jogos": {
+        "largura": 800,
+        "altura": 750,
+        "profundidade": 800,
+        "peso": 15,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "jogos de tabuleiro",
+            "cartas"
+        ],
+        "mobArmazenar": [
+            "área de lazer"
+        ],
+        "mobUtilizar": [
+            "área de lazer"
+        ]
+    },
+    "cadeira de balanço": {
+        "largura": 600,
+        "altura": 900,
+        "profundidade": 800,
+        "peso": 10,
+        "material": [
+            "madeira",
+            "corda"
+        ],
+        "funcao": [
+            "balançar e relaxar"
+        ],
+        "mobArmazenar": [
+            "área de lazer"
+        ],
+        "mobUtilizar": [
+            "área de lazer"
+        ]
+    },
+    "redes": {
+        "largura": 1000,
+        "altura": 200,
+        "profundidade": 400,
+        "peso": 1.5,
+        "material": [
+            "tecido"
+        ],
+        "funcao": [
+            "descansar"
+        ],
+        "mobArmazenar": [
+            "área de lazer"
+        ],
+        "mobUtilizar": [
+            "área de lazer"
+        ]
+    },
+    "mesa para refeições": {
+        "largura": 800,
+        "altura": 750,
+        "profundidade": 800,
+        "peso": 15,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "apoio para refeições"
+        ],
+        "mobArmazenar": [
+            "área de lazer"
+        ],
+        "mobUtilizar": [
+            "área de lazer"
+        ]
+    },
+    "sofá externo": {
+        "largura": 1800,
+        "altura": 800,
+        "profundidade": 900,
+        "peso": 40,
+        "material": [
+            "tecido",
+            "espuma",
+            "metal"
+        ],
+        "funcao": [
+            "sentar",
+            "relaxar"
+        ],
+        "mobArmazenar": [
+            "área de lazer"
+        ],
+        "mobUtilizar": [
+            "área de lazer"
+        ]
+    },
+    "caixa de som": {
+        "largura": 200,
+        "altura": 300,
+        "profundidade": 200,
+        "peso": 2,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "reprodução de áudio"
+        ],
+        "mobArmazenar": [
+            "mesa de centro"
+        ],
+        "mobUtilizar": [
+            "área de lazer"
+        ]
+    },
+    "mesa de sinuca": {
+        "largura": 1000,
+        "altura": 750,
+        "profundidade": 2000,
+        "peso": 100,
+        "material": [
+            "madeira",
+            "tecido",
+            "metal"
+        ],
+        "funcao": [
+            "jogo de sinuca"
+        ],
+        "mobArmazenar": [
+            "sala de jogos"
+        ],
+        "mobUtilizar": [
+            "sala de jogos"
+        ]
+    },
+    "mesa de ping pong": {
+        "largura": 1500,
+        "altura": 750,
+        "profundidade": 2500,
+        "peso": 80,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "jogo de ping pong"
+        ],
+        "mobArmazenar": [
+            "sala de jogos"
+        ],
+        "mobUtilizar": [
+            "sala de jogos"
+        ]
+    },
+    "mesa de pebolim": {
+        "largura": 800,
+        "altura": 800,
+        "profundidade": 1500,
+        "peso": 50,
+        "material": [
+            "madeira",
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "jogo de pebolim"
+        ],
+        "mobArmazenar": [
+            "sala de jogos"
+        ],
+        "mobUtilizar": [
+            "sala de jogos"
+        ]
+    },
+    "dardos": {
+        "largura": 50,
+        "altura": 300,
+        "profundidade": 50,
+        "peso": 0.3,
+        "material": [
+            "metal",
+            "plumante"
+        ],
+        "funcao": [
+            "jogo de dardos"
+        ],
+        "mobArmazenar": [
+            "parede"
+        ],
+        "mobUtilizar": [
+            "sala de jogos"
+        ]
+    },
+    "jogos de tabuleiro": {
+        "largura": 400,
+        "altura": 100,
+        "profundidade": 400,
+        "peso": 2,
+        "material": [
+            "papelão"
+        ],
+        "funcao": [
+            "jogos de tabuleiro"
+        ],
+        "mobArmazenar": [
+            "estante para jogos"
+        ],
+        "mobUtilizar": [
+            "sala de jogos"
+        ]
+    },
+    "videogame": {
+        "largura": 300,
+        "altura": 80,
+        "profundidade": 200,
+        "peso": 2,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "jogar videogame"
+        ],
+        "mobArmazenar": [
+            "estante para jogos"
+        ],
+        "mobUtilizar": [
+            "sala de jogos"
+        ]
+    },
+    "fliperama": {
+        "largura": 600,
+        "altura": 1800,
+        "profundidade": 600,
+        "peso": 100,
+        "material": [
+            "metal",
+            "vidro"
+        ],
+        "funcao": [
+            "jogar fliperama"
+        ],
+        "mobArmazenar": [
+            "sala de jogos"
+        ],
+        "mobUtilizar": [
+            "sala de jogos"
+        ]
+    },
+    "mesa para cartas": {
+        "largura": 800,
+        "altura": 750,
+        "profundidade": 800,
+        "peso": 15,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "jogos de cartas"
+        ],
+        "mobArmazenar": [
+            "sala de jogos"
+        ],
+        "mobUtilizar": [
+            "sala de jogos"
+        ]
+    },
+    "poltrona reclinável": {
+        "largura": 800,
+        "altura": 1000,
+        "profundidade": 900,
+        "peso": 40,
+        "material": [
+            "tecido",
+            "espuma",
+            "metal"
+        ],
+        "funcao": [
+            "sentar",
+            "relaxar"
+        ],
+        "mobArmazenar": [
+            "sala de jogos"
+        ],
+        "mobUtilizar": [
+            "sala de jogos"
+        ]
+    },
+    "estante para jogos": {
+        "largura": 800,
+        "altura": 1800,
+        "profundidade": 400,
+        "peso": 30,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "organizar jogos e videogames"
+        ],
+        "mobArmazenar": [
+            "sala de jogos"
+        ],
+        "mobUtilizar": [
+            "sala de jogos"
+        ]
+    },
+    "mesa de buffet": {
+        "largura": 1000,
+        "altura": 750,
+        "profundidade": 800,
+        "peso": 30,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "apoio para alimentos e bebidas"
+        ],
+        "mobArmazenar": [
+            "salão de festas"
+        ],
+        "mobUtilizar": [
+            "salão de festas"
+        ]
+    },
+    "cadeira para eventos": {
+        "largura": 500,
+        "altura": 900,
+        "profundidade": 500,
+        "peso": 5,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "assento para convidados"
+        ],
+        "mobArmazenar": [
+            "salão de festas"
+        ],
+        "mobUtilizar": [
+            "salão de festas"
+        ]
+    },
+    "mesa para convidados": {
+        "largura": 800,
+        "altura": 750,
+        "profundidade": 800,
+        "peso": 15,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "apoio para convidados"
+        ],
+        "mobArmazenar": [
+            "salão de festas"
+        ],
+        "mobUtilizar": [
+            "salão de festas"
+        ]
+    },
+    "palco": {
+        "largura": 3000,
+        "altura": 600,
+        "profundidade": 2000,
+        "peso": 150,
+        "material": [
+            "madeira",
+            "tecido",
+            "metal"
+        ],
+        "funcao": [
+            "elevado para apresentações"
+        ],
+        "mobArmazenar": [
+            "salão de festas"
+        ],
+        "mobUtilizar": [
+            "salão de festas"
+        ]
+    },
+    "iluminação cênica": {
+        "largura": 200,
+        "altura": 200,
+        "profundidade": 100,
+        "peso": 2,
+        "material": [
+            "metal",
+            "vidro"
+        ],
+        "funcao": [
+            "criar efeitos de luz"
+        ],
+        "mobArmazenar": [
+            "salão de festas"
+        ],
+        "mobUtilizar": [
+            "salão de festas"
+        ]
+    },
+    "pista de dança": {
+        "largura": 4000,
+        "altura": 1,
+        "profundidade": 2000,
+        "peso": 0,
+        "material": [
+            "madeira",
+            "plastico"
+        ],
+        "funcao": [
+            "espaço para dançar"
+        ],
+        "mobArmazenar": [
+            "salão de festas"
+        ],
+        "mobUtilizar": [
+            "salão de festas"
+        ]
+    },
+    "sistema de som": {
+        "largura": 300,
+        "altura": 400,
+        "profundidade": 200,
+        "peso": 10,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "reprodução de áudio"
+        ],
+        "mobArmazenar": [
+            "palco"
+        ],
+        "mobUtilizar": [
+            "salão de festas"
+        ]
+    },
+    "projetor": {
+        "largura": 200,
+        "altura": 300,
+        "profundidade": 200,
+        "peso": 5,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "projeção de imagens"
+        ],
+        "mobArmazenar": [
+            "mesa de buffet"
+        ],
+        "mobUtilizar": [
+            "salão de festas"
+        ]
+    },
+    "telão": {
+        "largura": 2000,
+        "altura": 1500,
+        "profundidade": 200,
+        "peso": 8,
+        "material": [
+            "tecido",
+            "metal"
+        ],
+        "funcao": [
+            "exibição de imagens e vídeos"
+        ],
+        "mobArmazenar": [
+            "mesa de buffet"
+        ],
+        "mobUtilizar": [
+            "salão de festas"
+        ]
+    },
+    "decoração temática": {
+        "largura": 1,
+        "altura": 1,
+        "profundidade": 1,
+        "peso": 0,
+        "material": [
+            "diversos"
+        ],
+        "funcao": [
+            "tematizar o ambiente"
+        ],
+        "mobArmazenar": [
+            "salão de festas"
+        ],
+        "mobUtilizar": [
+            "salão de festas"
+        ]
+    },
+    "toalha de praia": {
+        "largura": 800,
+        "altura": 1500,
+        "profundidade": 10,
+        "peso": 0.5,
+        "material": [
+            "algodão"
+        ],
+        "funcao": [
+            "cobrir superfícies"
+        ],
+        "mobArmazenar": [
+            "espreguiçadeira"
+        ],
+        "mobUtilizar": [
+            "área de piscina"
+        ]
+    },
+    "cooler": {
+        "largura": 400,
+        "altura": 300,
+        "profundidade": 300,
+        "peso": 3,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "armazenar bebidas geladas"
+        ],
+        "mobArmazenar": [
+            "área de piscina"
+        ],
+        "mobUtilizar": [
+            "área de piscina"
+        ]
+    },
+    "boia inflável": {
+        "largura": 800,
+        "altura": 800,
+        "profundidade": 800,
+        "peso": 1,
+        "material": [
+            "plastico"
+        ],
+        "funcao": [
+            "flutuar na água"
+        ],
+        "mobArmazenar": [
+            "área de piscina"
+        ],
+        "mobUtilizar": [
+            "área de piscina"
+        ]
+    },
+    "cadeira reclinável": {
+        "largura": 600,
+        "altura": 800,
+        "profundidade": 700,
+        "peso": 10,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "sentar e relaxar"
+        ],
+        "mobArmazenar": [
+            "área de piscina"
+        ],
+        "mobUtilizar": [
+            "área de piscina"
+        ]
+    },
+    "chuveiro externo": {
+        "largura": 200,
+        "altura": 2000,
+        "profundidade": 200,
+        "peso": 4,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "banho de água fria"
+        ],
+        "mobArmazenar": [
+            "parede"
+        ],
+        "mobUtilizar": [
+            "área de piscina"
+        ]
+    },
+    "caixa de som resistente à água": {
+        "largura": 200,
+        "altura": 300,
+        "profundidade": 200,
+        "peso": 2,
+        "material": [
+            "plastico",
+            "metal"
+        ],
+        "funcao": [
+            "reprodução de áudio"
+        ],
+        "mobArmazenar": [
+            "mesa lateral"
+        ],
+        "mobUtilizar": [
+            "área de piscina"
+        ]
+    },
+    "mesa para petiscos": {
+        "largura": 600,
+        "altura": 600,
+        "profundidade": 600,
+        "peso": 8,
+        "material": [
+            "madeira",
+            "metal"
+        ],
+        "funcao": [
+            "apoio para petiscos e bebidas"
+        ],
+        "mobArmazenar": [
+            "área de piscina"
+        ],
+        "mobUtilizar": [
+            "área de piscina"
+        ]
+    },
+    "esteira": {
+        "largura": 800,
+        "altura": 1200,
+        "profundidade": 1800,
+        "peso": 70,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "exercício cardiovascular"
+        ],
+        "mobArmazenar": [
+            "academia"
+        ],
+        "mobUtilizar": [
+            "academia"
+        ]
+    },
+    "bicicleta ergométrica": {
+        "largura": 600,
+        "altura": 1200,
+        "profundidade": 1000,
+        "peso": 50,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "exercício cardiovascular"
+        ],
+        "mobArmazenar": [
+            "academia"
+        ],
+        "mobUtilizar": [
+            "academia"
+        ]
+    },
+    "halteres": {
+        "largura": 200,
+        "altura": 300,
+        "profundidade": 200,
+        "peso": 2,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "exercício de força"
+        ],
+        "mobArmazenar": [
+            "academia"
+        ],
+        "mobUtilizar": [
+            "academia"
+        ]
+    },
+    "barra de peso": {
+        "largura": 1500,
+        "altura": 200,
+        "profundidade": 200,
+        "peso": 15,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "exercício de força"
+        ],
+        "mobArmazenar": [
+            "academia"
+        ],
+        "mobUtilizar": [
+            "academia"
+        ]
+    },
+    "colchonete": {
+        "largura": 600,
+        "altura": 10,
+        "profundidade": 1200,
+        "peso": 2,
+        "material": [
+            "espuma",
+            "tecido"
+        ],
+        "funcao": [
+            "apoio para exercícios"
+        ],
+        "mobArmazenar": [
+            "academia"
+        ],
+        "mobUtilizar": [
+            "academia"
+        ]
+    },
+    "bola de exercícios": {
+        "largura": 600,
+        "altura": 600,
+        "profundidade": 600,
+        "peso": 1,
+        "material": [
+            "plastico"
+        ],
+        "funcao": [
+            "exercícios de equilíbrio"
+        ],
+        "mobArmazenar": [
+            "academia"
+        ],
+        "mobUtilizar": [
+            "academia"
+        ]
+    },
+    "máquina de musculação": {
+        "largura": 1200,
+        "altura": 1800,
+        "profundidade": 2000,
+        "peso": 120,
+        "material": [
+            "metal",
+            "plastico"
+        ],
+        "funcao": [
+            "exercício de força"
+        ],
+        "mobArmazenar": [
+            "academia"
+        ],
+        "mobUtilizar": [
+            "academia"
+        ]
+    },
+    "corda de pular": {
+        "largura": 20,
+        "altura": 300,
+        "profundidade": 20,
+        "peso": 0.5,
+        "material": [
+            "tecido",
+            "plastico"
+        ],
+        "funcao": [
+            "exercício cardiovascular"
+        ],
+        "mobArmazenar": [
+            "academia"
+        ],
+        "mobUtilizar": [
+            "academia"
+        ]
+    },
+    "elástico de resistência": {
+        "largura": 1000,
+        "altura": 20,
+        "profundidade": 20,
+        "peso": 0.2,
+        "material": [
+            "borracha"
+        ],
+        "funcao": [
+            "exercício de resistência"
+        ],
+        "mobArmazenar": [
+            "academia"
+        ],
+        "mobUtilizar": [
+            "academia"
+        ]
+    },
+    "kettlebell": {
+        "largura": 200,
+        "altura": 300,
+        "profundidade": 200,
+        "peso": 10,
+        "material": [
+            "metal"
+        ],
+        "funcao": [
+            "exercício de força"
+        ],
+        "mobArmazenar": [
+            "academia"
+        ],
+        "mobUtilizar": [
+            "academia"
+        ]
+    }
+}
