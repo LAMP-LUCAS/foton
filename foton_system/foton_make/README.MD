@@ -18,8 +18,8 @@ Este é um projeto em Python que tem como objetivo criar uma solução para auxi
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/nome-do-repositorio.git
-cd nome-do-repositorio
+git clone https://github.com/LAMP-LUCAS/foton.git
+cd foton
 ```
 
 2. Instale as dependências:
