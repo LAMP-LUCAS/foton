@@ -16,16 +16,34 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'homepage' %}">Início</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'GestaoContrato:GestaoContrato_home' %}">Gestão de Contratos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'GestaoCliente:GestaoCliente_home' %}">Gestão de Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'GestaoOrcamento:GestaoOrcamento_home' %}">Gestão de Orçamentos</a>
-                    </li>
-                </ul>
+            </ul>
+        </div>
+    </nav>
+</header>
+ -->
+
+ <!-- Cabeçalho -->
+ <header>
+    <nav class="navbar navbar-expand-md fixed-bottom navbar-light bg-light">
+        <a class="navbar-brand" href="#">foton</a>
+        <footer class="bg-light py-3 text-center">
+            <p class="mb-0">&copy;<span id="currentYear"></span></p>
+        </footer>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item text-center">
+                    <a href="{% url 'GestaoContrato:GestaoContrato_home' %}" class="nav-link ">Inicio</a>
+                    <a href="{% url 'GestaoContrato:GestaoContrato_home' %}" class="nav-link ">Gestão de Contratos</a>
+                    <a href="{% url 'GestaoCliente:GestaoCliente_home' %}" class="nav-link ">Gestão de Clientes</a>
+                    <a href="{% url 'GestaoOrcamento:GestaoOrcamento_home' %}" class="nav-link ">Gestão de Orçamentos</a>
+                    <a class="nav-link" href="#">Contato</a>
+                    <br>
+                    <a class="nav-link" href="http://www.arqlamp.com">Design by Lamp</a>
+                </li>
+            </ul>
             </div>
         </div>
     </nav>
