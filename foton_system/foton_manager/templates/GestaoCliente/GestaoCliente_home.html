@@ -2,14 +2,18 @@
 
 {% block content %}
 <div class="container">
-    <h1>Gestão de Clientes</h1>
+    <h1 class="mt-4">Gestão de Clientes</h1>
     <div class="mb-3">
-        <a href="{% url 'GestaoCliente:incluir' %}" class="btn btn-primary">Incluir Novo Cliente</a>
-        <div class="btn-group" role="group" aria-label="Filtrar tabela">
-            <button type="button" class="btn btn-secondary">Filtro 1</button>
-            <button type="button" class="btn btn-secondary">Filtro 2</button>
-            <button type="button" class="btn btn-secondary">Filtro 3</button>
-        </div>
+        <a href="{% url 'GestaoCliente:incluir' %}" class="btn btn-primary">Incluir Novo Cliente</a></br>
+        <form class="form-inline mt-2 mt-md-0" method="GET" action="{% url 'GestaoCliente:GestaoCliente_home' %}">
+            <input class="form-control mr-sm-2 mt-2 mt-md-0" type="text" placeholder="CPF/CNPJ" name="documento" value="{{ request.GET.documento }}">
+            <select class="form-control mr-sm-2 mt-2 mt-md-0" name="tipo_pessoa">
+                <option value="">Todos</option>
+                <option value="PF" {% if request.GET.tipo_pessoa == 'PF' %}selected{% endif %}>Pessoa Física</option>
+                <option value="PJ" {% if request.GET.tipo_pessoa == 'PJ' %}selected{% endif %}>Pessoa Jurídica</option>
+            </select>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Filtrar</button>
+        </form>
     </div>
     <!-- Lista de clientes -->
     <table class="table">
@@ -24,9 +28,18 @@
         <tbody>
             {% for cliente in clientes %}
             <tr>
-                <td>{{ cliente.id }}</td>
-                <td>{{ cliente.nome }}</td>
-                <td>{{ cliente.email }}</td>
+                <td>{{ cliente.tipo_pessoa }}</td>
+                {% if cliente.tipo_pessoa == 'PF' %}
+                    <td>{{ cliente.nome_completo }}</td>
+                    <td>{{ cliente.cpf }}</td>
+                    <td>-</td>
+                    <td>-</td>
+                {% else %}
+                    <td>-</td>
+                    <td>-</td>
+                    <td>{{ cliente.nome_fantasia }}</td>
+                    <td>{{ cliente.cnpj }}</td>
+                {% endif %}
                 <td>
                     <!-- Botões para visualizar, editar ou excluir cliente -->
                     <a href="{% url 'GestaoCliente:detalhes' cliente.id %}" class="btn btn-primary">Detalhes</a>
@@ -35,6 +48,7 @@
                 </td>
             </tr>
             {% endfor %}
+
         </tbody>
     </table>
 </div>

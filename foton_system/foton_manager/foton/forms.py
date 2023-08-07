@@ -14,7 +14,43 @@ class OrcamentoForm(forms.ModelForm):
         model = Orcamento
         fields = ['descricao', 'valor', 'contrato']
 
-class ClienteForm(forms.ModelForm):
+#class ClienteForm(forms.ModelForm):
+ #   class Meta:
+  #      model = Cliente
+   #     fields = ['nome', 'email']
+
+class ClientePessoaFisicaForm(forms.ModelForm):
     class Meta:
         model = Cliente
-        fields = ['nome', 'email']
+        fields = [
+            'tipo_pessoa',
+            'nome_completo',
+            'cpf',
+            'rg',
+            'sexo',
+            'emprego_ocupacao',
+            'numero_telefone',
+            'email',
+            'cep',
+            'logradouro',
+            'numero',
+            'complemento',
+            'cidade',
+            'ug',
+        ]
+
+class ClientePessoaJuridicaForm(forms.ModelForm):
+    class Meta:
+        model = Cliente
+        fields = [
+            'tipo_pessoa',
+            'razao_social',
+            'nome_fantasia',
+            'cnpj',
+            'telefone',
+            'email',
+            'natureza',
+            'nome_representante',
+            'cpf_representante',
+            'telefone_representante',
+        ]
