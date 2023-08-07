@@ -1,3 +1,5 @@
 from django.db import models
+from django.contrib import admin
+from .models import ComposicaoCustos
 
-# Create your models here.
+admin.site.register(ComposicaoCustos)
