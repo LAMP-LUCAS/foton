@@ -1,5 +1,3 @@
-{% extends "base.html" %}
-
 {% block content %}
 <div class="container">
     <h1>Buscar Composições</h1>
@@ -17,11 +15,11 @@
                 <input type="text" class="form-control" name="termo_pesquisa" id="termo_pesquisa">
             </div>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Buscar</button>
+        <button type="button" class="btn btn-primary mt-3" id="buscar_composicoes">Buscar</button>
     </form>
     
     <h2>Composições Encontradas:</h2>
-    <table class="table">
+    <table class="table" id="tabelaResultados">
         <thead>
             <tr>
                 <th>Código</th>
@@ -31,17 +29,45 @@
             </tr>
         </thead>
         <tbody>
+            
             {% for composicao in composicoes %}
             <tr>
                 <td>{{ composicao.codigo }}</td>
                 <td>{{ composicao.descricao }}</td>
                 <td>{{ composicao.unidade }}</td>
                 <td>
-                    <a href="{% url 'GestaoOrcamento:incluir' %}?codigo_composicao={{ composicao.codigo }}" class="btn btn-secondary">Selecionar</a>
+                    <a href="{% url 'GestaoOrcamento:incluir' %}?codigo_composicao={{ composicao.codigo }}" data-codigo="{{ composicao.codigo }}" class="btn btn-secondary">Selecionar</a>
                 </td>
             </tr>
             {% endfor %}
+            
         </tbody>
     </table>
+ 
+    <script>
+        $('#buscar_composicoes').click(function() {
+            // Obtém os valores dos campos do formulário
+            var base_dados = $('#base_dados').val();
+            var termo_pesquisa = $('#termo_pesquisa').val();
+        
+            // Envia uma solicitação para o servidor com os dados do formulário
+            $.ajax({
+                url: '{% url 'GestaoOrcamento:buscar_composicoes' %}',
+                data: {base_dados: base_dados, termo_pesquisa: termo_pesquisa},
+                success: function(data) {
+
+                    // Atualiza o conteúdo do modal com os novos dados
+                    $('#buscarComposicoesModal').find('.modal-body').html(data);
+
+                    // Exibe o modal atualizado
+                    $('#buscarComposicoesModal').modal('show');
+                }
+            });
+        });
+    </script>
+    
+
+
+
 </div>
 {% endblock %}

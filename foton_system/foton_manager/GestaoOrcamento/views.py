@@ -6,6 +6,7 @@ from .serializers import ComposicaoCustoSerializer
 from django.http import JsonResponse
 from GestaoOrcamento.integrations import SINAPIClient, sinapi
 
+
 def index(request):
     orcamentos = Orcamento.objects.all()
     return render(request, 'GestaoOrcamento/GestaoOrcamento_home.html', {'orcamentos': orcamentos})
@@ -54,18 +55,78 @@ def composicao_modal(request, composicao_id=None):
         'composicao_id': composicao_id,
         # Outros dados da composição, se necessário
     }
+    print('-------------- funcao composicao_modal() ----------------')
+    print(data,'\n\n\n\n')
+    print('------------------------------------')
     return render(request, 'GestaoOrcamento/composicao_modal.html', data)
 
+
 def buscar_composicoes(request):
-    base_dados = request.GET.get('base_dados', 'SINAPI')
-    termo_pesquisa = request.GET.get('termo_pesquisa', '')
+    print('\niniciando buscar_composicoes')
+    base_dados = request.GET.get('base_dados',)# 'base_dados')
+    termo_pesquisa = request.GET.get('termo_pesquisa',)# 'termo_pesquisa')
+    if not termo_pesquisa:
+        termo_pesquisa = 'ASSENTAMENTO'
+    composicoes = []  # atribui um valor inicial à variável composicoes
 
     if base_dados == 'SINAPI':
+        print('\nacessando o sinapi')
         sinapi_client = SINAPIClient()  # Instancie o SINAPIClient
+        print('\nsinapi acessado com sucesso, Iniciando pesquisa do termo ', termo_pesquisa)
         composicoes = sinapi_client.buscar_composicoes(termo_pesquisa)  # Use o método do SINAPIClient
+        
+        # Exibe informações sobre o processo de busca
+        '''
+        print('-------------- funcao buscar_composicoes() -----------------')
+        print(f'sinapi_client: {sinapi_client}')
+        print('------------------------------------')
+        print(f'Base de dados: {base_dados}')
+        
+        print('------------------------------------')
+        print(f'Termo de pesquisa: {termo_pesquisa}')
+        print('------------------------------------')
+        
+        print(f'Resultados da busca: {composicoes}')
+        print('------------------------------------')
+        '''
+    print('\nA solicitação foi do tipo: ', type(request),'\n')
+    if request.headers.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest':
+        # A solicitação é uma solicitação AJAX
+        # Retorne os dados em formato JSON
+        print('\nenviando resposta json')
+        #return JsonResponse(composicoes, safe=False)
+        return render(request, 'GestaoOrcamento/buscar_composicoes.html', {'composicoes': composicoes})
 
-    return render(request, 'GestaoOrcamento/buscar_composicoes.html', {'composicoes': composicoes})
+    else:
+        # A solicitação não é uma solicitação AJAX
+        # Renderize o template normalmente
+        print('\nenviando resposta html\n')
+        return render(request, 'GestaoOrcamento/buscar_composicoes.html', {'composicoes': composicoes})
 
+
+'''
+def buscar_composicoes(request):
+    base_dados = request.GET.get('base_dados')
+    termo_pesquisa = request.GET.get('termo_pesquisa')
+    if not termo_pesquisa:
+        termo_pesquisa = 'ASSENTAMENTO'
+    composicoes = []
+
+    if base_dados == 'SINAPI':
+        sinapi_client = SINAPIClient()
+        composicoes = sinapi_client.buscar_composicoes(termo_pesquisa)
+
+    if request.is_ajax():
+        # A solicitação é uma solicitação AJAX
+        # Retorne os dados em formato JSON
+        return JsonResponse(composicoes, safe=False)
+    else:
+        # A solicitação não é uma solicitação AJAX
+        # Renderize o template normalmente
+        return render(request, 'GestaoOrcamento/buscar_composicoes.html', {'composicoes': composicoes})
+
+'''
+    
 def get_cost_by_code(request, codigo):
     sinapi_client = SINAPIClient()  # Instancie o SINAPIClient
     custo = sinapi_client.get_cost_by_code(codigo)  # Use o método do SINAPIClient

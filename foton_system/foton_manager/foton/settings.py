@@ -87,7 +87,7 @@ INSTALLED_APPS = [
     'GestaoContrato',  # Aplicação de gestão de contrato
     'GestaoCliente',  # Aplicação de gestão de cliente
     'GestaoOrcamento',  # Aplicação de gestão de orçamento
-    'GestaoRequisitos' #Aplicação de gestão de Requisitos do contrato
+    'GestaoRequisitos', #Aplicação de gestão de Requisitos do contrato
     # outras aplicações...
 ]
 

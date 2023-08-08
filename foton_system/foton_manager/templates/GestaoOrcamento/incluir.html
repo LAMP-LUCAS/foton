@@ -17,15 +17,61 @@
         <label for="quantidade">Quantidade:</label>
         <input type="number" name="quantidade" id="quantidade" required>
         <button type="submit" class="btn btn-primary">Incluir Orçamento</button>
-    </form> 
+    </form>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        $('#buscarComposicoes').click(function() {
-            window.location.href = "{% url 'GestaoOrcamento:buscar_composicoes' %}";
+<!-- Modal buscar_composicao -->
+<div class="modal fade" id="buscarComposicoesModal" tabindex="-1" role="dialog" aria-labelledby="buscarComposicoesModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="buscarComposicoesModalLabel">Buscar Composições</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- O conteúdo da página buscar_composicao será carregado aqui -->
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--Link para jquery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- script modal buscar_composicao -->
+
+    <script>
+        $(document).ready(function() {
+            $('#buscarComposicoes').click(function() {
+                // Carrega o conteúdo da página buscar_composicao no corpo do modal
+                $('#buscarComposicoesModal .modal-body').load("{% url 'GestaoOrcamento:buscar_composicoes' %}");
+                
+                // Abre o modal
+                $('#buscarComposicoesModal').modal('show');
+            });
         });
-    });
-</script>  
+        </script>
+
+    <!-- Script para adicionar o conteúdo pesquisado ao form de inclusão -->
+
+    <script>
+        $(document).ready(function() {
+            // Adiciona um evento de clique aos botões "Selecionar" no modal
+            $('#buscarComposicoesModal').on('click', '.selecionar', function() {
+                // Obtém o código da composição armazenado no atributo data-codigo do botão
+                var codigo = $(this).data('codigo');
+                
+                // Copia o código da composição para o campo do formulário
+                $('#codigo_composicao').val(codigo);
+                
+                // Fecha o modal
+                $('#buscarComposicoesModal').modal('hide');
+            });
+        });
+        </script>
+
+
+<!-- Final Modal buscar_composicao -->
+
 </div>
 {% endblock %}

@@ -1,6 +1,23 @@
 # foton_system\foton_manager\LocalLib\sinapiAPI.py
 import pandas as pd
 
+class Composicao:
+    def __init__(self, base_path):
+        self.base_path = base_path
+        self.data = pd.read_excel(self.base_path, sheet_name='Rel. Analítico')
+        #Guardar o cabeçalho em uma variável para acessar depois
+        cab = self.data.iloc[:5]
+        # Define o índice de coluna como a quinta linha do DataFrame
+        self.data.columns = self.data.iloc[4]
+        # Remove a quinta linha
+        self.data = self.data.iloc[5:]
+
+    def get_Comp_resumo(self, codigo, descricao, unidade):
+        self.codigo = codigo
+        self.descricao = descricao
+        self.unidade = unidade       
+
+
 class SinapiAPI:
     def __init__(self, base_path):
         self.base_path = base_path
@@ -26,6 +43,8 @@ class SinapiAPI:
             return composicoes
         except KeyError:
             return None
+        
+
     def buscar_por_termo(self, termo_pesquisa):
         termo_pesquisa = termo_pesquisa.upper()
 
@@ -50,9 +69,34 @@ class SinapiAPI:
 
         for coluna in colunas_pesquisa:
             filtro = self.data[coluna].astype(str).str.contains(termo_pesquisa, case=False, na=False, regex=True)
-            resultados.extend(self.data[filtro])
+            
+            # Converte cada linha do DataFrame em um dicionário e adiciona à lista de resultados
+            for _, row in self.data[filtro].iterrows():
+                resultados.append(row.to_dict())
 
         if resultados:
-            return resultados
+            # Cria objetos Composicao a partir dos resultados da busca
+            composicoes = []
+            for resultado in resultados:
+                composicao = self.get_Comp_resumo(
+                    codigo=resultado['CODIGO DA COMPOSICAO'],
+                    descricao=resultado['DESCRICAO DA COMPOSICAO'],
+                    unidade=resultado['UNIDADE']
+                )
+                composicoes.append(composicao)
+            
+            return composicoes
         else:
             return None
+
+
+    def get_Comp_resumo(self, codigo, descricao, unidade):
+        self.codigo = codigo
+        self.descricao = descricao
+        self.unidade = unidade
+
+        return {
+        'codigo': codigo,
+        'descricao': descricao,
+        'unidade': unidade
+        }

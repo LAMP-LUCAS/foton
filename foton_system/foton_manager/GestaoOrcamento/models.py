@@ -6,7 +6,7 @@ import datetime
 def get_default_termino():
     return timezone.now() + datetime.timedelta(days=30)
 
-class ComposicaoCusto(models.Model):
+class ComposicaoCusto(models.Model):#depurador indicou um erro aqui: Requested setting INSTALLED_APPS
     codigo = models.CharField(max_length=10, unique=True)
     descricao = models.TextField()
     custo = models.DecimalField(max_digits=10, decimal_places=2)
