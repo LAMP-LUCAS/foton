@@ -18,7 +18,6 @@
         <input type="number" name="quantidade" id="quantidade" required>
         <button type="submit" class="btn btn-primary">Incluir Orçamento</button>
     </form>
-
 <!-- Modal buscar_composicao -->
 <div class="modal fade" id="buscarComposicoesModal" tabindex="-1" role="dialog" aria-labelledby="buscarComposicoesModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -52,26 +51,50 @@
         });
         </script>
 
-    <!-- Script para adicionar o conteúdo pesquisado ao form de inclusão -->
+    <!-- Script para adicionar o conteúdo pesquisado ao form de inclusão e à tabela de composições -->
 
     <script>
-        $(document).ready(function() {
-            // Adiciona um evento de clique aos botões "Selecionar" no modal
-            $('#buscarComposicoesModal').on('click', '.selecionar', function() {
-                // Obtém o código da composição armazenado no atributo data-codigo do botão
-                var codigo = $(this).data('codigo');
-                
-                // Copia o código da composição para o campo do formulário
-                $('#codigo_composicao').val(codigo);
-                
-                // Fecha o modal
-                $('#buscarComposicoesModal').modal('hide');
-            });
-        });
-        </script>
+      $(document).ready(function() {
+          // Adiciona um evento de clique aos botões "Selecionar" no modal
 
+          $('#buscarComposicoesModal').on('click', '.selecionar', function() {
+            console.log('botao selecionar clicado');
+            // Obtém o código e a descrição da composição armazenados nos atributos data-codigo e data-descri do botão
+            var codigo = $(this).data('codigo');
+            var descri = $(this).data('descricao');
+            console.log('valores obtidos: ',codigo, descri);
+            // Copia o código da composição para o campo do formulário
+            //$('#codigo_composicao').val(codigo);
+            
+            // Fecha o modal
+            $('#buscarComposicoesModal').modal('hide');
+            console.log('atualizando a tabela');
+            // Cria uma nova linha na tabela com os valores de codigo e descri
+            var row = $('<tr></tr>');
+            row.append('<td>' + codigo + '</td>');
+            row.append('<td>' + descri + '</td>');
+            $('#tabelaComposicoes tbody').append(row);
+            console.log('fim');
+          });
+      });
+  </script>
+  
 
-<!-- Final Modal buscar_composicao -->
+    <!-- Tabela com as composições escolhidas no modal Buscar composições-->
+    <h3>Composições Selecionadas:</h3>
+    <table class="table" id="tabelaComposicoes">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- valores obtidos na busca de composições -->
+        </tbody>
+    </table>
+
+      <!-- Final Modal buscar_composicao -->
 
 </div>
 {% endblock %}
