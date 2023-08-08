@@ -1,5 +1,5 @@
 from django.db import models
 from django.contrib import admin
-from .models import ComposicaoCustos
+from GestaoOrcamento.models import ComposicaoCusto
 
-admin.site.register(ComposicaoCustos)
+admin.site.register(ComposicaoCusto)

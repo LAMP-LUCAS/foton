@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Orcamento
+from .models import Orcamento, ComposicaoCusto
 from foton.forms import OrcamentoForm
 from rest_framework import viewsets
-from .models import ComposicaoCusto
 from .serializers import ComposicaoCustoSerializer
 from django.http import JsonResponse
+from GestaoOrcamento.integrations import SINAPIClient, sinapi
 
 def index(request):
     orcamentos = Orcamento.objects.all()
@@ -55,3 +55,19 @@ def composicao_modal(request, composicao_id=None):
         # Outros dados da composição, se necessário
     }
     return render(request, 'GestaoOrcamento/composicao_modal.html', data)
+
+def buscar_composicoes(request):
+    base_dados = request.GET.get('base_dados', 'SINAPI')
+    termo_pesquisa = request.GET.get('termo_pesquisa', '')
+
+    if base_dados == 'SINAPI':
+        sinapi_client = SINAPIClient()  # Instancie o SINAPIClient
+        composicoes = sinapi_client.buscar_composicoes(termo_pesquisa)  # Use o método do SINAPIClient
+
+    return render(request, 'GestaoOrcamento/buscar_composicoes.html', {'composicoes': composicoes})
+
+def get_cost_by_code(request, codigo):
+    sinapi_client = SINAPIClient()  # Instancie o SINAPIClient
+    custo = sinapi_client.get_cost_by_code(codigo)  # Use o método do SINAPIClient
+
+    return render(request, 'GestaoOrcamento/custo_composicao.html', {'custo': custo})

@@ -6,7 +6,26 @@
     <form method="post" action="{% url 'GestaoOrcamento:incluir' %}">
         {% csrf_token %}
         {{ form.as_p }}
+        
+        <!-- Botão para abrir a janela de visualização e pesquisa de composições -->
+        <button type="button" class="btn btn-primary" id="buscarComposicoes">Buscar Composições</button>
+        
+        <!-- Campos para incluir a composição de custo -->
+        <h3>Incluir Composição de Custo:</h3>
+        <label for="codigo_composicao">Código da Composição:</label>
+        <input type="text" name="codigo_composicao" id="codigo_composicao" required>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" name="quantidade" id="quantidade" required>
         <button type="submit" class="btn btn-primary">Incluir Orçamento</button>
-    </form>
+    </form> 
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#buscarComposicoes').click(function() {
+            window.location.href = "{% url 'GestaoOrcamento:buscar_composicoes' %}";
+        });
+    });
+</script>  
 </div>
 {% endblock %}

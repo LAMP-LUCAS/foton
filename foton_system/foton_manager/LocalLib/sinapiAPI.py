@@ -20,16 +20,39 @@ class SinapiAPI:
             return None
 
 
-# Teste da funcionalidade da biblioteca
-if __name__ == "__main__":
-    caminho = f'C:/Users/Lucas/OneDrive/LAMP ARQUITETURA/foton/foton_system/foton_manager/bd/SINAPI/SINAPI_Custo_Ref_Composicoes_Analitico_GO_202306_NaoDesonerado.xls'
-    sinapi_api = SinapiAPI(base_path=caminho)
-    
-    code = '97141'  # Substitua pelo código da composição que deseja consultar
-    cost = sinapi_api.get_cost_by_code(code)
-    cost = cost[0].replace(',', '.')
-    cost = float(cost)
-    if cost is not None:
-        print(f"Custo da composição de código {code}: R$ {cost:.2f}")
-    else:
-        print(f"Composição de código {code} não encontrada.")
+    def buscar_por_id(self, id_coluna, valor):
+        try:
+            composicoes = self.data[self.data[id_coluna] == valor]
+            return composicoes
+        except KeyError:
+            return None
+    def buscar_por_termo(self, termo_pesquisa):
+        termo_pesquisa = termo_pesquisa.upper()
+
+        # Define as colunas em que deseja realizar a pesquisa
+        colunas_pesquisa = [
+            'DESCRICAO DA CLASSE',
+            'SIGLA DA CLASSE',
+            'DESCRICAO DO TIPO 1',
+            'SIGLA DO TIPO 1',
+            'CODIGO DO AGRUPADOR',
+            'DESCRICAO DO AGRUPADOR',
+            'CODIGO DA COMPOSICAO',
+            'DESCRICAO DA COMPOSICAO',
+            'UNIDADE',
+            'TIPO ITEM',
+            'CODIGO ITEM',
+            'DESCRIÇÃO ITEM',
+            'UNIDADE ITEM'
+        ]
+
+        resultados = []
+
+        for coluna in colunas_pesquisa:
+            filtro = self.data[coluna].astype(str).str.contains(termo_pesquisa, case=False, na=False, regex=True)
+            resultados.extend(self.data[filtro])
+
+        if resultados:
+            return resultados
+        else:
+            return None

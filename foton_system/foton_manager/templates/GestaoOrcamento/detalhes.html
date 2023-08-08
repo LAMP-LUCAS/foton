@@ -7,6 +7,28 @@
     <p>Descrição: {{ orcamento.descricao }}</p>
     <p>Valor: {{ orcamento.valor }}</p>
     <!-- Outros detalhes do orçamento -->
+    
+    <!-- Exibir composições de custo -->
+    <h3>Composições de Custo:</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descrição</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for composicao in orcamento.composicoes.all %}
+            <tr>
+                <td>{{ composicao.codigo }}</td>
+                <td>{{ composicao.descricao }}</td>
+                <td>{{ composicao.quantidade }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
     <a href="{% url 'GestaoOrcamento:editar' orcamento.id %}" class="btn btn-warning">Editar</a>
     <a href="{% url 'GestaoOrcamento:excluir' orcamento.id %}" class="btn btn-danger">Excluir</a>
 </div>

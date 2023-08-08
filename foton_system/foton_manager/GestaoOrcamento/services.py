@@ -1,6 +1,5 @@
-# foton_system\foton_manager\services.py
 from .integrations import SINAPIClient
-from .models import Orcamento, ComposicaoCusto
+from .models import ComposicaoCusto
 
 class OrcamentacaoSINAPI:
     def __init__(self, orcamento):

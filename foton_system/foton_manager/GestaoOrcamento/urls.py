@@ -9,4 +9,6 @@ urlpatterns = [
     path('<int:orcamento_id>/detalhes/', views.detalhes, name='detalhes'),
     path('<int:orcamento_id>/editar/', views.editar, name='editar'),
     path('<int:orcamento_id>/excluir/', views.excluir, name='excluir'),
+    path('buscar_composicoes/', views.buscar_composicoes, name='buscar_composicoes'),
+
 ]

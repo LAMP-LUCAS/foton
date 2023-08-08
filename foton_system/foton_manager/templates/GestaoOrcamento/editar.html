@@ -8,5 +8,13 @@
         {{ form.as_p }}
         <button type="submit" class="btn btn-primary">Salvar Alterações</button>
     </form>
+    
+    <!-- Adicionar Composições de Custo -->
+    <h3>Adicionar Composições de Custo:</h3>
+    <form method="post" action="{% url 'GestaoOrcamento:adicionar_composicao' orcamento.id %}">
+        {% csrf_token %}
+        {{ composicao_form.as_p }}
+        <button type="submit" class="btn btn-success">Adicionar Composição</button>
+    </form>
 </div>
 {% endblock %}

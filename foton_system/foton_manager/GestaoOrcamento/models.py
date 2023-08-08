@@ -33,13 +33,13 @@ class Orcamento(models.Model):
 
     def __str__(self):
         return self.descricao
-    nome = models.CharField(max_length=255)
-    descricao = models.TextField()
+    nome = models.CharField(max_length=255, default='NOME')
+    descricao = models.TextField(default='DESCRICAO')
     valor = models.DecimalField(max_digits=10, decimal_places=2)
-    unidade_de_medida = models.CharField(max_length=50)
-    base_dados = models.CharField(max_length=50, choices=[('SINAPI', 'SINAPI'), ('TCPO', 'TCPO'), ('GOINFRA', 'GOINFRA'), ('DNIT', 'DNIT'), ('FOTON', 'FOTON')])
-    eficiencia = models.DecimalField(max_digits=5, decimal_places=2)
-    codigo_bim = models.CharField(max_length=50)
+    unidade_de_medida = models.CharField(max_length=50, default='UN')
+    base_dados = models.CharField(max_length=50, choices=[('SINAPI', 'SINAPI'), ('TCPO', 'TCPO'), ('GOINFRA', 'GOINFRA'), ('DNIT', 'DNIT'), ('FOTON', 'FOTON')], default='BASE')
+    eficiencia = models.DecimalField(max_digits=5, decimal_places=2, default=0)
+    codigo_bim = models.CharField(max_length=50, default=0)
 
     def __str__(self):
         return self.nome

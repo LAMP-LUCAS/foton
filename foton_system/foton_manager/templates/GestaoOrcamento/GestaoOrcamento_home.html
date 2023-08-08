@@ -5,12 +5,14 @@
     <h1>Gestão de Orçamentos</h1>
     <div class="mb-3">
         <a href="{% url 'GestaoOrcamento:incluir' %}" class="btn btn-primary">Incluir Novo Orçamento</a>
-        <div class="btn-group" role="group" aria-label="Filtrar tabela">
-            <button type="button" class="btn btn-secondary">Filtro 1</button>
-            <button type="button" class="btn btn-secondary">Filtro 2</button>
-            <button type="button" class="btn btn-secondary">Filtro 3</button>
-        </div>
     </div>
+    <form class="form-inline mt-2 mt-md-0" method="GET" action="{% url 'GestaoOrcamento:GestaoOrcamento_home' %}">
+        <input class="form-control mr-sm-2" type="text" placeholder="Valor Máximo" name="valor_max" value="{{ request.GET.valor_max }}">
+        <input class="form-control mr-sm-2" type="text" placeholder="Cliente" name="cliente" value="{{ request.GET.cliente }}">
+        <input class="form-control mr-sm-2" type="text" placeholder="Descrição" name="descricao" value="{{ request.GET.descricao }}">
+        <input class="form-control mr-sm-2" type="date" placeholder="Data Cadastro" name="data_cadastro" value="{{ request.GET.data_cadastro }}">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Filtrar</button>
+    </form>
     <!-- Lista de orçamentos -->
     <table class="table">
         <thead>
@@ -18,6 +20,8 @@
                 <th>ID</th>
                 <th>Descrição</th>
                 <th>Valor</th>
+                <th>Cliente</th>
+                <th>Data Cadastro</th>
                 <th>Ações</th>
             </tr>
         </thead>
@@ -27,6 +31,8 @@
                 <td>{{ orcamento.id }}</td>
                 <td>{{ orcamento.descricao }}</td>
                 <td>{{ orcamento.valor }}</td>
+                <td>{{ orcamento.contrato.cliente.nome }}</td>
+                <td>{{ orcamento.inicio }}</td>
                 <td>
                     <!-- Botões para visualizar, editar ou excluir orçamento -->
                     <a href="{% url 'GestaoOrcamento:detalhes' orcamento.id %}" class="btn btn-primary">Detalhes</a>
@@ -38,6 +44,4 @@
         </tbody>
     </table>
 </div>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-<!-- Conteúdo específico da administração do sistema -->
 {% endblock %}

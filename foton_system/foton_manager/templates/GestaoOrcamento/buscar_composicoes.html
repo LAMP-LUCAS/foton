@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Buscar Composições</h1>
+    <form method="get" action="{% url 'GestaoOrcamento:buscar_composicoes' %}">
+        <div class="form-row">
+            <div class="col-md-6">
+                <label for="base_dados">Base de Dados:</label>
+                <select class="form-control" name="base_dados" id="base_dados">
+                    <option value="SINAPI">SINAPI</option>
+                    <!-- Adicione outras opções de base de dados aqui -->
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="termo_pesquisa">Termo de Pesquisa:</label>
+                <input type="text" class="form-control" name="termo_pesquisa" id="termo_pesquisa">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Buscar</button>
+    </form>
+    
+    <h2>Composições Encontradas:</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descrição</th>
+                <th>Unidade</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for composicao in composicoes %}
+            <tr>
+                <td>{{ composicao.codigo }}</td>
+                <td>{{ composicao.descricao }}</td>
+                <td>{{ composicao.unidade }}</td>
+                <td>
+                    <a href="{% url 'GestaoOrcamento:incluir' %}?codigo_composicao={{ composicao.codigo }}" class="btn btn-secondary">Selecionar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
