@@ -4,69 +4,98 @@ import environ
 from pathlib import Path
 from urllib.parse import urlparse
 from google.cloud import secretmanager
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+import configparser
+print('iniciando o settings.py')
+# Definição do diretório base do projeto
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# [START gaestd_py_django_secret_config]
+# Configuração do ambiente e leitura das variáveis de ambiente
 env = environ.Env(DEBUG=(bool, False))
 env_file = os.path.join(BASE_DIR, ".env")
+print('arquivo .env configurado')
+config = configparser.ConfigParser()
+config.read(os.path.join(BASE_DIR, "2.env"))
+print('arquivo 2.env configurado')
 
+# Verificação e leitura do arquivo .env local, se disponível
 if os.path.isfile(env_file):
-    # Use a local secret file, if provided
-
     env.read_env(env_file)
-# [START_EXCLUDE]
-elif os.getenv("TRAMPOLINE_CI", None):
-    # Create local settings if running with CI, for unit testing
+    print('arquivo .env encontrado')
 
+# Configurações condicionais para ambientes diferentes
+elif os.getenv("TRAMPOLINE_CI", None):
+    print('trampoline sendo utilizado')
+    # Cria configurações locais para testes de unidade em ambientes de CI
+    database_settings = config["database"]
+    
+    # Construa o DATABASE_URL usando as informações do arquivo 2.env
+    db_user = database_settings["USER"]
+    db_password = database_settings["PASSWORD"]
+    db_host = database_settings["HOST"]
+    db_port = database_settings["PORT"]
+    db_name = database_settings["NAME"]
+
+    database_url = f"mysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+    
+    print(database_url)
+    # Configure o DATABASE_URL no ambiente de CI
+    os.environ["DATABASE_URL"] = database_url
+
+    '''
     placeholder = (
         f"SECRET_KEY=a\n"
-        f"DATABASE_URL=sqlite://{os.path.join(BASE_DIR, 'db.sqlite3')}"
+        f"DATABASE_URL=mysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
     )
     env.read_env(io.StringIO(placeholder))
-# [END_EXCLUDE]
-elif os.environ.get("GOOGLE_CLOUD_PROJECT", None):
-    # Pull secrets from Secret Manager
-    project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
+    '''
 
+# Definição do tipo de banco de dados (local ou online)
+DATABASE_TYPE = os.getenv("DATABASE_TYPE", "local")  # Padrão para "online" se não definido
+print(f'DATABASE_TYPE configurado COMO: {DATABASE_TYPE[:]}')
+# Se DATABASE_TYPE for "online", tenta acessar o banco de dados do Google
+if DATABASE_TYPE == "online" and os.environ.get("GOOGLE_CLOUD_PROJECT", None):
+    print('\nINICIANDO DATABASE_TYPE ONLINE E CONFIGURANDO INFORMAÇÕES DO GOOGLE PROJET E SECRET\n')
+    project_id = os.environ.get("GOOGLE_CLOUD_PROJECT")
     client = secretmanager.SecretManagerServiceClient()
     settings_name = os.environ.get("SETTINGS_NAME", "django_settings")
     name = f"projects/{project_id}/secrets/{settings_name}/versions/latest"
-    payload = client.access_secret_version(name=name).payload.data.decode("UTF-8")
+    print(f'acesso ao google cloud configurado como `{name}\nIniciar tentativas de acesso:\n')
+    
+    try:
+        print('1 - tentando acessar o secret')
+        secret_version = client.access_secret_version(name=name)
+        print(f'Secret version definido como:\n {secret_version,} \n')
+        payload = secret_version.payload.data.decode("UTF-8")
+        print('\n\ncarregando a versão no formato UTF8: ',payload)
+        print('Lendo o arquivo .env: \n',env)
+        env.read_env(io.StringIO(payload))
+        print('arquivo env lido com sucesso, seguindo..\n')
+    except google.api_core.exceptions.NotFound as e:
+        print(f"Erro: O segredo '{settings_name}' não foi encontrado no Google Secret Manager.")
+        # Trate o erro conforme necessário, por exemplo, definindo uma configuração padrão ou levantando uma exceção personalizada.
+        DATABASE_TYPE = "local"
+    except Exception as e:
+        print(f"Erro ao acessar o banco de dados do Google: {e}")
+        # Trate o erro conforme necessário, por exemplo, definindo uma configuração padrão ou levantando uma exceção personalizada.
+        DATABASE_TYPE = "local"
 
-    env.read_env(io.StringIO(payload))
-else:
-    raise Exception("No local .env or GOOGLE_CLOUD_PROJECT detected. No secrets found.")
-# [END gaestd_py_django_secret_config]
-
-# SECURITY WARNING: keep the secret key used in production secret!
+# Configuração da chave secreta e opções de segurança
 SECRET_KEY = env("SECRET_KEY")
+print(f'secret key definida como: {SECRET_KEY}')
+DEBUG = True  # Altere para "False" em ambiente de produção
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# Change this to "False" when you are ready for production
-DEBUG = True
-
-# [START gaestd_py_django_csrf]
-# SECURITY WARNING: It's recommended that you use this when
-# running in production. The URL will be known once you first deploy
-# to App Engine. This code takes the URL and converts it to both these settings formats.
+# Configuração de segurança para o uso do App Engine
 APPENGINE_URL = env("APPENGINE_URL", default=None)
 if APPENGINE_URL:
-    # Ensure a scheme is present in the URL before it's processed.
     if not urlparse(APPENGINE_URL).scheme:
         APPENGINE_URL = f"https://{APPENGINE_URL}"
-
     ALLOWED_HOSTS = [urlparse(APPENGINE_URL).netloc]
     CSRF_TRUSTED_ORIGINS = [APPENGINE_URL]
     SECURE_SSL_REDIRECT = True
 else:
     ALLOWED_HOSTS = ['foton.arqlamp.com','www.foton.arqlamp.com','foton-393716.uw.r.appspot.com', 'localhost', '127.0.0.1',]
-
-# [END gaestd_py_django_csrf]
-
-# Application definition
-
+print(f'\nAPPENGINE_URL DEFINIDA COMO: {APPENGINE_URL}')
+# Definição das aplicações instaladas e configuração de autenticação
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -96,6 +125,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+# Configuração de middleware
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -106,8 +136,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Configuração das URLs do aplicativo
 ROOT_URLCONF = 'foton.urls'
 
+# Configuração de templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -124,37 +156,57 @@ TEMPLATES = [
     },
 ]
 
+# Configuração da aplicação WSGI
 WSGI_APPLICATION = 'foton.wsgi.application'
 
+print(f'\nBANCO DE DADOS DEFINIDO COMO : {DATABASE_TYPE}')
 
-# Database
-# [START db_setup]
-# [START gaestd_py_django_database_config]
-# Use django-environ to parse the connection string
-DATABASES = {"default": env.db()}
-
-# If the flag as been set, configure to use proxy
-if os.getenv("USE_CLOUD_SQL_AUTH_PROXY", None):
-    DATABASES["default"]["HOST"] = "127.0.0.1"
-#    DATABASES["default"]["PORT"] = 3306 #5432
-
-# [END gaestd_py_django_database_config]
-# [END db_setup]
-
-# Use a in-memory sqlite3 database when testing in CI systems
-# TODO(glasnt) CHECK IF THIS IS REQUIRED because we're setting a val above
-if os.getenv("TRAMPOLINE_CI", None):
+# Configuração do banco de dados
+if DATABASE_TYPE == "local":
+    # Configurar o banco de dados local a partir das configurações do arquivo 2.env
     DATABASES = {
         "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+            "ENGINE": config.get("database", "ENGINE"),
+            "NAME": config.get("database", "NAME"),
+            "USER": config.get("database", "USER"),
+            "PASSWORD": config.get("database", "PASSWORD"),
+            "HOST": config.get("database", "HOST"),
+            "PORT": config.get("database", "PORT"),
         }
     }
+else:
+    # Configurar o banco de dados do Google a partir das configurações obtidas do Secret Manager
+    print('UTILIZANDO O DATABASE DO ARQUIVO .ENV - DO GOOGLE')
+    DATABASES = {"default": env.db()}
+    print(DATABASES)
+
+# Configuração adicional do banco de dados, se necessário
+if os.getenv("USE_CLOUD_SQL_AUTH_PROXY", None):
+    DATABASES["default"]["HOST"] = "127.0.0.1"
+    if DATABASE_TYPE=='local':
+        DATABASES["default"]["PORT"] = 3306
+    else:
+        DATABASES["default"]["PORT"] = 3307
+
+# Configuração para uso de banco de dados em memória durante testes em ambientes de CI
+# TODO(glasnt) VERIFIQUE SE ISSO É NECESSÁRIO porque estamos configurando acima
+if os.getenv("TRAMPOLINE_CI", None):
+    print('\n CONFIGURANDO O TRAMPOLINE_CI')
+    DATABASES = {
+    'default': {
+        'ENGINE': config.get('database', 'ENGINE'),
+        'NAME': config.get('database', 'NAME'),
+        'USER': config.get('database', 'USER'),
+        'PASSWORD': config.get('database', 'PASSWORD'),
+        'HOST': config.get('database', 'HOST'),
+        'PORT': config.get('database', 'PORT'),
+    }
+}
 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-
+print('\nvalidando passwords')
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -196,3 +248,6 @@ STATICFILES_DIRS = []
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+print('fim do settings.py')
+print(f'banco de dados definido como : \n {DATABASES}')

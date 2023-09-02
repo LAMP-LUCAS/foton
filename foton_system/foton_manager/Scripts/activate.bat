@@ -1,4 +1,4 @@
-@set "VIRTUAL_ENV=C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton"
+@set "VIRTUAL_ENV=C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system"
 
 @set "VIRTUAL_ENV_PROMPT="
 @if NOT DEFINED VIRTUAL_ENV_PROMPT (

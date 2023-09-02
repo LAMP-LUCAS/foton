@@ -1,3 +1,0 @@
-DATABASE_URL=MySQL://fotonAdmin:foton0451@//cloudsql/foton-393716:us-central1:foton/fotonGcloud
-GS_BUCKET_NAME=foton-393716
-SECRET_KEY=kVJFFhPUZqiikmqnxRIbQRULUstqpcYVYDsVwvhfqUyscTkOXB
