@@ -1,11 +1,10 @@
-cd c:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_manager\Scripts
-pause
+call "c:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_manager\Scripts\activate.bat"
 
-start activate.bat python manage.py runserver 8080 browser
+cd "c:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_manager\"
 
-pause
+set GOOGLE_CLOUD_PROJECT=foton-393716
 
-cd..
+set USE_CLOUD_SQL_AUTH_PROXY=true
 
 python manage.py runserver 8080
 

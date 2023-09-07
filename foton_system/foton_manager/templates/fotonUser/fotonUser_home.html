@@ -1,7 +1,22 @@
-<!-- templates/fotonUser/user_list.html -->
-{% for user in users %}
-    <p>{{ user.username }}</p>
-{% empty %}
-    <p>Nenhum usuário encontrado.</p>
-{% endfor %}
-<a href="{% url 'user_create' %}">Criar novo usuário</a>
+{% extends "base.html" %}
+
+
+{% block content %}
+    <section >
+        <h1>Dashboard do Usuário</h1>
+
+        <p>Olá, {{ request.user.username }}!</p>
+    </br>
+    <p>Último login: {{ request.user.last_login|date:"F d, Y H:i" }}</p>
+        {% for user in users %}
+            <ul>
+                {% for group in request.user.groups.all %}
+                    <li>{{ group.name }}</li>
+                {% endfor %}
+            </ul>
+            <canvas id="myChart" width="400" height="400"></canvas>            
+        {% endfor %}
+    </section>
+<br><br><br><br><br><br>
+
+{% endblock %}

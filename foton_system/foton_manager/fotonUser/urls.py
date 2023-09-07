@@ -5,11 +5,9 @@ app_name = 'fotonUser'
 
 urlpatterns = [
     path('', views.fotonUser_home, name='fotonUser_home'),
-
-#    path('detalhes/<int:contrato_id>/', views.detalhes, name='detalhes'),
-#    path('excluir/<int:contrato_id>/', views.excluir, name='excluir'),
-#    path('editar/<int:contrato_id>/', views.editar, name='editar'),
-#    path('incluir/', views.incluir, name='incluir'),
-
+#    path('autorizar/', views.foton, name='fotonUser_autorizar'),
+    path('excluir/', views.fotonUser_deletar, name='excluir'),
+    path('editar/', views.fotonUser_editar, name='editar'),
+    path('incluir/', views.fotonUser_incluir, name='incluir'),
     # outras URLs do microsserviço de contrato...
 ]

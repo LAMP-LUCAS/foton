@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base_home.html" %}
 
 {% block content %}
     <div class="container">
@@ -11,7 +11,11 @@
             <li>Gestão de Clientes: permite incluir, visualizar, editar e excluir clientes.</li>
             <li>Gestão de Orçamentos: permite incluir, visualizar, editar e excluir orçamentos.</li>
         </ul>
-        <p>Acesse o foton:</p>
-        <a href="{% url 'account_login' %}" class="btn btn-primary btn-block mt-3">Acessar o sistema</a>
+        <p>Acesse, o foton:</p>
+        <!--<a href= "{% url 'account_login' %}" class="btn btn-primary btn-block mt-3">Acessar o sistema</a>-->
+        <a href= "account_login" class="btn btn-primary btn-block mt-3">Fazer Login</a>
+        <a href= "../admin/" class="btn btn-primary btn-block mt-3">Acessar o sistema</a>
+        <br><br><br><br><br>
     </div>
+    <!---->
 {% endblock %}

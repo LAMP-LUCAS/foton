@@ -94,7 +94,7 @@ if APPENGINE_URL:
     SECURE_SSL_REDIRECT = True
 else:
     ALLOWED_HOSTS = ['foton.arqlamp.com','www.foton.arqlamp.com','foton-393716.uw.r.appspot.com', 'localhost', '127.0.0.1',]
-print(f'\nAPPENGINE_URL DEFINIDA COMO: {APPENGINE_URL}')
+print(f'APPENGINE_URL DEFINIDA COMO: {APPENGINE_URL}')
 # Definição das aplicações instaladas e configuração de autenticação
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -103,6 +103,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -124,6 +125,10 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
+SITE_ID = 1
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+LOGIN_REDIRECT_URL = "fotonUser:fotonUser_home"
 
 # Configuração de middleware
 MIDDLEWARE = [
@@ -206,7 +211,7 @@ if os.getenv("TRAMPOLINE_CI", None):
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
-print('\nvalidando passwords')
+#print('\nvalidando passwords')
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -249,5 +254,6 @@ STATICFILES_DIRS = []
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-print('fim do settings.py')
-print(f'banco de dados definido como : \n {DATABASES}')
+
+print(f'Configuração do banco de dados: \n {DATABASES}')
+print('\nFim do settings.py')

@@ -2,6 +2,7 @@ from django import forms
 from GestaoContrato.models import Contrato
 from GestaoOrcamento.models import Orcamento
 from GestaoCliente.models import Cliente
+from allauth.account.forms import LoginForm
 
 
 class ContratoForm(forms.ModelForm):
@@ -54,3 +55,9 @@ class ClientePessoaJuridicaForm(forms.ModelForm):
             'cpf_representante',
             'telefone_representante',
         ]
+
+class CustomLoginForm(LoginForm):
+    def __init__(self, *args, **kwargs):
+        super(CustomLoginForm, self).__init__(*args, **kwargs)
+        self.fields['remember'].label = 'Permanecer conectado'
+        self.fields['remember'].initial = True

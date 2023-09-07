@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from foton import views
+from . import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    
+    path('accounts/', include('allauth.urls')),
 
     path('', views.homepage, name='homepage'),
     
@@ -33,9 +37,6 @@ urlpatterns = [
 
     path('api/orcamento/', include('GestaoOrcamento.urls', namespace='GestaoOrcamento')),
 
-    path('api/accounts/', include('allauth.urls')),
-
-    path('accounts/', include('allauth.urls')),
 
     # outras rotas do sistema...
 ]
