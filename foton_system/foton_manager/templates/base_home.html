@@ -35,13 +35,13 @@
 
 <!-- Conteúdo Principal -->
 <main class="container my-5">
-    {% if request.user.is_authenticated %}
+
         {% block content %}
         {% endblock %}
-    {% else %}
+
         <p>Faça login para acessar este conteúdo.</p>
         <a href="{% url 'account_login' %}">fazer login</a>
-    {% endif %}
+
     
 </main>
 
