@@ -1,0 +1,125 @@
+<mxfile host="Electron" modified="2024-04-02T21:53:56.326Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.1.0 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="6OL0L858_4YlLLP9jkyb" version="24.1.0" type="device">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1149" dy="1120" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-7" value="GESTÃO SERVIDOR / DATABASE" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=40;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="265" y="10" width="640" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-22" value="" style="group" vertex="1" connectable="0" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="94" y="80" width="1000" height="720" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-2" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;" parent="5IMCoYVR-H-_Oc0hJDCb-22" source="WIyWlLk6GJQsqaUBKTNV-3" target="WIyWlLk6GJQsqaUBKTNV-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-3" value="Sincronização Base/Servidor" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;arcSize=50;" parent="5IMCoYVR-H-_Oc0hJDCb-22" vertex="1">
+          <mxGeometry x="10.281630515676445" y="45.71428571428568" width="240.45709287000196" height="91.42857142857142" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-4" value="Yes" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="5IMCoYVR-H-_Oc0hJDCb-22" source="WIyWlLk6GJQsqaUBKTNV-6" target="5IMCoYVR-H-_Oc0hJDCb-9" edge="1">
+          <mxGeometry x="0.0019" y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="514.281525742249" y="228.57142857142853" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-5" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;" parent="5IMCoYVR-H-_Oc0hJDCb-22" source="WIyWlLk6GJQsqaUBKTNV-6" target="WIyWlLk6GJQsqaUBKTNV-7" edge="1">
+          <mxGeometry x="-0.0299" y="9" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-6" value="Os Clientes da base estão com pastas no servidor?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=11;align=center;strokeWidth=1;spacing=10;spacingTop=0;labelBackgroundColor=none;spacingLeft=32;spacingRight=32;spacingBottom=0;" parent="5IMCoYVR-H-_Oc0hJDCb-22" vertex="1">
+          <mxGeometry x="377.1427787409727" width="274.66933065579025" height="182.85714285714278" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-7" value="Criar Estrutura de pastas do novo cliente no Servidor" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;arcSize=0;" parent="5IMCoYVR-H-_Oc0hJDCb-22" vertex="1">
+          <mxGeometry x="765.5957592123699" y="47.348571428571404" width="193.2571026821166" height="88.16" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-8" value="No" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="5IMCoYVR-H-_Oc0hJDCb-22" source="5IMCoYVR-H-_Oc0hJDCb-3" target="WIyWlLk6GJQsqaUBKTNV-11" edge="1">
+          <mxGeometry x="0.3326" y="20" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="134.98201275574897" y="502.81257934267103" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-9" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="5IMCoYVR-H-_Oc0hJDCb-22" source="5IMCoYVR-H-_Oc0hJDCb-3" edge="1">
+          <mxGeometry x="-0.0066" y="13" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <mxPoint x="272.38361684523886" y="411.4285714285714" as="sourcePoint" />
+            <mxPoint x="354.28155900365454" y="502.85714285714283" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-11" value="Sincronizar Status" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;arcSize=0;" parent="5IMCoYVR-H-_Oc0hJDCb-22" vertex="1">
+          <mxGeometry x="210.2473032317613" y="628.5714285714286" width="145.8285411131761" height="91.42857142857142" as="geometry" />
+        </mxCell>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-12" value="FIM" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;arcSize=50;" parent="5IMCoYVR-H-_Oc0hJDCb-22" vertex="1">
+          <mxGeometry x="537.1386638477625" y="457.1428571428571" width="117.16568992886216" height="91.42857142857142" as="geometry" />
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-1" value="" style="curved=1;endArrow=block;html=1;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endFill=0;" edge="1" parent="5IMCoYVR-H-_Oc0hJDCb-22" source="WIyWlLk6GJQsqaUBKTNV-7" target="WIyWlLk6GJQsqaUBKTNV-6">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1118.7499715116062" y="91.42857142857139" as="sourcePoint" />
+            <mxPoint x="1175.8928167753897" y="34.28571428571425" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="703.9614863108528" y="239.99999999999994" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-2" value="Verificar o Status dos serviços na base" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;arcSize=0;" vertex="1" parent="5IMCoYVR-H-_Oc0hJDCb-22">
+          <mxGeometry x="54.13304997110409" y="274.2857142857142" width="166.39996540813823" height="91.42857142857142" as="geometry" />
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-3" value="Status da base igual ao Status do servidor?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=11;align=center;strokeWidth=1;spacing=10;spacingTop=0;labelBackgroundColor=none;spacingLeft=32;spacingRight=32;spacingBottom=0;" vertex="1" parent="5IMCoYVR-H-_Oc0hJDCb-22">
+          <mxGeometry y="411.4285714285714" width="274.66933065579025" height="182.85714285714278" as="geometry" />
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-6" value="" style="rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;edgeStyle=orthogonalEdgeStyle;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="5IMCoYVR-H-_Oc0hJDCb-22" source="5IMCoYVR-H-_Oc0hJDCb-2" target="5IMCoYVR-H-_Oc0hJDCb-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="137.013032741696" y="365.71428571428567" as="sourcePoint" />
+            <mxPoint x="137.013032741696" y="480" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-11" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;startSize=8;endArrow=blockThin;endSize=8;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endFill=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="5IMCoYVR-H-_Oc0hJDCb-22" source="5IMCoYVR-H-_Oc0hJDCb-9" target="5IMCoYVR-H-_Oc0hJDCb-2">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="228.56729942333033" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-12" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontFamily=Helvetica;" vertex="1" connectable="0" parent="5IMCoYVR-H-_Oc0hJDCb-11">
+          <mxGeometry x="0.0405" y="-2" relative="1" as="geometry">
+            <mxPoint y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-9" value="Os Serviços dos Clientes da base estão com pastas no servidor?" style="rhombus;whiteSpace=wrap;html=1;shadow=0;fontFamily=Helvetica;fontSize=11;align=center;strokeWidth=1;spacing=10;spacingTop=0;labelBackgroundColor=none;spacingLeft=32;spacingRight=32;spacingBottom=0;" vertex="1" parent="5IMCoYVR-H-_Oc0hJDCb-22">
+          <mxGeometry x="377.1427787409727" y="228.57142857142853" width="274.66933065579025" height="182.85714285714278" as="geometry" />
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-15" value="No" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;orthogonalLoop=1;fontSize=11;endArrow=block;endFill=0;endSize=8;strokeWidth=1;shadow=0;labelBackgroundColor=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="5IMCoYVR-H-_Oc0hJDCb-22" target="5IMCoYVR-H-_Oc0hJDCb-16">
+          <mxGeometry x="-0.0299" y="9" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="651.812109396763" y="320" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-16" value="Criar Estrutura de pastas do serviço no Servidor" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;arcSize=0;" vertex="1" parent="5IMCoYVR-H-_Oc0hJDCb-22">
+          <mxGeometry x="777.0243282651267" y="276.5714285714285" width="204.68567173487335" height="88.16" as="geometry" />
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-17" value="" style="curved=1;endArrow=block;html=1;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;endFill=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="5IMCoYVR-H-_Oc0hJDCb-22" source="5IMCoYVR-H-_Oc0hJDCb-16" target="5IMCoYVR-H-_Oc0hJDCb-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1135.8928250907413" y="318.3657142857142" as="sourcePoint" />
+            <mxPoint x="599.9957936379246" y="372.0799999999999" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="721.1043398899878" y="466.93714285714276" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-19" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;startSize=8;endArrow=blockThin;endSize=8;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;endFill=0;" edge="1" parent="5IMCoYVR-H-_Oc0hJDCb-22" source="5IMCoYVR-H-_Oc0hJDCb-18" target="WIyWlLk6GJQsqaUBKTNV-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-18" value="Servidor Sincronizado" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.display;whiteSpace=wrap;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;" vertex="1" parent="5IMCoYVR-H-_Oc0hJDCb-22">
+          <mxGeometry x="356.07584434493737" y="468.57142857142856" width="114.28569052756747" height="68.57142857142857" as="geometry" />
+        </mxCell>
+        <mxCell id="5IMCoYVR-H-_Oc0hJDCb-21" value="" style="curved=1;endArrow=block;html=1;rounded=0;fontFamily=Architects Daughter;fontSource=https%3A%2F%2Ffonts.googleapis.com%2Fcss%3Ffamily%3DArchitects%2BDaughter;fontSize=16;sourcePerimeterSpacing=8;targetPerimeterSpacing=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endFill=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="5IMCoYVR-H-_Oc0hJDCb-22" source="WIyWlLk6GJQsqaUBKTNV-11" target="5IMCoYVR-H-_Oc0hJDCb-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="278.51014618387734" y="582.8571428571428" as="sourcePoint" />
+            <mxPoint x="-17.489792282522398" y="584" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="228.56729942333033" y="594.2857142857142" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
