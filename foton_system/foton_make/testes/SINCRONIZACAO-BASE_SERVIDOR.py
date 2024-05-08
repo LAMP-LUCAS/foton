@@ -3,11 +3,23 @@ import os
 from pathlib import Path
 import io
 
-class Verificar:
 
+class BaseServidor:
     def __init__(self, caminho_pastaClientes, caminho_baseClientes):
         self.pastaClientes = Path(caminho_pastaClientes)
         self.baseClientes = Path(caminho_baseClientes)
+
+class Verificar(BaseServidor):
+
+    def converter_excel_para_csv(self):
+        xls = pd.ExcelFile(self.baseClientes)
+        csv_dict = {sheet_name: pd.read_excel(xls, sheet_name=sheet_name).to_csv(index=False)
+                    for sheet_name in xls.sheet_names}
+        return csv_dict
+
+    def imprimir_dicionario_csv(self, csv_dict):
+        print('Dicionário de CSV:', csv_dict, '\n')
+
 
     def DbExcel2CSV(self):
         print('Convertendo a base excel em csv...\n')
@@ -19,21 +31,21 @@ class Verificar:
         print('dicionário de csv: ',csv_dict,'\n')
         return csv_dict
     
-    def nomeClienteDB(self):
+    def AliasDB(self):
         print('Definindo os nomes dos clientes... \n')
         base = self.DbExcel2CSV()
         print(base,'\n')
 
         df_clientes = pd.read_csv(base)
 
-        return df_clientes['nomeCliente'].tolist()
+        return df_clientes['Alias'].tolist()
 
     def verificar_pastas(self):
         print('Iniciando a Verificação das Pastas dos Clientes...\n')
 
         lista_atual = [pasta.name for pasta in self.pastaClientes.iterdir() if pasta.is_dir()]
-        nomes_clientes = self.nomeClienteDB()
-        lista_novos = set(nomes_clientes) - set(lista_atual)
+        NomeAlias = self.AliasDB()
+        lista_novos = set(NomeAlias) - set(lista_atual)
 
         for nome_novo in lista_novos:
             try:
@@ -67,7 +79,7 @@ class Verificar:
 
         if nomeCSV in conversor:
             dfClientes = pd.read_csv(io.StringIO(conversor[nomeCSV]))
-            nomesClientes = dfClientes['NomeCliente'].tolist()
+            nomesClientes = dfClientes['Alias'].tolist()
         else:
             print(f"CSV '{nomeCSV}' não encontrado no dicionário.")
             return
@@ -78,7 +90,7 @@ class Verificar:
 
         #Criar novas subpastas com os nomes da listaNovos
         criar = Criar(self.pastaClientes,self.baseClientes)
-        criar.criar_pastas(listaNovos)
+        criar.NovasPastas(listaNovos)
 
         print('Pastas dos Clientes Verificadas...')
 
@@ -102,21 +114,17 @@ class Verificar:
         #
         return Database
 
-class Criar:
+class Criar(BaseServidor):
 
-    def __init__(self, caminho_pastaClientes, caminho_baseClientes):
-        self.pastaClientes = Path(caminho_pastaClientes)
-        self.baseClientes = Path(caminho_baseClientes)
+    def NovasPastas(self, listaNovasPastas):
         
-    def criar_pastas(self, lista_novos_clientes):
-        
-        listaClientes = lista_novos_clientes
+        listaClientes = listaNovasPastas
 
         for i, nome_pasta in enumerate(listaClientes):
             try:
                 pasta_nova = self.pastaClientes / nome_pasta.upper()
                 pasta_nova.mkdir()
-                print(f"Pasta '{nome_pasta}' criada com sucesso! ({i+1}/{len(lista_novos_clientes)})")
+                print(f"Pasta '{nome_pasta}' criada com sucesso! ({i+1}/{len(listaNovasPastas)})")
             except Exception as e:
                 print(f"Erro ao criar pasta '{nome_pasta}': {e}")
 
@@ -137,7 +145,7 @@ diretorio_base = f'C:\\Users\\Lucas\\OneDrive\\LAMP ARQUITETURA\\foton\\foton_sy
 dataBase = f'C:\\Users\\Lucas\\OneDrive\\LAMP ARQUITETURA\\foton\\foton_system\\foton_make\\testes\\base.xlsx'
 verServidor = Verificar(caminho_pastaClientes = diretorio_base,caminho_baseClientes = dataBase)
 criarServidor = Criar(caminho_pastaClientes = diretorio_base,caminho_baseClientes = dataBase)
-if p1 == 'Y' or 'y':
+if p1.lower() == 'Y':
     print('\nIniciando Sincronização...\n')
     v1 = verServidor.PastasClientes()
     v3 = criarServidor.AtualizaçãoStatus()
@@ -146,3 +154,36 @@ else:
     print('\nNão Sincronizar...\n')
 
 print('<<<<< Fim do Programa >>>>>>')
+
+##########################################
+#Funções necessárias:#
+##########################################
+
+#Visualizar Clientes da Base
+Verificar.VerClientes('base')
+
+#Visualizar Clientes do servidor
+Verificar.VerClientes('servidor')
+
+#Visualizar Serviços da Base
+Verificar.VerServicos('base')
+
+#Visualizar Serviços do Servidor
+Verificar.VerServicos('servidor')
+
+##########################################
+
+#Sincronizar Clientes - Servidor com Base
+Criar.SincronizarClientes('servidor')
+
+#Sincronizar Clientes - Base com Servidor
+Criar.SincronizarClientes('base')
+
+#Sincronizar Serciços - Servidor com Base
+Criar.SincronizarServicos('servidor')
+
+#Sincronizar Serviços - Base com Servidor
+Criar.SincronizarServicos('base')
+
+
+##########################################
