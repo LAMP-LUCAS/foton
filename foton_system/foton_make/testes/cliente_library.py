@@ -54,8 +54,16 @@ class Configuracoes:
 config = Configuracoes.config()
 pastaClientes = Configuracoes.pastaClientes(config)
 baseClientes = Configuracoes.baseClientes(config)
+
 # Configuração do Logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+    logging.FileHandler("log.txt"),
+    logging.StreamHandler()
+    ]   
+    )
 
 #base
 class BaseServidor:

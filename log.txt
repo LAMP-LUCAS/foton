@@ -1,0 +1,2 @@
+2024-05-08 20:06:40,447 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-08 20:06:40,567 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\base_20240508_200640.xlsx
