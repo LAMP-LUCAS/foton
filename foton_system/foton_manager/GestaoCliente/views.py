@@ -1,10 +1,16 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Cliente
 from foton.forms import ClientePessoaFisicaForm, ClientePessoaJuridicaForm
+from fotonUser.models import Usuario
+
+def lista_clientes():
+    # Filtrar contratos apenas para a organização do usuário logado
+    #Clientes = Cliente.objects.all()
+    clientesOrg = Cliente.objects.filter(organizacao=Usuario.organizacao)
+    return clientesOrg
 
 def index(request):
-    clientes = Cliente.objects.all()
-    return render(request, 'GestaoCliente/GestaoCliente_home.html', {'clientes': clientes})
+    return render(request, 'GestaoCliente/GestaoCliente_home.html', {'clientes': lista_clientes()})
 
 def incluir(request):
     if request.method == 'POST':

@@ -5,11 +5,16 @@ from rest_framework import viewsets
 from .serializers import ComposicaoCustoSerializer
 from django.http import JsonResponse
 from GestaoOrcamento.integrations import SINAPIClient, sinapi
+from fotonUser.models import Usuario
 
+def lista_orcamentos():
+    # Filtrar orcamentos apenas para a organização do usuário logado
+    orcamentosOrg = Orcamento.objects.filter(organizacao=Usuario.organizacao)
+    return orcamentosOrg
 
 def index(request):
     orcamentos = Orcamento.objects.all()
-    return render(request, 'GestaoOrcamento/GestaoOrcamento_home.html', {'orcamentos': orcamentos})
+    return render(request, 'GestaoOrcamento/GestaoOrcamento_home.html', {'orcamentos': lista_orcamentos()})
 
 def detalhes(request, orcamento_id):
     orcamento = get_object_or_404(Orcamento, id=orcamento_id)

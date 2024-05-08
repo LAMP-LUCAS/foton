@@ -8,14 +8,14 @@
         <p>Olá, {{ request.user.username }}!</p>
     </br>
     <p>Último login: {{ request.user.last_login|date:"F d, Y H:i" }}</p>
-        {% for user in users %}
+        <section>
+            <h2>Seus Dados do Grupo {{ user_group }}</h2>
             <ul>
-                {% for group in request.user.groups.all %}
-                    <li>{{ group.name }}</li>
+                {% for item in filtered_data %}
+                    <li>{{ item.nome_do_campo }}</li>
                 {% endfor %}
-            </ul>
-            <canvas id="myChart" width="400" height="400"></canvas>            
-        {% endfor %}
+            </ul>   
+        </section>
     </section>
 <br><br><br><br><br><br>
 

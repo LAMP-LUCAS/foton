@@ -3,3 +3,4 @@ from django.contrib import admin
 from GestaoOrcamento.models import ComposicaoCusto
 
 admin.site.register(ComposicaoCusto)
+

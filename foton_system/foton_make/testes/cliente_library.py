@@ -33,7 +33,7 @@ class Configuracoes:
         caminho_configFile = Configuracoes.Carregar_config()
         print('caminho é : ',caminho_configFile)
         try:
-            with open('config.json', 'r') as config_file:
+            with open(caminho_configFile, 'r') as config_file:
                 config_file = json.load(config_file)
         except FileNotFoundError:
             raise ConfigError("O arquivo de configuração 'config.json' não foi encontrado.")
@@ -51,14 +51,7 @@ class Configuracoes:
         return base
 
 # Carregar configurações
-try:
-    caminho_config = Configuracoes.Carregar_config()
-    with open(caminho_config, 'r') as config_file:
-        config = json.load(config_file)
-except FileNotFoundError:
-    raise ConfigError("O arquivo de configuração 'config.json' não foi encontrado.")
-except json.JSONDecodeError:
-    raise ConfigError("Erro ao decodificar o arquivo de configuração 'config.json'.")
+config = Configuracoes.config()
 
 # Configuração do Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

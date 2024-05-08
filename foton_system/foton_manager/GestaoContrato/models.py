@@ -1,6 +1,11 @@
 from django.db import models
+from fotonUser.models import Organizacao
 
 class Contrato(models.Model):
+
+    organizacao = models.ForeignKey(Organizacao, on_delete=models.CASCADE, null=True)
+
+
     titulo = models.CharField(max_length=100)
     data = models.DateField()
     numero = models.CharField(

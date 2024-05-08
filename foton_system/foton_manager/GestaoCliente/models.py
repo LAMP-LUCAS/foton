@@ -1,10 +1,10 @@
 from django.db import models
+from django.contrib.auth.models import Group
+from fotonUser.models import Organizacao
 
 class Cliente(models.Model):
-
-#CADASTRO DE CLIENTES:
-#    nome = models.CharField(max_length=100)
-#    email = models.EmailField()
+  
+    organizacao = models.ForeignKey(Organizacao, on_delete=models.CASCADE, null=True)
 
     TIPO_PESSOA_CHOICES = [
         ('PF', 'Pessoa Física / MEI'),
@@ -67,6 +67,11 @@ class Cliente(models.Model):
                 null=True,
                 blank=True,
                 related_name='clienteContrato')
-    
+
+    descricaoCliente = models.TextField(null=True)
+
+    # GRUPO INSERIDO
+    grupo = models.ForeignKey(Group, on_delete=models.CASCADE, null=True)
+
     def __str__(self):
         return self.nome_completo if self.nome_completo else self.razao_social

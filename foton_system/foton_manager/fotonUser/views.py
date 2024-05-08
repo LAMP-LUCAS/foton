@@ -3,6 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from allauth.account.views import SignupView
 from .models import Autorizacao
+from fotonUser.models import Organizacao
+
 
 @login_required
 def fotonUser_home(request):
@@ -48,3 +50,4 @@ def authorization_editar(request, fotonUser_id):
         return redirect('fotonUser_home')
     else:
         return render(request, 'fotonUser/authorization_editar.html', {'user': user, 'authorization': authorization})
+

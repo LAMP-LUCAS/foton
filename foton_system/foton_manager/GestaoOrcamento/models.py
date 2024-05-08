@@ -1,21 +1,27 @@
 from django.db import models
 from django.utils import timezone
 import datetime
+from fotonUser.models import Organizacao
 
 
 def get_default_termino():
     return timezone.now() + datetime.timedelta(days=30)
 
-class ComposicaoCusto(models.Model):#depurador indicou um erro aqui: Requested setting INSTALLED_APPS
+class ComposicaoCusto(models.Model):
+    organizacao = models.ForeignKey(Organizacao, on_delete=models.CASCADE, null=True)
+
+
     codigo = models.CharField(max_length=10, unique=True)
-    descricao = models.TextField()
+    descricao = models.TextField(default='', null=True)
     custo = models.DecimalField(max_digits=10, decimal_places=2)
     
     def __str__(self):
         return f"{self.codigo} - {self.descricao}"
 
 class Orcamento(models.Model):
-    descricao = models.TextField(null=False)
+    organizacao = models.ForeignKey(Organizacao, on_delete=models.CASCADE, null=True)
+
+    descricao = models.TextField(default='',null=False)
     valor = models.DecimalField(max_digits=10, decimal_places=2, null=False)
     contrato = models.OneToOneField(
         'GestaoContrato.Contrato',
@@ -34,12 +40,12 @@ class Orcamento(models.Model):
     def __str__(self):
         return self.descricao
     nome = models.CharField(max_length=255, default='NOME')
-    descricao = models.TextField(default='DESCRICAO')
+    descricao = models.TextField(default='DESCRICAO', null=True)
     valor = models.DecimalField(max_digits=10, decimal_places=2)
     unidade_de_medida = models.CharField(max_length=50, default='UN')
-    base_dados = models.CharField(max_length=50, choices=[('SINAPI', 'SINAPI'), ('TCPO', 'TCPO'), ('GOINFRA', 'GOINFRA'), ('DNIT', 'DNIT'), ('FOTON', 'FOTON')], default='BASE')
-    eficiencia = models.DecimalField(max_digits=5, decimal_places=2, default=0)
-    codigo_bim = models.CharField(max_length=50, default=0)
+    base_dados = models.CharField(max_length=50, choices=[('SINAPI', 'SINAPI'), ('TCPO', 'TCPO'), ('GOINFRA', 'GOINFRA'), ('DNIT', 'DNIT'), ('FOTON', 'FOTON')], default='BASE', null=True)
+    eficiencia = models.DecimalField(max_digits=5, decimal_places=2, default=0, null=True)
+    codigo_bim = models.CharField(max_length=50, default=0, null=True)
 
     def __str__(self):
         return self.nome

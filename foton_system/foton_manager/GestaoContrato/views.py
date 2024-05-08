@@ -2,10 +2,17 @@
 from django.shortcuts import redirect, render,get_object_or_404
 from foton.forms import ContratoForm
 from GestaoContrato.models import Contrato
+from fotonUser.models import Usuario
+
+
+def lista_contratos():
+    # Filtrar contratos apenas para a organização do usuário logado
+    contratosOrg = Contrato.objects.filter(organizacao=Usuario.organizacao)
+    return contratosOrg
 
 def index(request):
-    # lógica para recuperar os contratos e renderizar o template
-    return render(request, 'GestaoContrato/GestaoContrato_home.html')
+    
+    return render(request, 'GestaoContrato/GestaoContrato_home.html', {'contratos': lista_contratos()})
 
 def detalhes(request, contrato_id):
     contrato = get_object_or_404(Contrato, id=contrato_id)

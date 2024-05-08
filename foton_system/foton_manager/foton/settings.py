@@ -5,6 +5,7 @@ from pathlib import Path
 from urllib.parse import urlparse
 from google.cloud import secretmanager
 import configparser
+
 print('iniciando o settings.py')
 # Definição do diretório base do projeto
 BASE_DIR = Path(__file__).resolve().parent.parent

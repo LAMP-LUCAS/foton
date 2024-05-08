@@ -5,7 +5,8 @@
     <title>Foton</title>
     <!-- Incluir links para os arquivos CSS e JS do Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <!-- Incluir link para seu arquivo de estilo customizado
+    <!-- 
+        Incluir link para seu arquivo de estilo customizado
     <link rel="stylesheet" href="seu-estilo.css">
      -->
 </head>
@@ -36,12 +37,14 @@
 <!-- Conteúdo Principal -->
 <main class="container my-5">
 
+    {% if request.user.is_authenticated %}
         {% block content %}
+        
         {% endblock %}
-
+    {% else %}
         <p>Faça login para acessar este conteúdo.</p>
         <a href="{% url 'account_login' %}">fazer login</a>
-
+    {% endif %}
     
 </main>
 
