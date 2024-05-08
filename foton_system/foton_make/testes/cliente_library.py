@@ -42,17 +42,18 @@ class Configuracoes:
         
         return config_file
     
-    def pastaClientes():
+    def pastaClientes(config):
         diretorio = Path(config['caminho_pastaClientes'])
         return diretorio
 
-    def baseClientes():
+    def baseClientes(config):
         base = Path(config['caminho_baseClientes'])
         return base
 
 # Carregar configurações
 config = Configuracoes.config()
-
+pastaClientes = Configuracoes.pastaClientes(config)
+baseClientes = Configuracoes.baseClientes(config)
 # Configuração do Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -60,8 +61,8 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 class BaseServidor:
     def __init__(self):
         try:
-            self.pastaClientes = Path(config['caminho_pastaClientes'])
-            self.baseClientes = Path(config['caminho_baseClientes'])
+            self.pastaClientes = Path(pastaClientes)
+            self.baseClientes = Path(baseClientes)
             if not self.pastaClientes.is_dir():
                 raise FilesystemError(f"O caminho {self.pastaClientes} não é um diretório válido.")
             if not self.baseClientes.suffix == '.xlsx':
