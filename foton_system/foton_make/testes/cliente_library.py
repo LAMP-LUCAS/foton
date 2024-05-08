@@ -1,26 +1,36 @@
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
+import logging
+import json
 import os
 
+
+# Carregar configurações
+with open('config.json', 'r') as config_file:
+    config = json.load(config_file)
+
+# Configuração do Logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
 class BaseServidor:
-    def __init__(self, caminho_pastaClientes, caminho_baseClientes):
-        self.pastaClientes = Path(caminho_pastaClientes)
-        self.baseClientes = Path(caminho_baseClientes)
+    def __init__(self):
+        self.pastaClientes = Path(config['caminho_pastaClientes'])
+        self.baseClientes = Path(config['caminho_baseClientes'])
 
 class Verificador(BaseServidor):
     def base_existe(self):
         try:
             return self.baseClientes.exists()
         except Exception as e:
-            print(f"Erro ao verificar existência da base: {e}")
+            logging.error(f"Erro ao verificar existência da base: {e}")
             return False
 
     def pasta_clientes_existe(self):
         try:
             return self.pastaClientes.exists()
         except Exception as e:
-            print(f"Erro ao verificar existência da pasta de clientes: {e}")
+            logging.error(f"Erro ao verificar existência da pasta de clientes: {e}")
             return False
 
     def obter_aliases(self):
@@ -28,7 +38,7 @@ class Verificador(BaseServidor):
             df = pd.read_excel(self.baseClientes)
             return df['Alias'].tolist()
         except Exception as e:
-            print(f"Erro ao ler base de clientes: {e}")
+            logging.error(f"Erro ao ler base de clientes: {e}")
             return []
 
     def verificar_pastas_clientes(self):
@@ -45,9 +55,9 @@ class Gerenciador(BaseServidor):
     def criar_pasta(self, nome):
         try:
             (self.pastaClientes / nome).mkdir()
-            print(f'Pasta "{nome}" criada com sucesso.')
+            logging.info(f'Pasta "{nome}" criada com sucesso.')
         except Exception as e:
-            print(f'Erro ao criar pasta "{nome}": {e}')
+            logging.error(f'Erro ao criar pasta "{nome}": {e}')
 
     def criar_pastas_clientes_faltantes(self):
         verificador = Verificador(self.pastaClientes, self.baseClientes)
@@ -65,4 +75,5 @@ class Gerenciador(BaseServidor):
             timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             novo_nome_base = self.baseClientes.parent / f"base_{timestamp}.xlsx"
             df_novo.to_excel(novo_nome_base, index=False)
-            print(f"Base de dados atualizada e salva como {novo_nome_base}")
+            logging.info(f"Base de dados atualizada e salva como {novo_nome_base}")
+
