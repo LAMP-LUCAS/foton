@@ -107,15 +107,37 @@ class Configuracoes:
         return Path(config['caminho_pastaClientes'])
 
     @staticmethod
+    def baseUnificada(config_file):
+        """Retorna o caminho para a base de dados configurada."""
+        config = config_file
+        return Path(config['caminho_baseDados'])
+
+    @staticmethod
     def baseDados(config_file):
         """Retorna o caminho para a base de dados configurada."""
         config = config_file
         return Path(config['caminho_baseDados'])
 
+    @staticmethod
+    def baseClientes(config_file):
+        """Retorna o caminho para a base de dados configurada."""
+        config = config_file
+        return Path(config['caminho_baseClientes'])
+
+    @staticmethod
+    def baseServicos(config_file):
+        """Retorna o caminho para a base de dados configurada."""
+        config = config_file
+        return Path(config['caminho_baseServicos'])
+
 # Carregar configurações
 configFile = Configuracoes.config()
 basePasta = Configuracoes.basePasta(configFile)
 baseDados = Configuracoes.baseDados(configFile)
+baseServicos = Configuracoes.baseServicos(configFile)
+baseClientes = Configuracoes.baseUnificada(configFile)
+
+
 
 # Configuração do Logging
 logging.basicConfig(
@@ -216,7 +238,7 @@ class Verificador(BaseServidor):
             
         return servicos_registrados
 
-    def verificar_servicos_clientes(self):
+    def lista_servicos_clientes(self):
         """Identifica pastas de serviços para cada cliente que não estão registradas na base de dados."""
         servicos_faltantes = {}
         servicos_registrados = self.verificar_servicos_registrados()
@@ -260,7 +282,7 @@ class Gerenciador(BaseServidor):
         for cliente in clientes_faltantes:
             self.criar_pasta(cliente)
 
-    def atualizar_base(self):
+    def atualizar_base_Clientes(self):
         """Atualiza a base de dados com novas pastas encontradas que ainda não estão listadas na base."""
         verificador = Verificador()
         pastas_nao_listadas = verificador.verificar_pastas_nao_listadas()
@@ -268,12 +290,16 @@ class Gerenciador(BaseServidor):
             logging.info("Nenhuma atualização necessária na base de dados.")
         else:
             try:
-                df_atual = pd.read_excel(self.baseDados)
+                df_atual = pd.read_excel(self.baseDados, sheet_name='baseClientes')
                 novos_dados = pd.DataFrame(list(pastas_nao_listadas), columns=['Alias'])
                 df_novo = pd.concat([df_atual, novos_dados], ignore_index=True)
+
+                df_novo.to_excel(self.baseDados, sheet_name='baseClientes' , index=False)
+
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-                novo_nome_base = self.baseDados.parent / f"base_{timestamp}.xlsx"
-                df_novo.to_excel(novo_nome_base, index=False)
+                novo_nome_base = self.baseDados.parent / f"BKP-baseClientes_{timestamp}.xlsx"
+                df_novo.to_excel(novo_nome_base, sheet_name='baseClientes' , index=False)
+
                 logging.info(f"Base de dados atualizada e salva como {novo_nome_base}")
             except Exception as e:
                 raise DatabaseError(f"Erro ao atualizar a base de dados: {e}")
@@ -281,7 +307,7 @@ class Gerenciador(BaseServidor):
     def atualizar_base_servicos(self):
         """Atualiza a base de dados 'baseServicos' com novos serviços encontrados."""
         verificador = Verificador()
-        servicos_faltantes = verificador.verificar_servicos_clientes()
+        servicos_faltantes = verificador.lista_servicos_clientes()
 
         if not servicos_faltantes:
             logging.info("Todos os serviços já estão registrados na base de dados.")
@@ -292,14 +318,24 @@ class Gerenciador(BaseServidor):
             novos_servicos = []
             for cliente, servicos in servicos_faltantes.items():
                 for servico in servicos:
-                    novos_servicos.append({'Cliente': cliente, 'NomeServico': servico})
+                    novos_servicos.append({'AliasCliente': cliente, 'Alias': servico})
             
             df_novos_servicos = pd.DataFrame(novos_servicos)
             df_novo = pd.concat([df_atual, df_novos_servicos], ignore_index=True)
+
             df_novo.to_excel(self.baseDados, sheet_name='baseServicos', index=False)
+
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            novo_nome_base = self.baseDados.parent / f"BKP-baseServicos_{timestamp}.xlsx"
+            df_novo.to_excel(novo_nome_base, sheet_name='baseServicos' , index=False)
+
             logging.info(f"Base de dados de serviços atualizada.")
         except Exception as e:
             raise DatabaseError(f"Erro ao atualizar a base de dados de serviços: {e}")
+
+    def atualizar_baseDados(self):
+
+        return
 
 def main():
     parser = argparse.ArgumentParser(description="Gerenciador de pastas e bases de clientes")
@@ -311,15 +347,16 @@ def main():
     args = parser.parse_args()
 
     gerenciador = Gerenciador()
+    verificador = Verificador()
 
     if args.criar_pastas:
         gerenciador.criar_pastas_clientes_faltantes()
     
     if args.atualizar_base:
-        gerenciador.atualizar_base()
+        gerenciador.atualizar_baseDados()
 
     if args.verificar_servicos:
-        gerenciador.verificar_servicos_clientes()
+        verificador.lista_servicos_clientes()
 
     if args.atualizar_servicos:
         gerenciador.atualizar_base_servicos()

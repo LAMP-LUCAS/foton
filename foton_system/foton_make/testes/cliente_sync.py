@@ -78,14 +78,14 @@ def sincronizar_Clientes():
     print("Sincronizando Clientes do Servidor com Base de dados...")
     print(" Iniciando verificação de pastas de Clientes faltantes...")
 
-    gerenciador.sincronizar_Clientes_faltantes()
+    gerenciador.atualizar_base_Clientes()
 
     print("Sincronização de pastas faltantes concluída.")
 
 def Exibir_Servicos_registrados():
     print("Serviços registrados na base de dados:")
 
-    Lista_Servicos_registrados = verificador.verificar_servicos_clientes()
+    Lista_Servicos_registrados = verificador.lista_servicos_clientes()
 
     for i, servico in enumerate(Lista_Servicos_registrados):
         print(f'Serviço base - {i} : {servico}' )
@@ -141,7 +141,7 @@ def main():
         '6': ['Sincronizar Serviços',sincronizar_Servicos],
         '7': ['Exibir Histórico de Feedback',get_feedback_history],
         '8': ['Enviar Feedback',lambda: enviar_feedback(input("Digite seu e-mail: "), getpass.getpass("Digite sua senha: "), input("Digite seu feedback: "))],
-        '9': ['Finalizar Programa',lambda: exit("Finalizando Programa...")]
+        '9': ['Finalizar Programa',lambda: exit("Finalizando Programa...\n")]
     }
 
     while True:
@@ -153,12 +153,11 @@ def main():
         escolha = input("Digite o número da opção desejada: ")
         action = menu_options.get(escolha)
         action = action[1]
-
+        print("")
         if action:
             action()
         else:
-            print("Opção inválida. Por favor, tente novamente.")
-
+            print("\nOpção inválida. Por favor, tente novamente.\n")
 
 if __name__ == "__main__":
     main()
