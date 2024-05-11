@@ -137,8 +137,6 @@ baseDados = Configuracoes.baseDados(configFile)
 baseServicos = Configuracoes.baseServicos(configFile)
 baseClientes = Configuracoes.baseUnificada(configFile)
 
-
-
 # Configuração do Logging
 logging.basicConfig(
     level=logging.INFO,
@@ -161,6 +159,7 @@ class BaseServidor:
         DatabaseError: Erro se o arquivo de base de dados não é um arquivo Excel.
         ConfigError: Erro se uma configuração esperada está ausente.
     """
+
     def __init__(self):
         try:
             self.basePasta = Path(basePasta)
@@ -180,8 +179,8 @@ class Verificador(BaseServidor):
         base_existe: Verifica a existência da base de dados.
         pasta_clientes_existe: Verifica a existência da pasta de clientes.
         Lista_alias_Clientes_Base: Extrai e retorna os aliases de clientes a partir da base de dados.
-        verificar_pastas_clientes: Compara os aliases da base de dados com as pastas físicas.
-        verificar_pastas_nao_listadas: Identifica pastas físicas não listadas na base de dados.
+        verificar_pastas_inexistentes_clientes: Compara os aliases da base de dados com as pastas físicas.
+        verificar_pastas_clientes_nao_listadas: Identifica pastas físicas não listadas na base de dados.
     """
 
     def base_existe(self):
@@ -212,7 +211,7 @@ class Verificador(BaseServidor):
         pasta_clientes = {pasta.name for pasta in self.basePasta.iterdir() if pasta.is_dir()}
         return pasta_clientes
 
-    def verificar_pastas_clientes(self):
+    def verificar_pastas_inexistentes_clientes(self):
         """Identifica aliases que não têm uma pasta correspondente no sistema de arquivos."""
         if not self.pasta_clientes_existe():
             raise FilesystemError(f"A pasta {self.basePasta} não existe ou não pode ser acessada.")
@@ -220,36 +219,51 @@ class Verificador(BaseServidor):
         pasta_clientes = self.Lista_Pastas_Clientes()
         return set(aliases) - pasta_clientes
     
-    def verificar_pastas_nao_listadas(self):
-        """Identifica pastas físicas que não estão listadas na base de dados."""
+    def verificar_pastas_clientes_nao_listadas(self):
+        """Identifica pastas de clientes no servidor que não estão registradas na base de dados."""
         aliases = set(self.Lista_alias_Clientes_Base())
-        pastas_fisicas = {pasta.name for pasta in self.basePasta.iterdir() if pasta.is_dir()}
-        return pastas_fisicas - aliases
+        pastas_clientes_servidor = {pasta.name for pasta in self.basePasta.iterdir() if pasta.is_dir()}
+        return pastas_clientes_servidor - aliases
     
-    def verificar_servicos_registrados(self):
-        df = pd.read_excel(self.baseDados, sheet_name='baseServicos')
-        servicos_registrados = set(df['NomeServico'].tolist())
-        return servicos_registrados
-
-    def lista_pastas_servicos(self):
-        for cliente_pasta in self.basePasta.iterdir():
-            if cliente_pasta.is_dir():
-                servicos_registrados = {servico.name for servico in cliente_pasta.iterdir() if servico.is_dir()}
-            
-        return servicos_registrados
-
-    def lista_servicos_clientes(self):
+    def verificar_servicos_clientes(self):
         """Identifica pastas de serviços para cada cliente que não estão registradas na base de dados."""
         servicos_faltantes = {}
-        servicos_registrados = self.verificar_servicos_registrados()
+        df = pd.read_excel(self.baseDados, sheet_name='baseServicos')
+        servicos_registrados = df.groupby('AliasCliente')['Alias'].apply(set).to_dict()
 
         for cliente_pasta in self.basePasta.iterdir():
             if cliente_pasta.is_dir():
                 servicos_cliente = {servico.name for servico in cliente_pasta.iterdir() if servico.is_dir()}
-                servicos_nao_listados = servicos_cliente - servicos_registrados
+                servicos_nao_listados = servicos_cliente - servicos_registrados.get(cliente_pasta.name, set())
                 if servicos_nao_listados:
                     servicos_faltantes[cliente_pasta.name] = list(servicos_nao_listados)
 
+        return servicos_faltantes
+
+    def lista_servicosRegistrados(self):
+        df = pd.read_excel(self.baseDados, sheet_name='baseServicos')
+        servicos_registrados = df.groupby('AliasCliente')['Alias'].apply(set).to_dict()
+        return servicos_registrados
+
+    def lista_pastasServicosServidor(self):
+        """Lista todas as pastas de serviços dentro das pastas dos clientes no servidor."""
+        pastasServicosServidor = {}
+        for cliente_pasta in self.basePasta.iterdir():
+            if cliente_pasta.is_dir():
+                servicos = [servico.name for servico in cliente_pasta.iterdir() if servico.is_dir()]
+                pastasServicosServidor[cliente_pasta.name] = servicos
+        return pastasServicosServidor
+
+    def verificarPastasServicosFaltantes(self):
+        """Identifica pastas de serviços para cada cliente que ainda não foram criadas."""
+        servicos_faltantes = {}
+        servicos_registrados = self.lista_servicosRegistrados()
+        servicos_servidor = self.lista_pastasServicosServidor()
+        for cliente, servicos in servicos_registrados.items():
+            if servicos:
+                servicos_nao_listados = servicos - set(servicos_servidor.get(cliente, set()))
+                if servicos_nao_listados:
+                    servicos_faltantes[cliente] = list(servicos_nao_listados)
         return servicos_faltantes
 
 class Gerenciador(BaseServidor):
@@ -263,7 +277,7 @@ class Gerenciador(BaseServidor):
     """
 
     def criar_pasta(self, nome):
-        """Cria uma pasta individual para um cliente, dado o nome da pasta."""
+        """Cria uma pasta individual, dado o nome da pasta."""
         try:
             pasta = self.basePasta / nome
             pasta.mkdir(exist_ok=True)
@@ -276,25 +290,40 @@ class Gerenciador(BaseServidor):
     def criar_pastas_clientes_faltantes(self):
         """Cria pastas para todos os clientes listados na base de dados que ainda não possuem pasta."""
         verificador = Verificador()
-        clientes_faltantes = verificador.verificar_pastas_clientes()
+        clientes_faltantes = verificador.verificar_pastas_inexistentes_clientes()
         if not clientes_faltantes:
             logging.info("Não há pastas de clientes faltantes para criar.")
         for cliente in clientes_faltantes:
             self.criar_pasta(cliente)
 
+    def criar_pastas_servicos_faltantes(self):
+        """Cria pastas para todos os serviços de cada cliente que ainda não possuem pasta."""
+        verificador = Verificador()
+        pastasServicosFaltantes = verificador.verificarPastasServicosFaltantes()
+
+        if not pastasServicosFaltantes:
+            logging.info("Não há pastas de serviços faltantes para criar.")
+        for cliente, servicos in pastasServicosFaltantes.items():
+            for servico in servicos:
+                nome_pasta_servico = f"{cliente}/{servico}"
+                self.criar_pasta(nome_pasta_servico)
+
     def atualizar_base_Clientes(self):
         """Atualiza a base de dados com novas pastas encontradas que ainda não estão listadas na base."""
         verificador = Verificador()
-        pastas_nao_listadas = verificador.verificar_pastas_nao_listadas()
+        pastas_nao_listadas = verificador.verificar_pastas_clientes_nao_listadas()
         if not pastas_nao_listadas:
             logging.info("Nenhuma atualização necessária na base de dados.")
+            return print(pastas_nao_listadas)
+
         else:
             try:
                 df_atual = pd.read_excel(self.baseDados, sheet_name='baseClientes')
-                novos_dados = pd.DataFrame(list(pastas_nao_listadas), columns=['Alias'])
-                df_novo = pd.concat([df_atual, novos_dados], ignore_index=True)
+                df_novos_dados = pd.DataFrame(list(pastas_nao_listadas), columns=['Alias'])
+                df_novo = pd.concat([df_atual, df_novos_dados], ignore_index=True)
 
-                df_novo.to_excel(self.baseDados, sheet_name='baseClientes' , index=False)
+                with pd.ExcelWriter(self.baseDados, mode='a' , engine="openpyxl" , if_sheet_exists='replace') as writer:
+                    df_novo.to_excel(writer, sheet_name='baseClientes', index=False)
 
                 timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
                 novo_nome_base = self.baseDados.parent / f"BKP-baseClientes_{timestamp}.xlsx"
@@ -303,39 +332,40 @@ class Gerenciador(BaseServidor):
                 logging.info(f"Base de dados atualizada e salva como {novo_nome_base}")
             except Exception as e:
                 raise DatabaseError(f"Erro ao atualizar a base de dados: {e}")
-            
+
     def atualizar_base_servicos(self):
         """Atualiza a base de dados 'baseServicos' com novos serviços encontrados."""
         verificador = Verificador()
-        servicos_faltantes = verificador.lista_servicos_clientes()
+        servicos_faltantes = verificador.verificar_servicos_clientes()
 
         if not servicos_faltantes:
             logging.info("Todos os serviços já estão registrados na base de dados.")
-            return
+        
+        else: 
+            try:
+                df_atual = pd.read_excel(self.baseDados, sheet_name='baseServicos')
+                df_novos_servicos = pd.DataFrame(list(servicos_faltantes), columns=['Alias'])
+                df_novo = pd.concat([df_atual,df_novos_servicos], ignore_index=True)
+                
+                for cliente, servicos in servicos_faltantes.items():
+                    for servico in servicos:
+                        nova_linha = pd.DataFrame({'AliasCliente': [cliente], 'Alias': [servico]})
+                        df_novo = pd.concat([df_novo, nova_linha], ignore_index=True)
+                
+                df_novos_servicos = pd.DataFrame(df_novo)
+                df_novo = pd.concat([df_atual, df_novos_servicos], ignore_index=True)
 
-        try:
-            df_atual = pd.read_excel(self.baseDados, sheet_name='baseServicos')
-            novos_servicos = []
-            for cliente, servicos in servicos_faltantes.items():
-                for servico in servicos:
-                    novos_servicos.append({'AliasCliente': cliente, 'Alias': servico})
-            
-            df_novos_servicos = pd.DataFrame(novos_servicos)
-            df_novo = pd.concat([df_atual, df_novos_servicos], ignore_index=True)
+                with pd.ExcelWriter(self.baseDados, mode='a' , engine="openpyxl", if_sheet_exists='replace') as writer:
+                    df_novo.to_excel(writer, sheet_name='baseServicos', index=False)
 
-            df_novo.to_excel(self.baseDados, sheet_name='baseServicos', index=False)
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                novo_nome_base = self.baseDados.parent / f"BKP-baseServicos_{timestamp}.xlsx"
+                df_novo.to_excel(novo_nome_base, sheet_name='baseServicos' , index=False)
 
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-            novo_nome_base = self.baseDados.parent / f"BKP-baseServicos_{timestamp}.xlsx"
-            df_novo.to_excel(novo_nome_base, sheet_name='baseServicos' , index=False)
-
-            logging.info(f"Base de dados de serviços atualizada.")
-        except Exception as e:
-            raise DatabaseError(f"Erro ao atualizar a base de dados de serviços: {e}")
-
-    def atualizar_baseDados(self):
-
-        return
+                logging.info(f"Base de dados de serviços atualizada.")
+        
+            except Exception as e:
+                raise DatabaseError(f"Erro ao atualizar a base de dados de serviços: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="Gerenciador de pastas e bases de clientes")
@@ -356,7 +386,7 @@ def main():
         gerenciador.atualizar_baseDados()
 
     if args.verificar_servicos:
-        verificador.lista_servicos_clientes()
+        gerenciador.verificar_servicos_clientes()
 
     if args.atualizar_servicos:
         gerenciador.atualizar_base_servicos()

@@ -6,3 +6,275 @@
 2024-05-09 21:17:28,556 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240509_211728.xlsx
 2024-05-09 21:21:17,452 - INFO - Base de dados de serviços atualizada.
 2024-05-09 21:23:33,728 - INFO - Base de dados de serviços atualizada.
+2024-05-10 11:03:19,208 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 11:04:18,120 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 11:38:43,216 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_113843.xlsx
+2024-05-10 11:38:57,584 - INFO - Base de dados de serviços atualizada.
+2024-05-10 11:59:17,598 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_115917.xlsx
+2024-05-10 12:03:37,518 - INFO - Pasta "SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 12:03:37,519 - INFO - Pasta "PROJ-1" criada com sucesso.
+2024-05-10 12:03:37,521 - INFO - Pasta "SERVICO-TEST-1" criada com sucesso.
+2024-05-10 12:03:37,523 - INFO - Pasta "SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 12:04:10,551 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-10 12:04:10,552 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 12:04:10,552 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 12:05:02,266 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-10 12:05:02,267 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 12:05:02,267 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 12:05:32,324 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_120532.xlsx
+2024-05-10 12:05:42,723 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_120542.xlsx
+2024-05-10 12:05:44,784 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_120544.xlsx
+2024-05-10 12:05:49,037 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 12:05:52,808 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 12:06:09,502 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_120609.xlsx
+2024-05-10 12:06:12,050 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_120612.xlsx
+2024-05-10 12:06:14,034 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_120614.xlsx
+2024-05-10 12:06:22,839 - INFO - Pasta "SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 12:06:22,840 - INFO - Pasta "PROJ-1" criada com sucesso.
+2024-05-10 12:06:22,842 - INFO - Pasta "SERVICO-TEST-1" criada com sucesso.
+2024-05-10 12:06:22,843 - INFO - Pasta "SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 12:06:46,860 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 12:06:50,029 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 12:06:57,156 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_120657.xlsx
+2024-05-10 12:07:08,132 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_120708.xlsx
+2024-05-10 12:07:12,622 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_120712.xlsx
+2024-05-10 12:07:22,053 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-10 12:07:22,053 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 12:07:22,054 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 12:07:41,090 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-10 12:07:41,091 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 12:07:41,091 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 12:07:42,579 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-10 12:07:42,579 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 12:07:42,580 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 12:07:43,946 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-10 12:07:43,947 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 12:07:43,947 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 12:07:55,567 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-10 12:07:55,567 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 12:07:55,568 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 12:07:57,177 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-10 12:07:57,178 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 12:07:57,178 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 13:38:56,644 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_133856.xlsx
+2024-05-10 13:39:12,970 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:39:20,834 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:39:22,660 - INFO - Pasta "LUCAS LAMP" criada com sucesso.
+2024-05-10 13:39:39,702 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 13:39:43,119 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:40:27,063 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:40:33,481 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:42:30,039 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:43:11,659 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:44:46,276 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-10 13:44:46,277 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 13:44:46,279 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 13:45:29,620 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-10 13:45:29,621 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 13:45:29,622 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-10 13:48:36,368 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:48:46,356 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:48:55,086 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 13:48:57,318 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:49:07,069 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:50:16,030 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_135015.xlsx
+2024-05-10 13:50:24,230 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:50:27,012 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:50:32,326 - INFO - Pasta "LUCAS LAMP" criada com sucesso.
+2024-05-10 13:50:34,784 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:50:37,384 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:50:38,455 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 13:50:42,340 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:50:52,760 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:50:54,329 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:50:55,577 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:52:40,505 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:52:42,604 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 13:52:45,419 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 13:52:47,172 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:52:50,609 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:52:52,295 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:19,318 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:54:20,992 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 13:54:22,274 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:22,360 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:22,447 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:22,540 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:22,641 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:22,749 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:22,861 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:22,983 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:23,111 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:23,233 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:23,442 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:23,607 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:23,744 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:23,882 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:24,041 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:24,206 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:24,341 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:24,479 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:24,620 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:24,764 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:24,942 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:25,092 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:25,282 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:25,481 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:25,627 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:25,778 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:25,963 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:26,133 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:26,304 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:26,476 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:26,712 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:26,881 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:27,048 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:27,259 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:27,488 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:27,665 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:27,893 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:28,109 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:28,359 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:28,581 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:28,770 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:28,982 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:54:29,254 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:55:55,891 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 13:55:56,779 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 13:55:57,577 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:56:00,439 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:56:02,403 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:56:03,624 - INFO - Base de dados de serviços atualizada.
+2024-05-10 13:56:04,793 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:05:55,066 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_140555.xlsx
+2024-05-10 14:06:00,578 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 14:06:18,794 - INFO - Pasta "LUCAS LAMP" criada com sucesso.
+2024-05-10 14:06:23,343 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:06:28,438 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:06:30,271 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:06:31,485 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:08:25,616 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_140825.xlsx
+2024-05-10 14:08:34,954 - INFO - Pasta "LUCAS LAMP" criada com sucesso.
+2024-05-10 14:08:45,323 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 14:08:48,839 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 14:08:51,000 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 14:08:52,665 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 14:08:53,537 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 14:08:54,247 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 14:08:54,912 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 14:08:55,689 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 14:08:57,519 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 14:08:59,739 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:10:30,238 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_141030.xlsx
+2024-05-10 14:10:43,360 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 14:10:45,912 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 14:10:46,319 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 14:10:46,712 - INFO - Nenhuma atualização necessária na base de dados.
+2024-05-10 14:10:55,234 - INFO - Pasta "LUCAS LAMP" criada com sucesso.
+2024-05-10 14:10:57,768 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 14:10:59,359 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 14:10:59,919 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-10 14:11:00,952 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:11:20,562 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:11:22,261 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:11:23,284 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:11:24,347 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:19:38,468 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:19:40,748 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:19:42,036 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:19:43,141 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:19:44,225 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:19:51,528 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:20:55,014 - INFO - Pasta "LUCAS LAMP" criada com sucesso.
+2024-05-10 14:21:02,570 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-10 14:21:05,172 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-10 14:21:05,796 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-10 14:21:06,228 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-10 14:21:06,629 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-10 14:21:07,094 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-10 14:27:07,803 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:30:00,092 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:34:17,269 - INFO - Base de dados atualizada e salva como C:\Users\Lucas\OneDrive\LAMP ARQUITETURA\foton\foton_system\foton_make\testes\BKP-baseClientes_20240510_143417.xlsx
+2024-05-10 14:34:25,235 - INFO - Pasta "LUCAS LAMP" criada com sucesso.
+2024-05-10 14:34:27,379 - INFO - Base de dados de serviços atualizada.
+2024-05-10 14:35:40,868 - INFO - Base de dados de serviços atualizada.
+2024-05-10 22:55:50,435 - INFO - Pasta "LUCAS LAMP" criada com sucesso.
+2024-05-10 22:56:35,436 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-10 22:56:35,437 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-10 22:56:35,437 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-11 09:37:57,584 - INFO - Base de dados de serviços atualizada.
+2024-05-11 09:54:37,960 - INFO - Base de dados de serviços atualizada.
+2024-05-11 09:54:40,276 - INFO - Base de dados de serviços atualizada.
+2024-05-11 09:54:41,471 - INFO - Base de dados de serviços atualizada.
+2024-05-11 09:54:42,579 - INFO - Base de dados de serviços atualizada.
+2024-05-11 10:51:50,274 - INFO - Pasta "LUCAS LAMP" criada com sucesso.
+2024-05-11 10:51:53,043 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-11 10:51:54,547 - INFO - Não há pastas de clientes faltantes para criar.
+2024-05-11 10:51:56,302 - INFO - Base de dados de serviços atualizada.
+2024-05-11 10:52:06,399 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-11 10:52:08,277 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-11 10:52:08,869 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-11 10:52:09,363 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-11 10:52:09,833 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-11 10:52:12,834 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 10:52:15,192 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 10:52:15,774 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 10:52:53,433 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 10:53:23,388 - INFO - Base de dados de serviços atualizada.
+2024-05-11 10:53:53,203 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 10:53:53,204 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 10:53:53,204 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-11 10:54:20,381 - INFO - Base de dados de serviços atualizada.
+2024-05-11 10:54:22,479 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 10:54:24,173 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 10:54:24,667 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 10:54:25,055 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 10:55:47,768 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 10:55:47,769 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 10:55:47,769 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-11 10:55:50,391 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 10:55:50,392 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 10:55:50,393 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-11 10:55:51,032 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 10:55:51,033 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 10:55:51,033 - INFO - Pasta "CLIENTE-TESTE-3/SERVICO-TESTE-3" criada com sucesso.
+2024-05-11 10:56:03,603 - INFO - Base de dados de serviços atualizada.
+2024-05-11 10:56:11,067 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 10:56:13,110 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 10:56:31,843 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 10:56:35,920 - INFO - Todos os serviços já estão registrados na base de dados.
+2024-05-11 10:56:37,601 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 11:39:37,445 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 11:39:37,446 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 11:40:02,872 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 11:40:02,873 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 11:40:03,887 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 11:40:03,888 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 11:40:04,369 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 11:40:04,370 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 11:40:04,780 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 11:40:04,780 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 11:40:05,187 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 11:40:05,188 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 11:40:05,562 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 11:40:05,563 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 11:40:06,094 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 11:40:06,094 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 11:40:06,598 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 11:40:06,598 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 11:40:13,980 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 11:40:13,981 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 11:40:33,653 - INFO - Pasta "CLIENTE-TESTE-1/SERVICO-TEST-1" criada com sucesso.
+2024-05-11 11:40:33,653 - INFO - Pasta "CLIENTE-TESTE-2/SERVICO-CL2-TESTE" criada com sucesso.
+2024-05-11 11:40:37,446 - INFO - Base de dados de serviços atualizada.
+2024-05-11 11:40:39,979 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 11:40:41,103 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 11:42:56,347 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 11:50:13,572 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 13:36:54,803 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 13:37:38,771 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 13:41:16,092 - INFO - Pasta "LUCAS LAMP/PROJ-1" criada com sucesso.
+2024-05-11 13:41:38,901 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 13:41:41,045 - INFO - Não há pastas de serviços faltantes para criar.
+2024-05-11 13:43:04,106 - INFO - Base de dados de serviços atualizada.
+2024-05-11 13:43:33,529 - INFO - Base de dados de serviços atualizada.

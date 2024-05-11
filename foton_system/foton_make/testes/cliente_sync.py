@@ -34,7 +34,7 @@ def enviar_feedback(email_from, senha, mensagem):
     msg.attach(body)
 
     try:
-        server = smtplib.SMTP('smtp.gmail.com', 587)  # Configuração para Gmail, alterar se necessário
+        server = smtplib.SMTP('smtp.hostinger.com', 465)
         server.starttls()
         server.login(email_from, senha)
         text = msg.as_string()
@@ -74,18 +74,26 @@ def exibir_clientes_servidor():
     
     print("Fim da lista.")
 
-def sincronizar_Clientes():
-    print("Sincronizando Clientes do Servidor com Base de dados...")
+def sincronizar_baseClientes():
+    print("Sincronizando Clientes da Base de dados...")
     print(" Iniciando verificação de pastas de Clientes faltantes...")
 
     gerenciador.atualizar_base_Clientes()
 
     print("Sincronização de pastas faltantes concluída.")
 
+def sincronizar_servidorClientes():
+    print("Sincronizando Clientes do Servidor...")
+    print(" Iniciando verificação de pastas de Clientes faltantes...")
+
+    gerenciador.criar_pastas_clientes_faltantes()
+
+    print("Sincronização de pastas faltantes concluída.")
+
 def Exibir_Servicos_registrados():
     print("Serviços registrados na base de dados:")
 
-    Lista_Servicos_registrados = verificador.lista_servicos_clientes()
+    Lista_Servicos_registrados = verificador.verificar_servicos_registrados()
 
     for i, servico in enumerate(Lista_Servicos_registrados):
         print(f'Serviço base - {i} : {servico}' )
@@ -95,19 +103,29 @@ def Exibir_Servicos_registrados():
 def Exibir_Servicos_Servidor():
     print("Serviços no Servidor:")
 
-    Lista_Servicos_Servidor = verificador.lista_pastas_servicos()
-
-    for i, servico in enumerate(Lista_Servicos_Servidor):
-        print(f'Serviço no Servidor - {i} : {servico}' )
+    Servicos_Servidor = verificador.lista_pastas_servicos()
+    Lista_Servicos_Servidor = list(Servicos_Servidor)
+    Lista_Clientes_Servicos = 12
+    for i, cliente in enumerate(Lista_Servicos_Servidor):
+        valor = Servicos_Servidor[cliente]
+        print(f'{i} - Serviço no Servidor: {valor} | cliente: {cliente}' )
     
     print("Fim da lista.")
     return
 
-def sincronizar_Servicos():
+def sincronizar_baseServicos():
     print("Sincronizando Serviços com Base de dados...")
     print(" Iniciando verificação de pastas de Serv faltantes...")
 
     gerenciador.atualizar_base_servicos()
+
+    print("Sincronização de pastas faltantes concluída.")
+
+def sincronizar_servidorServicos():
+    print("Sincronizando Serviços com Base de dados...")
+    print(" Iniciando verificação de pastas de Serv faltantes...")
+
+    gerenciador.criar_pastas_servicos_faltantes()
 
     print("Sincronização de pastas faltantes concluída.")
 
@@ -137,11 +155,13 @@ def main():
         '2': ['Exibir Clientes no Servidor',exibir_clientes_servidor],
         '3': ['Exibir Servicos Registrados',Exibir_Servicos_registrados],
         '4': ['Exibir Servicos no Servidor',Exibir_Servicos_Servidor],
-        '5': ['Sincronizar Clientes',sincronizar_Clientes],
-        '6': ['Sincronizar Serviços',sincronizar_Servicos],
-        '7': ['Exibir Histórico de Feedback',get_feedback_history],
-        '8': ['Enviar Feedback',lambda: enviar_feedback(input("Digite seu e-mail: "), getpass.getpass("Digite sua senha: "), input("Digite seu feedback: "))],
-        '9': ['Finalizar Programa',lambda: exit("Finalizando Programa...\n")]
+        '5': ['Sincronizar baseClientes',sincronizar_baseClientes], #erro esta sincronizando mesmo estando tudo ok
+        '6': ['Sincronizar servidorClientes',sincronizar_servidorClientes], #erro está criando as pastas na raiz dos clientes
+        '7': ['Sincronizar baseServiços',sincronizar_baseServicos], #erro esta sincronizando mesmo estando tudo ok
+        '8': ['Sincronizar servidorServiços',sincronizar_servidorServicos], #erro esta sincronizando mesmo estando tudo ok
+        '9': ['Exibir Histórico de Feedback',get_feedback_history],
+        '10': ['Enviar Feedback',lambda: enviar_feedback(input("Digite seu e-mail: "), getpass.getpass("Digite sua senha: "), input("Digite seu feedback: "))],
+        '11': ['Finalizar Programa',lambda: exit("Finalizando Programa...\n")]
     }
 
     while True:
