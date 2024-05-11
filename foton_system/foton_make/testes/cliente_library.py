@@ -350,9 +350,11 @@ class Gerenciador(BaseServidor):
                 for cliente, servicos in servicos_faltantes.items():
                     
                     for servico in servicos:
-                        nova_linha = pd.DataFrame({'AliasCliente': [cliente], 'Alias': [servico]})
+                        listaNegra = ['DOC','ARQ','HID','ELE','STR','PL','EVT']
+                        if servico not in listaNegra:
+                            nova_linha = pd.DataFrame({'AliasCliente': [cliente], 'Alias': [servico]})
 
-                        df_novo = pd.concat([df_novo, nova_linha], ignore_index=True)
+                            df_novo = pd.concat([df_novo, nova_linha], ignore_index=True)
                 
                 #df_novos_servicos = pd.DataFrame(df_novo)
 

@@ -34,7 +34,7 @@ def enviar_feedback(email_from, senha, mensagem):
     msg.attach(body)
 
     try:
-        server = smtplib.SMTP('smtp.hostinger.com', 465)
+        server = smtplib.SMTP('smtp.hostinger.com', 587)
         server.starttls()
         server.login(email_from, senha)
         text = msg.as_string()

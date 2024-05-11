@@ -1,5 +1,6 @@
 {
-    "caminho_pastaClientes": "C:\\Users\\Lucas\\OneDrive\\LAMP ARQUITETURA\\foton\\foton_system\\foton_make\\testes\\CLIENTES",
+    "caminho_pastaTestesClientes": "C:\\Users\\Lucas\\OneDrive\\LAMP ARQUITETURA\\foton\\foton_system\\foton_make\\testes\\CLIENTES",
+    "caminho_pastaClientes": "C:\\Users\\Lucas\\OneDrive\\LAMP ARQUITETURA\\CLIENTES",
     "caminho_baseDados": "C:\\Users\\Lucas\\OneDrive\\LAMP ARQUITETURA\\foton\\foton_system\\foton_make\\testes\\baseDados.xlsx",
     "caminho_baseClientes": "C:\\Users\\Lucas\\OneDrive\\LAMP ARQUITETURA\\foton\\foton_system\\foton_make\\testes\\baseClientes.xlsx",
     "caminho_baseServicos": "C:\\Users\\Lucas\\OneDrive\\LAMP ARQUITETURA\\foton\\foton_system\\foton_make\\testes\\baseServicos.xlsx"
