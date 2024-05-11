@@ -338,22 +338,45 @@ class Gerenciador(BaseServidor):
         verificador = Verificador()
         servicos_faltantes = verificador.verificar_servicos_clientes()
 
+        print(f'\n\nservicos_faltantes: {servicos_faltantes}\n\n')
+
         if not servicos_faltantes:
             logging.info("Todos os serviços já estão registrados na base de dados.")
         
         else: 
             try:
                 df_atual = pd.read_excel(self.baseDados, sheet_name='baseServicos')
-                df_novos_servicos = pd.DataFrame(list(servicos_faltantes), columns=['Alias'])
-                df_novo = pd.concat([df_atual,df_novos_servicos], ignore_index=True)
+
+                print(f'\ndf_atual: {df_atual}\n\n')
+
+                #df_novos_servicos = pd.DataFrame(list(servicos_faltantes), columns=['AliasCliente'])
+
+                #print(f'\ndf_novos_servicos: {df_novos_servicos}\n\n')
+
+                #df_novo = pd.concat([df_atual,df_novos_servicos], ignore_index=True)
+                
+                df_novo = pd.concat([df_atual], ignore_index=True)
+
+                print(f'\ndf_novo: {df_novo}\n\n')
                 
                 for cliente, servicos in servicos_faltantes.items():
+                    
                     for servico in servicos:
                         nova_linha = pd.DataFrame({'AliasCliente': [cliente], 'Alias': [servico]})
+
+                        print(f'\n\nova_linha: {nova_linha}\n\n')
+
                         df_novo = pd.concat([df_novo, nova_linha], ignore_index=True)
+
+                        print(f'\n\df_novo: {df_novo}\n\n')
                 
                 df_novos_servicos = pd.DataFrame(df_novo)
-                df_novo = pd.concat([df_atual, df_novos_servicos], ignore_index=True)
+
+                print(f'\n\df_novos_servicos: {df_novos_servicos}\n\n')
+
+                #df_novo = pd.concat([df_atual, df_novos_servicos], ignore_index=True)
+
+                print(f'\n\df_novo sem atual: {df_novo}\n\n')
 
                 with pd.ExcelWriter(self.baseDados, mode='a' , engine="openpyxl", if_sheet_exists='replace') as writer:
                     df_novo.to_excel(writer, sheet_name='baseServicos', index=False)
