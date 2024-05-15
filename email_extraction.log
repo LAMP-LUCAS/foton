@@ -1,0 +1,342 @@
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+ERROR:root:Erro ao extrair e-mails: command SEARCH illegal in state AUTH, only allowed in states SELECTED
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+ERROR:root:Erro ao extrair e-mails: command SEARCH illegal in state AUTH, only allowed in states SELECTED
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+ERROR:root:Erro ao extrair e-mails: command SEARCH illegal in state AUTH, only allowed in states SELECTED
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+ERROR:root:Erro ao extrair e-mails: command SEARCH illegal in state AUTH, only allowed in states SELECTED
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+ERROR:root:Erro ao extrair e-mails: command SEARCH illegal in state AUTH, only allowed in states SELECTED
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+ERROR:root:Erro ao extrair e-mails: command SEARCH illegal in state AUTH, only allowed in states SELECTED
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+ERROR:root:Erro ao extrair e-mails: command SEARCH illegal in state AUTH, only allowed in states SELECTED
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+ERROR:root:Erro ao extrair e-mails: command SEARCH illegal in state AUTH, only allowed in states SELECTED
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+ERROR:root:Erro ao extrair e-mails: command SEARCH illegal in state AUTH, only allowed in states SELECTED
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+ERROR:root:Erro ao extrair e-mails: command SEARCH illegal in state AUTH, only allowed in states SELECTED
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta {pasta}
+INFO:root:Email Encontrado: 
+{email_data}
+
+
+INFO:root:Data Frame Criado com Sucesso
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta {pasta}
+INFO:root:Email Encontrado: 
+{email_data}
+
+
+INFO:root:Data Frame Criado com Sucesso
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta INBOX.cadastroSite
+INFO:root:Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:
+
+Email Encontrado: 
+[{'nome': None, 'email': None, 'telefone': None}]
+
+
+INFO:root:Data Frame Criado com Sucesso:
+
+    nome email telefone
+0  None  None     None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:Data Frame Criado com Sucesso:
+
+   nome=3D email=3D telefone=3D
+0    None     None        None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:Data Frame Criado com Sucesso:
+
+   nome=3D email=3D telefone=3D
+0    None     None        None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:Data Frame Criado com Sucesso:
+
+   nome=3D email=3D telefone=3D
+0    None     None        None
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:Data Frame Criado com Sucesso:
+
+       nome                email       telefone
+0  Lucas\r  lucas@arqlamp.com\r  62981613868\r
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+ERROR:root:Erro ao extrair e-mails: no such group
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+ERROR:root:Erro ao extrair e-mails: no such group
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+ERROR:root:Erro ao extrair e-mails: no such group
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+ERROR:root:Erro ao extrair e-mails: no such group
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:Data Frame Criado com Sucesso:
+
+   nome                email       telefone
+0   Lu  lucas@arqlamp.com\r  62981613868\r
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:Data Frame Criado com Sucesso:
+
+   nome                email       telefone
+0    L  lucas@arqlamp.com\r  62981613868\r
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:Data Frame Criado com Sucesso:
+
+      nome                email       telefone
+0  ucas\r  lucas@arqlamp.com\r  62981613868\r
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:Data Frame Criado com Sucesso:
+
+     nome                email       telefone
+0  Lucas  lucas@arqlamp.com\r  62981613868\r
+
+
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:Data Frame Criado com Sucesso:
+
+     nome              email     telefone
+0  Lucas  lucas@arqlamp.com  62981613868
+
+
+INFO:root:Data Frame Salvo com Sucesso
+INFO:root:Procurando e-mail...
+INFO:root:Conectando...
+INFO:root:Percorrendo e-mails na pasta: INBOX.cadastroSite
+INFO:root:Data Frame Criado com Sucesso:
+
+     nome              email     telefone
+0  Lucas  lucas@arqlamp.com  62981613868
+
+
