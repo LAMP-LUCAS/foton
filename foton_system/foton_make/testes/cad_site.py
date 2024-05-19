@@ -131,7 +131,7 @@ def EmailConect():
     logging.info('Conectando...')
     # Informações da conta
     username = "cadastro@arqlamp.com"
-    password = " "
+    password = input('Digite a senha do email: ')
 
     # Crie uma instância do IMAP4 class com SSL
     mail = imaplib.IMAP4_SSL("imap.hostinger.com")
