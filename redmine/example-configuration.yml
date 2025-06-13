@@ -1,0 +1,8 @@
+production:
+  email_delivery:
+    smtp_settings:
+      address: <%= ENV['SMTP_HOST'] %>
+      port: <%= ENV['SMTP_PORT'] %>
+      user: <%= ENV['SMTP_USER'] %>
+      password: <%= ENV['SMTP_PASSWORD'] %>
+      

@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:admin}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:senhaPOSTGRES}
+      POSTGRES_DB: ${POSTGRES_DB:redmine}
+    volumes:
+      - redmine_postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  redmine:
+    image: redmine:6.0
+    depends_on:
+      - postgres
+    ports:
+      - "3123:3123"
+    environment:
+      #configuração de banco de dados
+      REDMINE_DB_POSTGRES: postgres
+      REDMINE_DB_USERNAME: ${POSTGRES_USER:redmine}
+      REDMINE_DB_PASSWORD: ${POSTGRES_PASSWORD:redmine}
+      REDMINE_DB_DATABASE: ${POSTGRES_DB:redmine}
+
+      #configuração de emails SMTP
+      REDMINE_SMTP_ENABLED: "true"
+      REDMINE_SMTP_HOST: ${SMTP_HOST:smtp.example.com}
+      REDMINE_SMTP_PORT: ${SMTP_PORT:587}
+      REDMINE_SMTP_USER: ${SMTP_USER:email@example.com}
+      REDMINE_SMTP_PASSWORD: ${SMTP_PASSWORD:senhaEMAIL}
+      REDMINE_SMTP_TLS: "true"
+    volumes:
+      - redmine_data:/usr/src/redmine/files
+      - ./redmine/plugins:/usr/src/redmine/plugins
+      - ./redmine/themes:/usr/src/redmine/public/themes
+      - ./redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml
+    restart: unless-stopped
+
+env_file:
+  - secrets/.secrets
+
+volumes:
+  redmine_postgres_data:
+  redmine_data:
