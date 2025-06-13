@@ -17,6 +17,9 @@ O **Foton** é um ecossistema integrado que transforma como arquitetos e engenhe
 **Para quem é:**  
 🏗️ Construtoras • 📐 Escritórios de Arquitetura • 🧮 Orçamentistas • 👷‍♂️ Gestores de Obra
 
+**Nosso Valor Principal**:  
+>> Capacitar profissionais a operarem todos os departamentos de um escritório usando ferramentas open-source integradas, com opções de suporte premium para quem precisa de mais recursos.
+
 **Quanto tenho que pagar?**
 
 O Foton é uma metodologia OpenSource, utilizamos ferramentas OpenSource ou Gratuítas em um fluxo estruturado, portanto você pode utiliza-las gratuítamente. Os planos e serviços que temos são referentes à hospedagens e serviços extras. Veja abaixo:
@@ -112,7 +115,7 @@ docker-compose up -d
 | Créditos OpenWebUI | 50/mês | 200/mês | Ilimitado |  
 | Cursos Inclusos | 3 básicos | 10+ | Todos |  
 | Suporte | Comunitário | E-mail | 24h prioritário |  
-| Acesso | [Assinar](https://mundoaec.com/assinatura?plano=economico) | [Assinar](https://mundoaec.com/assinatura?plano=tipo) | [Solicitar](https://mundoaec.com/penthouse) |  
+| Acesso | [Assinar](https://mundoaec.com/assinatura/#economico) | [Assinar](https://mundoaec.com/assinatura/#tipo) | [Solicitar](https://mundoaec.com/assinatura/#penthouse) |  
 
 ---
 
