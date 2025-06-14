@@ -1,24 +1,35 @@
-version: '3.8'
 
 services:
+
+  foton_cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: foton_cloudflared
+    restart: unless-stopped
+    command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
+    networks:
+      - foton
   foton_postgres:
+    container_name: foton_postgres
     image: postgres:15
+    ports:
+      - "5432:5432"
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-admin}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-senhaPOSTGRES}
+      POSTGRES_USER: ${POSTGRES_USER:-redmine}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-redmine}
       POSTGRES_DB: ${POSTGRES_DB:-redmine}
     volumes:
-      - redmine_postgres_data:/var/lib/postgresql/data
+      - ./postgres/data:/var/lib/postgresql/data
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
-      interval: 10s
+      interval: 5s
       timeout: 5s
       retries: 5
     networks:
       - foton
 
   foton_redmine:
+    container_name: foton_redmine
     image: redmine:6.0
     depends_on:
       foton_postgres:
@@ -36,8 +47,7 @@ services:
       REDMINE_SMTP_USER: ${SMTP_USER:-email@example.com}
       REDMINE_SMTP_PASSWORD: ${SMTP_PASSWORD:-senhaEMAIL}
       REDMINE_SMTP_TLS: "true"
-    volumes:
-      - redmine_data:/usr/src/redmine/files
+    volumes:      
       - ./redmine/plugins:/usr/src/redmine/plugins
       - ./redmine/themes:/usr/src/redmine/public/themes
       - ./redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml
@@ -55,8 +65,8 @@ services:
     networks:
       - foton
 
-env_file:
-  - secrets/.secrets
+# env_file:
+#   - secrets/.secrets
 
 volumes:
   redmine_postgres_data:
