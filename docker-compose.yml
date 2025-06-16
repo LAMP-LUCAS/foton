@@ -1,51 +1,56 @@
-
 services:
-
   foton_cloudflared:
     image: cloudflare/cloudflared:latest
-    container_name: foton_cloudflared
+    container_name: fotoncloudflared
     restart: unless-stopped
     command: tunnel --no-autoupdate run --token ${TUNNEL_TOKEN}
     networks:
       - foton
+  
   foton_postgres:
-    container_name: foton_postgres
+    container_name: fotonpostgres
     image: postgres:15
     ports:
-      - "5432:5432"
+      - "${POSTGRES_PORT}:5432"
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-redmine}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-redmine}
-      POSTGRES_DB: ${POSTGRES_DB:-redmine}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/init:/docker-entrypoint-initdb.d
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
-      interval: 5s
+      interval: 30s
       timeout: 5s
       retries: 5
     networks:
       - foton
 
   foton_redmine:
-    container_name: foton_redmine
-    image: redmine:6.0
+    container_name: comunidadefoton
+    image: redmine:latest
     depends_on:
       foton_postgres:
         condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     ports:
-      - "3123:3000"
-    environment:
-      REDMINE_DB_POSTGRES: foton_postgres
-      REDMINE_DB_USERNAME: ${POSTGRES_USER:-redmine}
-      REDMINE_DB_PASSWORD: ${POSTGRES_PASSWORD:-redmine}
-      REDMINE_DB_DATABASE: ${POSTGRES_DB:-redmine}
+      - "${REDMINE_WEB_PORT}:3000" 
+    environment:      
+
+      REDMINE_DB_DATABASE: ${REDMINE_DB_NAME}
+      REDMINE_DB_POSTGRES: ${REDMINE_DB_HOST}
+      REDMINE_DB_USERNAME: ${REDMINE_DB_USER}
+      REDMINE_DB_PASSWORD: ${REDMINE_DB_PASSWORD}
+      REDMINE_DB_PORT: ${REDMINE_DB_PORT}
+      
       REDMINE_SMTP_ENABLED: "true"
-      REDMINE_SMTP_HOST: ${SMTP_HOST:-smtp.example.com}
-      REDMINE_SMTP_PORT: ${SMTP_PORT:-587}
-      REDMINE_SMTP_USER: ${SMTP_USER:-email@example.com}
-      REDMINE_SMTP_PASSWORD: ${SMTP_PASSWORD:-senhaEMAIL}
+      REDMINE_SMTP_HOST: ${SMTP_HOST}
+      REDMINE_SMTP_PORT: ${SMTP_PORT}
+      REDMINE_SMTP_USER: ${SMTP_USER}
+      REDMINE_SMTP_PASSWORD: ${SMTP_PASSWORD}
       REDMINE_SMTP_TLS: "true"
     volumes:      
       - ./redmine/plugins:/usr/src/redmine/plugins
@@ -54,8 +59,8 @@ services:
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 30s
-      timeout: 10s
-      retries: 3
+      timeout: 30s
+      retries: 10
     restart: unless-stopped
     deploy:
       resources:
@@ -64,9 +69,6 @@ services:
           memory: 2G
     networks:
       - foton
-
-# env_file:
-#   - secrets/.secrets
 
 volumes:
   redmine_postgres_data:
