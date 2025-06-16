@@ -22,10 +22,11 @@ O **Foton** é um ecossistema integrado que transforma como arquitetos e engenhe
 
 **Quanto tenho que pagar?**
 
-O Foton é uma metodologia OpenSource, utilizamos ferramentas OpenSource ou Gratuítas em um fluxo estruturado, portanto você pode utiliza-las gratuítamente. Os planos e serviços que temos são referentes à hospedagens e serviços extras. Veja abaixo:
+O Foton é uma metodologia OpenSource, utilizamos ferramentas OpenSource ou Gratuítas em um fluxo estruturado, portanto você pode utiliza-las [GRATUITAMENTE Aqui!](https://comunidade.mundoaec.com/projects/foton)
+
+Os planos e serviços que temos são referentes à hospedagens e serviços extras. Veja abaixo:
 
 <div align="center" style="margin: 40px 0;">
-
   <a href="#-para-usuários-finais">
       <img src="https://img.shields.io/badge/QUERO_SABER_MAIS:-PLANOS_E_SERVIÇOS-FF6F61?style=for-the-badge&logo=git&logoColor=white" alt="Botão para Usuários Finais">
   </a>
@@ -45,7 +46,8 @@ services:
   obsidian:          # Documentação colaborativa
 ```
 
-### **🛠️ Comece Agora!**  
+### **🛠️ Comece Agora!**
+
 ```bash
 git clone https://github.com/seu-usuario/foton.git
 cd foton
@@ -53,12 +55,14 @@ cp .env.example .env
 docker-compose up -d
 ```
 
-**Acesse localmente:**  
+**Acesse localmente:**
+
 - Redmine: http://localhost:3000  
 - n8n: http://localhost:5678  
 - OpenWebUI: http://localhost:8080  
 
-### **🧩 Módulos Chave**  
+### **🧩 Módulos Chave**
+
 | Módulo | Status | Link |  
 |--------|--------|------|  
 | [autoSINAPI](https://github.com/LAMP-LUCAS/AutoSINAPI) | ✅ Produtivo | [Repositório](https://github.com/LAMP-LUCAS/AutoSINAPI) |  
@@ -68,13 +72,15 @@ docker-compose up -d
 
 ---
 
-### **🌱 Participe da Comunidade**  
-1. Reporte bugs nas [Issues](https://github.com/LAMP-LUCAS/foton/issues)  
-2. Acompanhe o nosso [Fórum Técnico](https://comunidade.mundoaec.com)  
-3. Siga nosso [Guia de Contribuição](CONTRIBUTING.md)
-4. Venha tomar um café na nossa [Comunidade](https://comunidade.mundoaec.com/coffee)  
+### **🌱 Participe da Comunidade**
 
-**Próximos passos técnicos:**  
+1. Reporte bugs nas [Issues](https://github.com/LAMP-LUCAS/foton/issues)
+2. Acompanhe o nosso [Fórum Técnico](https://comunidade.mundoaec.com/projects/foton/boards/2)  
+3. Siga nosso [Guia de Contribuição](CONTRIBUTING.md)
+4. Venha tomar um café na nossa [Comunidade](https://comunidade.mundoaec.com/projects/foton/boards/1)  
+
+**Próximos passos técnicos:**
+
 - [ ] Finalizar integração Redmine-OpenWebUI
 - [ ] Desenvolver API para sincSINAPI  
 - [ ] Implementar sistema de créditos  
@@ -98,8 +104,9 @@ docker-compose up -d
   </a>
 </div>
 
-### **🎓 Conteúdo Exclusivo**  
-- **Cursos Práticos:**  
+### **🎓 Conteúdo Exclusivo**
+
+- **Cursos Práticos:**
   » Orçamento com SINAPI  
   » Fluxos BIM no Redmine  
   » Automação com n8n  
@@ -108,18 +115,20 @@ docker-compose up -d
   » Templates de projetos  
   » Coleção de materiais SINAPI  
 
-### **📋 Detalhes dos Planos**  
-| Recurso | Econômico | Tipo | Penthouse |  
-|---------|-----------|------|----------|  
-| Armazenamento | - | 1GB | 10GB |  
-| Créditos OpenWebUI | 50/mês | 200/mês | Ilimitado |  
-| Cursos Inclusos | 3 básicos | 10+ | Todos |  
-| Suporte | Comunitário | E-mail | 24h prioritário |  
-| Acesso | [Assinar](https://mundoaec.com/assinatura/#economico) | [Assinar](https://mundoaec.com/assinatura/#tipo) | [Solicitar](https://mundoaec.com/assinatura/#penthouse) |  
+### **📋 Detalhes dos Planos**
+
+| Recurso | Gratuíto | Econômico | Tipo | Penthouse |  
+|---------|--------|-----------|------|----------|  
+| Armazenamento | - | - | 1GB | 10GB |  
+| Créditos OpenWebUI | - | 50/mês | 200/mês | Ilimitado |  
+| Cursos Inclusos | 1 básico | 3 básicos | 10+ | Todos |  
+| Suporte | Comunitário | Comunitário | E-mail | 24h prioritário |  
+| Acesso | [Acessar Agora!](https://comunidade.mundoaec.com/projects/foton) | [Assinar](https://mundoaec.com/assinatura/#economico) | [Assinar](https://mundoaec.com/assinatura/#tipo) | [Solicitar](https://mundoaec.com/assinatura/#penthouse) |  
 
 ---
 
-## **📜 Licenciamento**  
+## **📜 Licenciamento**
+
 - **Núcleo:** [GPLv3](LICENSE)  
 - **Conteúdo:** Copyright © Foton  
 - **Dados SINAPI:** Licença aberta (IBGE)  
@@ -130,10 +139,11 @@ sob os termos da GNU General Public License conforme publicada pela
 Free Software Foundation, versão 3 da Licença.
 ```
 
-## **📞 Contato**  
+## **📞 Contato**
+
 ✉️ **Suporte:** lucas@arqlamp.com  
 🌐 **Site:** [https://mundoaec.com](https://mundoaec.com)  
-💬 **Comunidade:** [Forum Foton](https://comunidade.mundoaec.com)  
+💬 **Comunidade:** [Forum Foton](https://comunidade.mundoaec.com/projects/foton/boards/1)  
 
 ---
 
