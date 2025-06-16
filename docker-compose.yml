@@ -1,3 +1,4 @@
+
 services:
   foton_cloudflared:
     image: cloudflare/cloudflared:latest
@@ -21,10 +22,15 @@ services:
       - ./postgres/init:/docker-entrypoint-initdb.d
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
-      interval: 30s
-      timeout: 5s
-      retries: 5
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER"]
+      interval: 1s
+      timeout: 2s
+      retries: 20
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 2G
     networks:
       - foton
 
@@ -48,9 +54,9 @@ services:
       
       REDMINE_SMTP_ENABLED: "true"
       REDMINE_SMTP_HOST: ${SMTP_HOST}
-      REDMINE_SMTP_PORT: ${SMTP_PORT}
-      REDMINE_SMTP_USER: ${SMTP_USER}
-      REDMINE_SMTP_PASSWORD: ${SMTP_PASSWORD}
+      REDMINE_SMTP_PORT: ${REDMINE_SMTP_PORT}
+      REDMINE_SMTP_USER: ${REDMINE_SMTP_USER}
+      REDMINE_SMTP_PASSWORD: ${REDMINE_SMTP_PASSWORD}
       REDMINE_SMTP_TLS: "true"
     volumes:      
       - ./redmine/plugins:/usr/src/redmine/plugins
@@ -58,8 +64,8 @@ services:
       - ./redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
-      interval: 30s
-      timeout: 30s
+      interval: 5s
+      timeout: 5s
       retries: 10
     restart: unless-stopped
     deploy:
