@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foton - Revolucionando a Gestão na Construção Civil</title>
+    <style>
+        :root {
+            --primary: #1a56db;
+            --secondary: #0e2b5c;
+            --accent: #ff6f61;
+            --light: #f8f9fa;
+            --dark: #1a202c;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+            margin: 2rem 0 1.5rem;
+            color: var(--secondary);
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--primary);
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+        
+        .btn:hover {
+            background-color: #e05a50;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 200px;
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .problem-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+        
+        .problem, .solution {
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        
+        .problem {
+            background-color: #fff0f0;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .solution {
+            background-color: #f0f7ff;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .pillar-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .testimonial {
+            background: linear-gradient(135deg, #2c5282 0%, #1a56db 100%);
+            color: white;
+            padding: 4rem 1rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+        
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+            font-size: 1.4rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 4rem 1rem;
+            background-color: #f8f9fa;
+        }
+        
+        .contribute-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .option-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+        
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .problem-solution {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <h1>Revolucione a Indústria da Construção Civil com o Foton</h1>
+            <p class="tagline">Junte-se à comunidade que está transformando escritórios de engenharia e arquitetura em máquinas de eficiência</p>
+            <div>
+                <a href="#comunidade" class="btn">Participar Agora</a>
+                <a href="#solucao" class="btn btn-outline">Conhecer a Solução</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="container">
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value">7.5%</div>
+                <p>do PIB brasileiro é movido pela construção civil</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">R$ 18M</div>
+                <p>gastos anualmente com serviços não relacionados à obra</p>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">2.5M</div>
+                <p>profissionais que poderiam focar no essencial</p>
+            </div>
+        </div>
+
+        <div class="problem-solution">
+            <div class="problem">
+                <h2>O Grande Desafio da Indústria AEC</h2>
+                <p>Enquanto você se dedica ao que realmente importa - projetar, construir e inovar - seu escritório gasta:</p>
+                <ul>
+                    <li>Horas intermináveis com gestão de projetos desconectada</li>
+                    <li>Recursos preciosos coletando dados do SINAPI</li>
+                    <li>Dias corrigindo falhas de comunicação entre equipes</li>
+                    <li>Semanas elaborando orçamentos manuais</li>
+                </ul>
+                <p><strong>Resultado:</strong> Mais de R$ 18 milhões anuais desperdiçados em operações que não agregam valor ao seu trabalho final.</p>
+            </div>
+            
+            <div class="solution">
+                <h2>A Revolução Foton</h2>
+                <p>Imagine um escritório virtual que opera como uma engrenagem perfeita:</p>
+                <ul>
+                    <li>Projetos fluindo automaticamente entre equipes</li>
+                    <li>Dados do SINAPI atualizados em tempo real</li>
+                    <li>Orçamentos gerados com precisão em minutos</li>
+                    <li>Assistentes de IA especializados em BIM e SINAPI</li>
+                </ul>
+                <p><strong>É isso que construímos juntos:</strong> Um ecossistema open source que elimina barreiras operacionais para você focar no que realmente importa - construir o futuro.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="solucao" class="container">
+        <h2>Como o Foton Transforma Seu Escritório</h2>
+        <p class="tagline">Conectamos todas as peças do seu fluxo de trabalho em uma única plataforma integrada</p>
+        
+        <div class="pillars">
+            <div class="pillar-card">
+                <div class="icon">⚡</div>
+                <h3>Automatização Inteligente</h3>
+                <p>n8n integrado com WhatsApp e sistemas internos para eliminar trabalho repetitivo</p>
+            </div>
+            
+            <div class="pillar-card">
+                <div class="icon">🤖</div>
+                <h3>Assistência Especializada</h3>
+                <p>OpenWebUI com modelos treinados em BIM, SINAPI e normas técnicas</p>
+            </div>
+            
+            <div class="pillar-card">
+                <div class="icon">📊</div>
+                <h3>Dados em Tempo Real</h3>
+                <p>autoSINAPI mantendo seus orçamentos sempre atualizados com as tabelas oficiais</p>
+            </div>
+            
+            <div class="pillar-card">
+                <div class="icon">🌐</div>
+                <h3>Comunidade Colaborativa</h3>
+                <p>Profissionais unidos para resolver os desafios operacionais da indústria</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <div class="container">
+            <blockquote class="testimonial-content">
+                "O Foton nos permitiu reduzir 70% do tempo gasto com gestão operacional. Finalmente conseguimos focar no que amamos: projetar e construir com excelência."
+                <footer style="margin-top: 1.5rem; font-style: normal;">— Eng. Carlos Silva, Diretor de Projetos</footer>
+            </blockquote>
+        </div>
+    </section>
+
+    <section id="comunidade" class="container">
+        <h2>Faça Parte Desta Revolução</h2>
+        <p class="tagline">Sua contribuição molda o futuro da construção civil brasileira</p>
+        
+        <div class="contribute-options">
+            <div class="option-card">
+                <h3>👷 Profissionais de Campo</h3>
+                <p>Compartilhe seus desafios operacionais e ajude-nos a priorizar soluções</p>
+                <a href="https://comunidade.mundoaec.com/projects/foton/boards/1" class="btn" style="background: var(--secondary);">Relatar Necessidade</a>
+            </div>
+            
+            <div class="option-card">
+                <h3>💻 Desenvolvedores</h3>
+                <p>Contribua com código, documentação ou integrações para o ecossistema</p>
+                <a href="https://github.com/LAMP-LUCAS/foton/blob/master/CONTRIBUTING.md" class="btn">Guia de Contribuição</a>
+            </div>
+            
+            <div class="option-card">
+                <h3>🧠 Especialistas Técnicos</h3>
+                <p>Compartilhe seu conhecimento em BIM, SINAPI e fluxos de trabalho</p>
+                <a href="https://comunidade.mundoaec.com/projects/foton/boards/2" class="btn" style="background: var(--secondary);">Participar do Fórum</a>
+            </div>
+            
+            <div class="option-card">
+                <h3>🚀 Embaixadores</h3>
+                <p>Divulgue o projeto e traga mais profissionais para a comunidade</p>
+                <a href="https://mundoaec.com/assinatura" class="btn">Planos Corporativos</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Pronto para Revolucionar a Construção Civil?</h2>
+            <p class="tagline">Junte-se a centenas de profissionais que já estão transformando suas operações</p>
+            <a href="https://comunidade.mundoaec.com/projects/foton" class="btn" style="font-size: 1.3rem; padding: 1rem 3rem;">Participar Gratuitamente</a>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">Open Source • Comunidade Ativa • Impacto Real</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3>Foton - Controle Integrado de Informações para Construção Civil</h3>
+            <p>Uma iniciativa da comunidade Mundo AEC para transformar a indústria da construção</p>
+            <div style="margin-top: 2rem;">
+                <a href="https://github.com/LAMP-LUCAS/foton" class="btn" style="background: var(--dark);">GitHub</a>
+                <a href="https://comunidade.mundoaec.com/projects/foton" class="btn btn-outline">Comunidade</a>
+                <a href="mailto:lucas@arqlamp.com" class="btn btn-outline">Contato</a>
+            </div>
+            <p style="margin-top: 2rem; font-size: 0.9rem;">© 2023 Foton - Licença GPLv3</p>
+        </div>
+    </footer>
+</body>
+</html>
