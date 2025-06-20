@@ -18,8 +18,8 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
     volumes:
-      - ./postgres/data:/var/lib/postgresql/data
-      - ./postgres/init:/docker-entrypoint-initdb.d
+      - ${DATA_DIR}/postgres/data:/var/lib/postgresql/data
+      - ${DATA_DIR}/postgres/init:/docker-entrypoint-initdb.d
     restart: unless-stopped
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER"]
@@ -59,9 +59,9 @@ services:
       REDMINE_SMTP_PASSWORD: ${REDMINE_SMTP_PASSWORD}
       REDMINE_SMTP_TLS: "true"
     volumes:      
-      - ./redmine/plugins:/usr/src/redmine/plugins
-      - ./redmine/themes:/usr/src/redmine/public/themes
-      - ./redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml
+      - ${DATA_DIR}/redmine/plugins:/usr/src/redmine/plugins
+      - ${DATA_DIR}/redmine/themes:/usr/src/redmine/public/themes
+      - ${DATA_DIR}/redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000"]
       interval: 5s

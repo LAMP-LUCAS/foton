@@ -1,0 +1,13 @@
+# Ignorar pastas e todo o seu conteúdo
+autoSINAPI/
+postgres/data
+
+# Ignorar arquivos específicos em pastas
+backups/*.*
+redmine/plugins/*.*
+redmine/themes/*.*
+redmine/configuration.yml
+
+# Arquivos sensíveis:
+*.secrets
+*.env
