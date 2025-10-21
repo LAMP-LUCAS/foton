@@ -9,7 +9,7 @@
 
 O **Foton** é um ecossistema integrado que transforma como arquitetos e engenheiros gerenciam informações em projetos de construção. Combinamos:  
 
-- **Gestão de projetos** (Redmine)  
+- **Gestão de projetos** (Redmine + Plugins)  
 - **Automação inteligente** (n8n + Ferramentas e APIs)  
 - **Assistência especializada** (OpenWebUI)  
 - **Dados SINAPI em tempo real** (autoSINAPI)  
@@ -18,17 +18,17 @@ O **Foton** é um ecossistema integrado que transforma como arquitetos e engenhe
 🏗️ Construtoras • 📐 Escritórios de Arquitetura • 🧮 Orçamentistas • 👷‍♂️ Gestores de Obra
 
 **Nosso Valor Principal**:  
->> Capacitar profissionais a operarem todos os departamentos de um escritório usando ferramentas open-source integradas, com opções de suporte premium para quem precisa de mais recursos.
+>> Capacitar profissionais a operarem todos os departamentos de um escritório usando ferramentas open-source integradas de maneira simples e fluída.
 
 **Quanto tenho que pagar?**
 
-O Foton é uma metodologia OpenSource, utilizamos ferramentas OpenSource ou Gratuítas em um fluxo estruturado, portanto você pode utiliza-las [GRATUITAMENTE Aqui!](https://comunidade.mundoaec.com/projects/foton)
+O Foton é uma ecossistema OpenSource, utilizamos ferramentas OpenSource ou Gratuítas em um fluxo estruturado, portanto você pode utiliza-las [GRATUITAMENTE!](https://mundoaec.com/foton/)
 
 Os planos e serviços que temos são referentes à hospedagens e serviços extras. Veja abaixo:
 
 <div align="center" style="margin: 40px 0;">
-  <a href="#-para-usuários-finais">
-      <img src="https://img.shields.io/badge/QUERO_SABER_MAIS:-PLANOS_E_SERVIÇOS-FF6F61?style=for-the-badge&logo=git&logoColor=white" alt="Botão para Usuários Finais">
+  <a href="https://mundoaec.com/foton/">
+      <img src="https://img.shields.io/badge/QUERO_SABER_MAIS:-PLANOS_E_SERVIÇOS-FF6F61?style=for-the-badge&logo=git&logoColor=white" alt="PLANOS E SERVIÇOS">
   </a>
 </div>
 
@@ -64,11 +64,11 @@ docker-compose up -d
 ### **🧩 Módulos Chave**
 
 | Módulo | Status | Link |  
-|--------|--------|------|  
-| [autoSINAPI](https://github.com/LAMP-LUCAS/AutoSINAPI) | ✅ Produtivo | [Repositório](https://github.com/LAMP-LUCAS/AutoSINAPI) |  
-| sincSINAPI | 🚧 Em desenvolvimento | - |  
-| orcSINAPI | 🚧 Em desenvolvimento | - |  
-| ifcSINAPI | 🚧 Em desenvolvimento | - |  
+|--------|--------|------|
+| Redmine + Plugins | ✅ Produtivo | [RedminePlugins](https://mundoaec.com/foton) |  
+| Ferramentas Web | ✅ Produtivo | [Ferramentas Web](https://mundoaec.com/tools/) |  
+| Assistente Virtual | 🚧 Em desenvolvimento | [OpenWebUI](https://chat.mundoaec.com/) |  
+| autoSINAPI | ✅ Produtivo | [Repositório](https://github.com/LAMP-LUCAS/AutoSINAPI) |
 
 ---
 
@@ -84,46 +84,6 @@ docker-compose up -d
 - [ ] Finalizar integração Redmine-OpenWebUI
 - [ ] Desenvolver API para sincSINAPI  
 - [ ] Implementar sistema de créditos  
-
----
-
-## **👤 Para Usuários Finais**  
-
-### **💡 Soluções Prontas para Sua Empresa**  
-
-| Plano | Benefícios | Investimento |  
-|-------|------------|--------------|  
-|**✅Free**|• Acesso à Comunidade<br>•Surpresinhas mensais<br>•Grupo de estudo comunitário<br>•E muito mais!| Grátis |
-| **💻 Econômico** | • Comunidade com acessos exclusívos<br>• 50 créditos/mês (IA)<br>• Wiki e fóruns | R$10 (individual)<br>R$25 (equipe) |  
-| **🚀 Tipo** | • Redmine na nuvem (1GB)<br>• Cursos básicos<br>• 200 créditos IA | R$50 (individual)<br>R$150 (equipe) |  
-| **🏆 Penthouse** | • Redmine premium (10GB)<br>• Todos cursos<br>• Suporte 24h | R$200 (individual)<br>R$1000 (equipe) |  
-
-<div align="center" style="margin: 30px 0;">
-  <a href="https://mundoaec.com/assinatura">
-    <img src="https://img.shields.io/badge/EXPERIMENTE_GRÁTIS-30_DIAS-DD0031?style=for-the-badge&logo=openaccess&logoColor=white" alt="Teste Grátis">
-  </a>
-</div>
-
-### **🎓 Conteúdo Exclusivo**
-
-- **Cursos Práticos:**
-  » Orçamento com SINAPI  
-  » Fluxos BIM no Redmine  
-  » Automação com n8n  
-- **Bibliotecas Premium:**  
-  » 200+ famílias RVT prontas  
-  » Templates de projetos  
-  » Coleção de materiais SINAPI  
-
-### **📋 Detalhes dos Planos**
-
-| Recurso | Gratuíto | Econômico | Tipo | Penthouse |  
-|---------|--------|-----------|------|----------|  
-| Armazenamento | - | - | 1GB | 10GB |  
-| Créditos OpenWebUI | - | 50/mês | 200/mês | Ilimitado |  
-| Cursos Inclusos | 1 básico | 3 básicos | 10+ | Todos |  
-| Suporte | Comunitário | Comunitário | E-mail | 24h prioritário |  
-| Acesso | [Acessar Agora!](https://comunidade.mundoaec.com/projects/foton) | [Assinar](https://mundoaec.com/assinatura/#economico) | [Assinar](https://mundoaec.com/assinatura/#tipo) | [Solicitar](https://mundoaec.com/assinatura/#penthouse) |  
 
 ---
 
