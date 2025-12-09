@@ -24,10 +24,30 @@ ps:
 # Inicialização completa (rebuilda e sobe do zero)
 init: down clean-volumes build up status
 
+# Novo: Setup de primeira inicialização para credenciais
+setup:
+	@if [ -f "redmine/config/master.key" ]; then \
+		echo "✅ Chave mestra (master.key) já existe. Nada a fazer."; \
+	else \
+		echo "🔑 Chave mestra não encontrada. Iniciando configuração de primeira vez..."; \
+		sudo $(COMPOSE) up -d; \
+		echo "⏳ Aguardando serviços ficarem prontos..."; \
+		sleep 20; \
+		echo "🔐 Gerando novas credenciais (non-interactive)..."; \
+		sudo $(COMPOSE) exec -e VISUAL= -e EDITOR= foton_redmine rails credentials:edit; \
+		echo "📂 Copiando arquivos gerados para o host..."; \
+		sudo docker cp comunidadefoton:/usr/src/redmine/config/master.key ./redmine/config/master.key; \
+		sudo docker cp comunidadefoton:/usr/src/redmine/config/credentials.yml.enc ./redmine/config/credentials.yml.enc; \
+		echo "🔒 Corrigindo permissões dos arquivos..."; \
+		sudo chown $(shell id -u):$(shell id -g) ./redmine/config/master.key ./redmine/config/credentials.yml.enc; \
+		echo "🔄 Reiniciando serviços para carregar novas chaves..."; \
+		sudo $(COMPOSE) down && sudo $(COMPOSE) up -d; \
+		echo "🎉 Configuração inicial concluída com sucesso!"; \
+	fi
+
 # Status e inspeção
 status:
-    $(COMPOSE) ps
-
+	$(COMPOSE) ps
 health:
     @echo "\n📋 Verificando healthchecks:\n"
     $(COMPOSE) ps --format "table {{.Name}}\t{{.State}}\t{{.Health}}"

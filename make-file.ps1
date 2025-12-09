@@ -19,6 +19,24 @@ switch ($Command) {
         docker compose up -d
         docker compose ps
     }
+    "setup"      {
+        if (Test-Path "redmine/config/master.key") {
+            Write-Host "✅ Chave mestra (master.key) já existe. Nada a fazer."
+        } else {
+            Write-Host "🔑 Chave mestra não encontrada. Iniciando configuração de primeira vez..."
+            docker compose up -d
+            Write-Host "⏳ Aguardando serviços ficarem prontos..."
+            Start-Sleep -Seconds 20
+            Write-Host "🔐 Gerando novas credenciais (non-interactive)..."
+            docker compose exec -e VISUAL= -e EDITOR= foton_redmine rails credentials:edit
+            Write-Host "📂 Copiando arquivos gerados para o host..."
+            docker cp comunidadefoton:/usr/src/redmine/config/master.key ./redmine/config/master.key
+            docker cp comunidadefoton:/usr/src/redmine/config/credentials.yml.enc ./redmine/config/credentials.yml.enc
+            Write-Host "🔄 Reiniciando serviços para carregar novas chaves..."
+            docker compose down; docker compose up -d
+            Write-Host "🎉 Configuração inicial concluída com sucesso!"
+        }
+    }
     "pg-console" {
         $envVars = Get-Content .env | ConvertFrom-StringData
         docker exec -it fotonpostgres psql -U $envVars.POSTGRES_USER -d $envVars.POSTGRES_DB
@@ -40,18 +58,15 @@ switch ($Command) {
     }
     default {
         Write-Host "Comandos disponíveis:"
-        Write-Host "  up              → docker compose up -d"
-        Write-Host "  down            → docker compose down"
-        Write-Host "  restart         → Reinicia o stack"
-        Write-Host "  build           → Rebuilda os containers"
-        Write-Host "  logs            → Mostra logs em tempo real"
-        Write-Host "  status / ps     → Mostra status dos containers"
-        Write-Host "  init            → Down + limpeza + build + up"
-        Write-Host "  pg-console      → Acessa psql no container"
-        Write-Host "  pg-dump         → Exporta dump do PostgreSQL"
-        Write-Host "  redmine-console → Bash do container Redmine"
-        Write-Host "  smtp-test       → Teste de conexão SMTP (telnet)"
-        Write-Host "  clean-volumes   → Remove volumes específicos"
-        Write-Host "  prune           → Limpa tudo (containers, volumes, etc)"
+        Write-Host "  up              → Inicia os serviços em segundo plano."
+        Write-Host "  down            → Para todos os serviços."
+        Write-Host "  restart         → Reinicia todos os serviços."
+        Write-Host "  build           → Reconstrói as imagens dos contêineres."
+        Write-Host "  setup           → (Primeira vez) Configura o projeto, incluindo chaves de segurança."
+        Write-Host "  init            → (Destrutivo) Reinicia o projeto do zero, limpando volumes."
+        Write-Host "  logs            → Mostra os logs dos serviços em tempo real."
+        Write-Host "  status / ps     → Mostra o status dos contêineres."
+        Write-Host "  pg-console      → Acessa o console psql do banco de dados."
+        Write-Host "  redmine-console → Acessa o terminal bash do contêiner Redmine."
     }
 }

@@ -36,7 +36,7 @@ services:
 
   foton_redmine:
     container_name: comunidadefoton
-    image: redmine:latest
+    image: redmine:6.0
     depends_on:
       foton_postgres:
         condition: service_healthy
@@ -44,29 +44,31 @@ services:
       - "host.docker.internal:host-gateway"
     ports:
       - "${REDMINE_WEB_PORT}:3000" 
-    environment:      
-
+    environment:
       REDMINE_DB_DATABASE: ${REDMINE_DB_NAME}
       REDMINE_DB_POSTGRES: ${REDMINE_DB_HOST}
       REDMINE_DB_USERNAME: ${REDMINE_DB_USER}
       REDMINE_DB_PASSWORD: ${REDMINE_DB_PASSWORD}
       REDMINE_DB_PORT: ${REDMINE_DB_PORT}
-      
-      REDMINE_SMTP_ENABLED: "true"
-      REDMINE_SMTP_HOST: ${SMTP_HOST}
-      REDMINE_SMTP_PORT: ${REDMINE_SMTP_PORT}
+      REDMINE_SECRET_KEY_BASE: ${REDMINE_SECRET_KEY_BASE}
+
+      # Variáveis SMTP para serem usadas pelo configuration.yml
+      REDMINE_SMTP_DOMAIN: ${REDMINE_SMTP_DOMAIN}
       REDMINE_SMTP_USER: ${REDMINE_SMTP_USER}
       REDMINE_SMTP_PASSWORD: ${REDMINE_SMTP_PASSWORD}
-      REDMINE_SMTP_TLS: "true"
-    volumes:      
+    volumes:
+      - ${DATA_DIR}/redmine/files:/usr/src/redmine/files
       - ${DATA_DIR}/redmine/plugins:/usr/src/redmine/plugins
       - ${DATA_DIR}/redmine/themes:/usr/src/redmine/public/themes
       - ${DATA_DIR}/redmine/config/configuration.yml:/usr/src/redmine/config/configuration.yml
+      - ${DATA_DIR}/redmine/config/master.key:/usr/src/redmine/config/master.key
+      - ${DATA_DIR}/redmine/config/credentials.yml.enc:/usr/src/redmine/config/credentials.yml.enc
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3000"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
+      test: ["CMD", "curl", "-f", "http://localhost:3000/login"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 45s
     restart: unless-stopped
     deploy:
       resources:

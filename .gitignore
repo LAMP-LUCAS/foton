@@ -11,3 +11,6 @@ redmine/configuration.yml
 # Arquivos sensíveis:
 *.secrets
 *.env
+*.key
+redmine/config/database.yml
+redmine/config/credentials.yml.enc
