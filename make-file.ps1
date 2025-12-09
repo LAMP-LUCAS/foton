@@ -20,6 +20,12 @@ switch ($Command) {
         docker compose ps
     }
     "setup"      {
+        if (-not (Test-Path ".env")) {
+            Write-Host "📋 Arquivo .env não encontrado. Copiando de .env.example..."
+            Copy-Item ".env.example" ".env"
+            Write-Host "‼️ IMPORTANTE: Por favor, revise e edite o arquivo .env com suas configurações específicas, depois rode '.\start.bat setup' novamente."
+            exit
+        }
         if (Test-Path "redmine/config/master.key") {
             Write-Host "✅ Chave mestra (master.key) já existe. Nada a fazer."
         } else {

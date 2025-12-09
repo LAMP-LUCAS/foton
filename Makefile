@@ -26,6 +26,12 @@ init: down clean-volumes build up status
 
 # Novo: Setup de primeira inicialização para credenciais
 setup:
+	@if [ ! -f ".env" ]; then \
+		echo "📋 Arquivo .env não encontrado. Copiando de .env.example..."; \
+		cp .env.example .env; \
+		echo "‼️ IMPORTANTE: Por favor, revise e edite o arquivo .env com suas configurações específicas, depois rode 'make setup' novamente."; \
+		exit 0; \
+	fi; \
 	@if [ -f "redmine/config/master.key" ]; then \
 		echo "✅ Chave mestra (master.key) já existe. Nada a fazer."; \
 	else \

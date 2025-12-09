@@ -48,16 +48,29 @@ services:
 
 ### **🛠️ Comece Agora!**
 
-```bash
-git clone https://github.com/seu-usuario/foton.git
-cd foton
-cp .env.example .env
-docker-compose up -d
-```
+Para iniciar seu ambiente Foton pela primeira vez, siga estes passos:
 
-**Acesse localmente:**
+1.  **Clone o repositório:**
+    ```bash
+    git clone https://github.com/seu-usuario/foton.git
+    cd foton
+    ```
+2.  **Execute o setup inicial:**
+    Este comando irá configurar seu arquivo `.env` (se necessário), gerar as chaves de segurança e iniciar todos os serviços.
 
-- Redmine: http://localhost:3000  
+    *   **No Linux/macOS:**
+        ```bash
+        make setup
+        ```
+    *   **No Windows (PowerShell):**
+        ```powershell
+        .\start.bat setup
+        ```
+    *   **Observação:** A primeira execução pode demorar, pois irá baixar as imagens Docker e instalar as dependências. Pode ser que o `sudo` solicite sua senha durante o processo para ajustar permissões de arquivos.
+
+**Acesse localmente (após o setup):**
+
+- Redmine: http://localhost:3231 (ou a porta configurada em seu .env)
 - n8n: http://localhost:5678  
 - OpenWebUI: http://localhost:8080  
 
