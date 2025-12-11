@@ -1,110 +1,62 @@
-# Guia de Contribuição para o Projeto Foton
+# 🤝 Guia de Contribuição - Ecossistema Foton
 
-🎉 **Obrigado por considerar contribuir com o Foton!** 🎉  
-Seguem as diretrizes para ajudar você a participar efetivamente do projeto.
+Bem-vindo ao Foton! Somos um ecossistema de soluções para a construção civil construído sobre o kernel do **Redmine**.
 
----
-
-## 🧭 Formas de Contribuir
-
-### 1. Reportando Problemas
-- Verifique se o problema já foi reportado nas [Issues](https://github.com/LAMP-LUCAS/foton/issues)
-- Caso novo, crie uma issue com:
-  - Título claro e descritivo
-  - Descrição detalhada do problema
-  - Passos para reprodução
-  - Comportamento esperado vs. atual
-  - Screenshots (se aplicável)
-
-### 2. Sugerindo Melhorias
-- Abra uma issue com o título **[SUGESTÃO]**
-- Descreva:
-  - O problema que a funcionalidade resolve
-  - Como você imagina a solução
-  - Alternativas consideradas
-
-### 3. Submetendo Código
-1. **Faça um fork** do repositório
-2. **Crie um branch** com nome descritivo:
-   ```bash
-   git checkout -b feat/nome-da-feature
-   # ou
-   git checkout -b fix/nome-do-bug
-   ```
-3. **Siga os padrões**:
-   - Documente seu código
-   - Mantenha consistência de estilo
-   - Adicione testes quando relevante
-4. **Teste suas alterações**:
-   ```bash
-   docker-compose up --build -d
-   ```
-5. **Envie um Pull Request (PR)**:
-   - Descreva as mudanças no template do PR
-   - Referencie issues relacionadas (ex: `Resolve #123`)
-   - Atualize a documentação se necessário
+Este repositório é um "monorepo" que abriga o Kernel (configurações do Redmine) e os Módulos (Plugins). Sua contribuição é valiosa, seja no código livre ou reportando problemas.
 
 ---
 
-## ⚙️ Ambiente de Desenvolvimento
+## 🧭 Por onde começar?
 
-### Pré-requisitos
-- Docker 20.10+
-- Docker Compose 2.0+
+Antes de codar, entenda onde sua contribuição se encaixa:
 
-### Configuração Inicial
-```bash
-git clone https://github.com/seu-usuario/foton.git
-cd foton
-cp .env.example .env  # Configure suas variáveis
-docker-compose up -d
-```
-
-### Estrutura de Pastas
-
-O respositório já está configurado como um template para ajuda-lo
-
-```
-foton/
-┣ docker/           # Configurações Docker personalizadas
-┣ docs/             # Documentação técnica
-┣ redmine/          # Plugins e temas customizados
-┣ scripts/          # Scripts de automação
-┣ secrets/
-┃ ┣ .secrets.example      # Template de variáveis e senhas
-┗ docker-compose.yml
-```
+| Se você quer... | Você deve ir para... |
+| :--- | :--- |
+| Criar/Melhorar funcionalidades de CRM ou Fluxo de Caixa | **Plugins Comunitários** (`redmine/plugins/foton_contacts`, etc.) |
+| Melhorar a Interface ou Tema | **FotonOS** (`redmine/themes/fotonOS`) |
+| Corrigir configurações do Docker ou Redmine base | **Kernel** (Raiz deste repositório) |
+| Entender a Arquitetura | [📖 Arquitetura do Ecossistema](docs/FOTON_ECOSYSTEM_ARCHITECTURE.md) |
 
 ---
 
-## 📜 Padrões de Código
+## 🛠️ Ambiente de Desenvolvimento
 
-### Backend (Python)
-- Siga a PEP 8
-- Use type hints
-- Documente com docstrings
-- Testes com pytest
-
-### Commits
-- Use [Conventional Commits](https://www.conventionalcommits.org):
-  ```
-  feat: Adiciona suporte ao SINAPI-2025
-  fix: Corrige timeout na sincronização
-  docs: Atualiza guia de instalação
-  ```
+1.  **Pré-requisitos:** Docker e Docker Compose.
+2.  **Setup Rápido:**
+    ```bash
+    make setup
+    # ou
+    ./start.bat setup
+    ```
+    Isso subirá o Redmine, Banco de Dados e todos os plugins configurados.
 
 ---
 
-## 🤝 Código de Conduta
-Seguimos o [Contributor Covenant](https://www.contributor-covenant.org).  
-Comportamentos inadequados podem ser reportados para lucas@arqlamp.com.
+## 📜 Regras do Jogo (Pipelines)
+
+Para garantir a estabilidade do ecossistema, seguimos regras estritas. Por favor, leia nosso **[Pipeline de Desenvolvimento](docs/DEVELOPMENT_PIPELINES.md)** antes de abrir um Pull Request.
+
+### Resumo Rápido:
+1.  **Não toque no Core:** Evite alterar arquivos do Redmine fora da pasta `plugins/` ou `themes/`. Use *hooks* e *patches*.
+2.  **Branches:** Crie branches a partir de `develop` (ex: `feat/nova-tela`).
+3.  **Commits:** Use [Conventional Commits](https://www.conventionalcommits.org) (ex: `feat: adiciona botão de exportar`).
+4.  **Testes:** Se quebrou, conserte. Se é novo, teste.
 
 ---
 
-## 🎁 Reconhecimento
-Todo contribuidor será:
-- Listado na nossa [página de agradecimentos](https://mundoaec.com/contributors)
-- Convidado para eventos exclusivos
-- Elegível para brindes especiais
+## 🐛 Reportando Problemas
 
-[👉 Voltar ao README](README.md)
+Encontrou um bug? Ótimo (quer dizer, que pena, mas obrigado por avisar)!
+Abra uma Issue detalhando:
+1.  Qual plugin/módulo falhou?
+2.  Passos para reproduzir.
+3.  O que você esperava vs O que aconteceu.
+
+---
+
+## 📄 Licença e Legal
+
+*   **Kernel e Plugins Comunitários:** GPLv3 (Software Livre).
+*   **SaaS Core (foton_subscription_manager):** Proprietário/Comercial.
+
+Ao contribuir, você concorda que seu código será compatível com estas licenças.

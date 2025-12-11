@@ -35,7 +35,7 @@ services:
       - foton
 
   foton_redmine:
-    container_name: comunidadefoton
+    container_name: fotonredmine
     image: redmine:6.0
     depends_on:
       foton_postgres:

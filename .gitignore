@@ -1,16 +1,18 @@
 # Ignorar pastas e todo o seu conteúdo
 autoSINAPI/
 postgres/data
+redmine/plugins/
+redmine/themes/
 
 # Ignorar arquivos específicos em pastas
 backups/*.*
-redmine/plugins/*.*
-redmine/themes/*.*
 redmine/configuration.yml
 
 # Arquivos sensíveis:
 *.secrets
 *.env
 *.key
+*.sql
 redmine/config/database.yml
 redmine/config/credentials.yml.enc
+.geminiignore

@@ -9,10 +9,10 @@
 
 O **Foton** é um ecossistema integrado que transforma como arquitetos e engenheiros gerenciam informações em projetos de construção. Combinamos:  
 
-- **Gestão de projetos** (Redmine + Plugins)  
+- **[Gestão de projetos](https://mundoaec.com/foton)** (Redmine + Plugins)  
 - **Automação inteligente** (n8n + Ferramentas e APIs)  
-- **Assistência especializada** (OpenWebUI)  
-- **Dados SINAPI em tempo real** (autoSINAPI)  
+- **[Assistência especializada](https://chat.mundoaec.com/)** (OpenWebUI)  
+- **[Dados SINAPI em tempo real](https://mundoaec.com/autosinapi/)** (autoSINAPI)  
 
 **Para quem é:**  
 🏗️ Construtoras • 📐 Escritórios de Arquitetura • 🧮 Orçamentistas • 👷‍♂️ Gestores de Obra
@@ -27,7 +27,7 @@ O Foton é uma ecossistema OpenSource, utilizamos ferramentas OpenSource ou Grat
 Os planos e serviços que temos são referentes à hospedagens e serviços extras. Veja abaixo:
 
 <div align="center" style="margin: 40px 0;">
-  <a href="https://mundoaec.com/foton/">
+  <a href="https://mundoaec.com/">
       <img src="https://img.shields.io/badge/QUERO_SABER_MAIS:-PLANOS_E_SERVIÇOS-FF6F61?style=for-the-badge&logo=git&logoColor=white" alt="PLANOS E SERVIÇOS">
   </a>
 </div>
@@ -78,10 +78,12 @@ Para iniciar seu ambiente Foton pela primeira vez, siga estes passos:
 
 | Módulo | Status | Link |  
 |--------|--------|------|
-| Redmine + Plugins | ✅ Produtivo | [RedminePlugins](https://mundoaec.com/foton) |  
-| Ferramentas Web | ✅ Produtivo | [Ferramentas Web](https://mundoaec.com/tools/) |  
-| Assistente Virtual | 🚧 Em desenvolvimento | [OpenWebUI](https://chat.mundoaec.com/) |  
-| autoSINAPI | ✅ Produtivo | [Repositório](https://github.com/LAMP-LUCAS/AutoSINAPI) |
+| RedmineOS (Redmine + Plugins) | ✅ Funcional | [Foton](https://mundoaec.com/foton) |  
+| Ferramentas Web | ✅ Funcional | [Ferramentas Web](https://mundoaec.com/tools/) |  
+| Assistente Virtual | 🚧 Em desenvolvimento | [chat](https://chat.mundoaec.com/) |  
+| autoSINAPI | ✅ Funcional | [AutoSINAPI](https://mundoaec.com/autosinapi/) |
+| fotonSystem | ✅ Funcional | [fotonSystem](https://github.com/LAMP-LUCAS/fotonSystem) |
+
 
 ---
 
@@ -94,8 +96,6 @@ Para iniciar seu ambiente Foton pela primeira vez, siga estes passos:
 
 **Próximos passos técnicos:**
 
-- [ ] Finalizar integração Redmine-OpenWebUI
-- [ ] Desenvolver API para sincSINAPI  
 - [ ] Implementar sistema de créditos  
 
 ---
@@ -107,16 +107,18 @@ Para iniciar seu ambiente Foton pela primeira vez, siga estes passos:
 - **Dados SINAPI:** Licença aberta (IBGE)  
 
 ```
+
 Este programa é software livre: você pode redistribuí-lo e/ou modificar
 sob os termos da GNU General Public License conforme publicada pela
 Free Software Foundation, versão 3 da Licença.
+
 ```
 
 ## **📞 Contato**
 
 ✉️ **Suporte:** lucas@arqlamp.com  
 🌐 **Site:** [https://mundoaec.com](https://mundoaec.com)  
-💬 **Comunidade:** [Forum Foton](https://comunidade.mundoaec.com/projects/foton/boards/1)  
+💬 **Comunidade:** [Grupo do Whatsapp](https://chat.whatsapp.com/FDDV88NPOyQ5MByMRtR3eO)  
 
 ---
 
